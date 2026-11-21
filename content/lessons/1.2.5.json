@@ -1,0 +1,50 @@
+{
+  "num": "1.2.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Blind people",
+    "Low vision people",
+    "People who cannot read small on-screen text",
+    "People listening on the go"
+  ],
+  "takeaways": [
+    "Prerecorded video with sound has audio description: narration of the important visual information, fitted into natural pauses. Level AA.",
+    "This is stricter than 1.2.3. At Level A a full text alternative can stand in. At AA you need audio description, though a text alternative is still a welcome extra.",
+    "If the main soundtrack already describes everything that matters, no separate description track is needed. Plan this at script and storyboard stage, where it costs least.",
+    "If the pauses are too short to fit the description, pausing the video for longer description is extended audio description, 1.2.7 (AAA)."
+  ],
+  "failures": [
+    "A product tour where key screens appear under music only",
+    "Prices, names or step titles shown on screen and never spoken",
+    "A described version that exists but has no control to find it"
+  ],
+  "check": [
+    "In the storyboard, mark every shot where the meaning is only in the picture.",
+    "For each, decide whether the main script will say it or a description track will.",
+    "In the build, listen with the screen off, and check the described version or description control is easy to find."
+  ],
+  "quiz": {
+    "question": "You are planning a new two-minute explainer video. What is the most efficient way to meet 1.2.5?",
+    "options": [
+      "Write the voiceover so it says what is on screen as it happens",
+      "Publish a transcript next to the video",
+      "Add alt text to the video’s poster image"
+    ],
+    "answer": 0,
+    "why": "When the main narration already carries the visual information, no extra description track is needed. A transcript is not enough at AA, and poster alt text says nothing about what plays."
+  },
+  "spec": [
+    "Annotate the storyboard, shot by shot, with the visual information that must be spoken.",
+    "Specify the player control for the described version or description track, and its label.",
+    "Flag any shot where the pauses are too short, so the team can decide how to handle it."
+  ],
+  "review": [
+    "Close your eyes. Can you still follow it?",
+    "Is that on-screen text read out anywhere?",
+    "Where does a blind viewer turn on the described version?"
+  ],
+  "tradeoff": "Adding description after the edit is costly, and sometimes impossible when there are no gaps. Writing it into the script from the start costs almost nothing and usually makes the video clearer for everyone.",
+  "system": "Add “Is the visual information spoken?” to the video brief template, and give the player a standard audio description control.",
+  "pitch": "A video that only works with your eyes open leaves blind customers out. Planning description into the script is cheaper than adding it later."
+}

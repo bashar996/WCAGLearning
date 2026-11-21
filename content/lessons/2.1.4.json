@@ -1,0 +1,50 @@
+{
+  "num": "2.1.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Voice control users",
+    "Tremors and limited dexterity",
+    "Keyboard users",
+    "People who mistype"
+  ],
+  "takeaways": [
+    "If a keyboard shortcut uses only a letter, number, punctuation or symbol key, people can turn it off, remap it to include a modifier such as Ctrl or Alt, or it only works while that component has focus.",
+    "Voice control users dictate words, which arrive as a stream of letters. Every letter can fire a single-key shortcut, so one spoken sentence can archive, delete or send things by accident.",
+    "Shortcuts like Ctrl+S or Alt+N are not covered. Shift does not count as a modifier here, because Shift plus a letter is still a letter.",
+    "Developers build the shortcuts. Designers decide which ones exist, where people turn them off or change them, and how they are listed."
+  ],
+  "failures": [
+    "An email app where pressing “e” archives the open message, with no way to switch it off",
+    "A video player where “k” and “j” work anywhere on the page",
+    "A shortcuts list that cannot be edited or disabled"
+  ],
+  "check": [
+    "List every single-key shortcut in the product, including ones from third-party components.",
+    "For each, find the setting that turns it off or remaps it, or confirm it only works while its component has focus.",
+    "Check that the setting is easy to find, for example in Settings and in the shortcuts help panel."
+  ],
+  "quiz": {
+    "question": "A task app uses “d” to mark the selected task done, anywhere on the page. Which change meets 2.1.4?",
+    "options": [
+      "Show the shortcut in a tooltip on the Done button",
+      "Add a setting to turn single-key shortcuts off, or change them to include Ctrl or Alt",
+      "Change the shortcut to Shift+D"
+    ],
+    "answer": 1,
+    "why": "A tooltip tells people the shortcut exists but does not stop accidental use. Shift+D is still just a letter key. Turning it off, or remapping it to include a modifier, stops voice users firing it by accident."
+  },
+  "spec": [
+    "List every single-key shortcut, what it does and where it is active.",
+    "Design the setting that turns shortcuts off or remaps them, and where it lives.",
+    "For shortcuts meant to work only inside a component, such as a player, note that they work only while it has focus."
+  ],
+  "review": [
+    "What happens if someone dictates a sentence while this screen is open?",
+    "Could any of these shortcuts delete, send or archive something without a confirmation?",
+    "Where would someone go to turn these off?"
+  ],
+  "tradeoff": "Power users love single-key shortcuts because they are fast. Keep them, but add one switch in settings to turn them off or remap them, and scope player shortcuts to the player.",
+  "system": "Register shortcuts in one place, so a single settings screen can list, remap and turn off all of them.",
+  "pitch": "For someone using voice control, a single-key shortcut means one spoken word can delete their work. One settings toggle prevents it."
+}

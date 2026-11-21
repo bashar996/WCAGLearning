@@ -1,0 +1,50 @@
+{
+  "num": "2.4.1",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Screen reader users",
+    "Switch users",
+    "Low vision with magnification"
+  ],
+  "takeaways": [
+    "There is a way to skip blocks of content that repeat on many pages, such as the header, navigation and side menus.",
+    "Without it, keyboard and switch users press Tab through every navigation link on every page before reaching the content.",
+    "Common ways to meet it are a “Skip to main content” link, headings at the start of each section, and landmark regions such as header, nav and main.",
+    "Designers decide the skip link’s design and position, the heading structure and the regions of each template. Developers build them."
+  ],
+  "failures": [
+    "Fifty navigation links before the main content, with no skip link",
+    "A skip link that is hidden even when it receives focus",
+    "A skip link that goes to the wrong place, or nowhere"
+  ],
+  "check": [
+    "In each page template, mark the blocks that repeat and the regions: header, navigation, main, footer.",
+    "Design the skip link’s focused state and check it appears first in the focus order.",
+    "In the build, press Tab once on a page and Enter on the skip link, then check that the next Tab lands inside the main content."
+  ],
+  "quiz": {
+    "question": "The team wants a skip link but feels it looks out of place in the header. What do you design?",
+    "options": [
+      "Leave it out, because screen readers can use headings instead",
+      "Hide it until it receives keyboard focus, then show it clearly at the top left",
+      "Put it in the footer so it does not disturb the design"
+    ],
+    "answer": 1,
+    "why": "A skip link that appears on focus keeps the header clean and helps sighted keyboard users, who cannot jump by headings. In the footer, people would already have tabbed past everything."
+  },
+  "spec": [
+    "Design the skip link’s focused state: wording, position, size and contrast.",
+    "Mark the regions of each template, such as header, navigation, main and footer, and where the skip link goes.",
+    "If there are several repeated blocks, such as a long filter panel, note any extra skip links."
+  ],
+  "review": [
+    "How many Tab presses does it take to reach the content?",
+    "Where does the skip link appear, and can sighted keyboard users see it?",
+    "Are the page regions marked in the file?"
+  ],
+  "tradeoff": "A visible skip link can feel like clutter. Showing it only on keyboard focus keeps the look clean, while still being there for the people who need it.",
+  "system": "Build the skip link and page regions into the page layout template, so every new page has them by default.",
+  "pitch": "Without a skip link, a keyboard user presses Tab through our whole menu on every single page. One link fixes that."
+}

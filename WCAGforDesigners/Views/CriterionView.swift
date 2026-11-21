@@ -114,6 +114,10 @@ struct CriterionView: View {
                 case .color: ColorDemo()
                 case .taps: TapsDemo(tint: x.principle.tint)
                 case .motion: MotionDemo(tint: x.principle.tint)
+                case .focus: FocusDemo()
+                case .resize: ResizeDemo()
+                case .formErrors: FormErrorDemo()
+                case .readingOrder: ReadingOrderDemo()
                 }
             }
         }

@@ -1,0 +1,50 @@
+{
+  "num": "2.4.10",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Cognitive and reading disabilities",
+    "People who skim",
+    "Screen magnifier users"
+  ],
+  "takeaways": [
+    "Where content is organized into sections, section headings mark them.",
+    "Level AAA. It applies to sections of writing, such as articles, help pages and long documents, not to UI components like buttons or cards.",
+    "Headings let people jump to the part they need and see the shape of a long text before reading it.",
+    "Related rules: whether headings are marked up in code is 1.3.1; whether they describe their content is 2.4.6. This one asks that the headings are there at all."
+  ],
+  "failures": [
+    "A long help article with no headings, only paragraphs",
+    "Sections set apart by spacing or a divider line alone",
+    "Bold lead-in sentences standing in for headings"
+  ],
+  "check": [
+    "Scroll a long page in the file. Where does the topic change, and is there a heading there?",
+    "Read only the headings. Do they show the structure of the content?",
+    "Check that the content templates in the system let writers add headings."
+  ],
+  "quiz": {
+    "question": "A policy page is one long block of text split into topics with extra white space. What does 2.4.10 ask for?",
+    "options": [
+      "Add a heading at the start of each topic",
+      "Add more white space between topics",
+      "Put each topic in a collapsible accordion"
+    ],
+    "answer": 0,
+    "why": "The rule asks for section headings where content is organized into sections. White space shows a break but does not name it, and an accordion still needs headings for its sections."
+  },
+  "spec": [
+    "Mark each section heading and its level in long content templates.",
+    "Note which visual styles are real headings and which are just large text.",
+    "Give writers guidance on when a section needs a heading."
+  ],
+  "review": [
+    "Could I find the part I need by reading only the headings?",
+    "Is this bold line a heading or just styled text?",
+    "Does the template let writers add headings, or does it squeeze everything into one block?"
+  ],
+  "tradeoff": "Headings add length and can make short content feel bureaucratic. Short pieces with one topic do not need them; any page people scan or come back to should have them. Meeting this AAA rule is usually cheap and worth it.",
+  "system": "Build content templates and rich text components with heading styles mapped to heading levels, so writers can structure content without custom styling.",
+  "pitch": "Nobody reads a wall of text. Headings make our content findable for everyone and cost nothing but a little editing."
+}

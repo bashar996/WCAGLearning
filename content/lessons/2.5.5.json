@@ -1,0 +1,50 @@
+{
+  "num": "2.5.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Tremors and limited dexterity",
+    "Large fingers and older users",
+    "Low vision",
+    "People on the move"
+  ],
+  "takeaways": [
+    "Pointer targets are at least 44 by 44 CSS px.",
+    "It is Level AAA. At AA, 2.5.8 asks for 24 by 24 CSS px, or enough spacing around smaller targets.",
+    "Exceptions: an equivalent control on the same page meets the size, the target is a link inside a sentence or block of text, the size is set by the browser and not changed, or the presentation is essential.",
+    "It is worth meeting for primary actions and anything used on the move. The hit area can be larger than the visible icon."
+  ],
+  "failures": [
+    "A 32px close button on a dialog",
+    "A row of 28px icon buttons in a toolbar",
+    "Small pagination numbers with no larger alternative"
+  ],
+  "check": [
+    "Draw a 44 by 44 frame over each target, or use a component overlay, and check its hit area fills it.",
+    "For smaller targets, check whether an exception applies, such as an inline link or a larger equivalent control.",
+    "In the build, check the real tap area, not only the visible shape."
+  ],
+  "quiz": {
+    "question": "A data table has 24px “Edit” icons on each row. Clicking anywhere on the row opens the same edit screen, and each row is 48px tall and full width. Does the icon meet 2.5.5?",
+    "options": [
+      "Yes. An equivalent target that meets the size is available",
+      "No. Every target must be at least 44 by 44 px",
+      "No. It only meets 2.5.8"
+    ],
+    "answer": 0,
+    "why": "The equivalent exception covers a small target when another control doing the same thing meets the size. The full row is at least 44 by 44, so the icon can stay small."
+  },
+  "spec": [
+    "Mark the hit area of each target separately from its visible size.",
+    "List any target below 44 by 44 and the exception that applies.",
+    "Give minimum heights for buttons, list rows and tabs as tokens."
+  ],
+  "review": [
+    "Which targets here are below 44 px, and why?",
+    "Could you hit this reliably with your thumb while walking?",
+    "Is the hit area bigger than the icon, or just the icon?"
+  ],
+  "tradeoff": "44 px targets take room, which dense tools and tables feel. Use 44 px for primary and touch actions, keep 2.5.8 at 24 px as the floor everywhere, and grow hit areas with padding rather than larger icons.",
+  "system": "Set 44 px as the default minimum hit area for buttons, icon buttons and list rows, with a compact variant that still meets 24 px.",
+  "pitch": "Bigger targets mean fewer mis-taps for everyone, not only people with tremors."
+}

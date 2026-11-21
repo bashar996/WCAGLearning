@@ -1,0 +1,50 @@
+{
+  "num": "1.4.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Low vision",
+    "Aging eyes",
+    "Color vision deficiency",
+    "Anyone reading on a dim or glary screen"
+  ],
+  "takeaways": [
+    "Text needs a contrast ratio of at least 7:1. Large text, at least 24px regular or about 18.66px bold, needs 4.5:1.",
+    "This is Level AAA, the stricter version of 1.4.3, which asks for 4.5:1 and 3:1.",
+    "The same exceptions apply: logos, purely decorative text, text in inactive controls and text that is part of a picture.",
+    "On white, #595959 is about the lightest gray that reaches 7:1. Most dark body text already passes; secondary and helper text usually does not."
+  ],
+  "failures": [
+    "Mid-gray captions and timestamps that only reach 4.5:1",
+    "White text on a mid-blue brand button",
+    "Placeholder text styled as light gray"
+  ],
+  "check": [
+    "Measure each text style against every background it appears on, with a contrast checker.",
+    "Decide whether each style is large or not using its real size and weight, not how it looks.",
+    "Check dark mode separately, because pale text on dark gray often drops below 7:1."
+  ],
+  "quiz": {
+    "question": "A 20px bold section title is #6B6B6B on white, about 5.3:1. Does it meet 1.4.6?",
+    "options": [
+      "No. All text needs 7:1 at AAA",
+      "No. Bold text needs 7:1 at any size",
+      "Yes. At 20px bold it counts as large text, which needs 4.5:1"
+    ],
+    "answer": 2,
+    "why": "Bold text from about 18.66px counts as large, and large text needs 4.5:1 at AAA. Body text below that size would need 7:1."
+  },
+  "spec": [
+    "Write the measured ratio next to each text color pair, and mark which pairs reach 7:1.",
+    "Mark each text style as large or normal, so developers know which threshold applies.",
+    "If you offer a high-contrast theme to meet this, specify its token values and where people switch it on."
+  ],
+  "review": [
+    "Is this product aiming for AAA contrast everywhere, or only in some places?",
+    "Which secondary text styles fall between 4.5:1 and 7:1?",
+    "Does the brand color still work as a text color at this level?"
+  ],
+  "tradeoff": "7:1 limits your palette: fewer grays and brand colors can carry text. It is worth meeting for long reading, older audiences and health or government services. Elsewhere, meet 1.4.3 everywhere and consider an optional high-contrast theme.",
+  "system": "Mark each text color token with its contrast level, AA or AAA, so teams can choose the stricter pairs when they need them.",
+  "pitch": "Stronger contrast makes text easier to read for everyone over 40 and for anyone outdoors. It costs a few palette choices, not a redesign."
+}

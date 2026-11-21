@@ -1,0 +1,50 @@
+{
+  "num": "1.2.8",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Deafblind people using braille",
+    "Blind people who prefer to read",
+    "Deaf and hard of hearing people",
+    "People who need to read at their own pace"
+  ],
+  "takeaways": [
+    "All prerecorded video with sound, and all prerecorded video-only content, has a full text alternative: a written version with the dialogue, sounds and visual information in order. Level AAA.",
+    "It goes further than its siblings. 1.2.3 accepts audio description or text, and 1.2.1 accepts an audio track for silent video. At AAA, the full text is required for both.",
+    "A media alternative reads like a screenplay: who speaks, what they say, what happens. It is the only way a deafblind person using braille gets the whole video, and it helps anyone who wants to skim or search.",
+    "Designers own where the alternative lives and how it is labelled. Writers often have the script already, so it is one of the more achievable AAA criteria, especially for tutorials and anything people come back to."
+  ],
+  "failures": [
+    "A transcript of the dialogue only",
+    "Visual steps written as “as you can see here”",
+    "A text version left out of date after the video is re-edited"
+  ],
+  "check": [
+    "For each video, check the text alternative covers what is shown, not only what is said.",
+    "Read the alternative without the video. Could you do the task or follow the story?",
+    "In the file, check the link to it sits with the player and is clearly labelled."
+  ],
+  "quiz": {
+    "question": "Your tutorial videos already have captions and audio description. What does 1.2.8 add?",
+    "options": [
+      "A full text version of each video, including the visual steps, linked from the player",
+      "Sign language interpretation",
+      "A transcript of the narration"
+    ],
+    "answer": 0,
+    "why": "1.2.8 asks for a media alternative: everything in the video, in text. A narration transcript misses the visuals, and sign language is 1.2.6."
+  },
+  "spec": [
+    "Place a “Read the full text version” link with each player, and say where it opens.",
+    "Specify the structure: speaker names, descriptions of action, and headings for each section.",
+    "Note who updates the text when the video is re-edited."
+  ],
+  "review": [
+    "Could someone do this tutorial from the text alone?",
+    "Does it say what happens, or only what is said?",
+    "Who keeps the text in step with the video after edits?"
+  ],
+  "tradeoff": "A full text version takes effort for every video, but the script is a head start and the result can double as a help article. Start with videos that teach tasks. For brand films, 1.2.3 and 1.2.5 may be the realistic bar.",
+  "system": "Give the video component a text alternative field and a standard link, and keep the text in the same content entry as the video.",
+  "pitch": "A good text version turns every tutorial into a help article, readable in braille, by search engines and by anyone in a hurry."
+}

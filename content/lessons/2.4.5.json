@@ -1,0 +1,50 @@
+{
+  "num": "2.4.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Screen reader users",
+    "Low vision with magnification",
+    "People new to the site"
+  ],
+  "takeaways": [
+    "There is more than one way to find any page in a set of pages: for example navigation, search, a site map, a table of contents or related links.",
+    "People find things in different ways. Some search, some browse menus, some scan an A to Z list. One route alone fails someone.",
+    "Pages that are a step in a process, or the result of one, are exempt. Step 3 of checkout does not need its own entry in search.",
+    "Level AA. It is about the set of pages as a whole, so plan it in the site map and information architecture, not page by page."
+  ],
+  "failures": [
+    "A help center reachable only by search",
+    "Pages hidden deep in menus with no search and no links to them",
+    "Search that does not cover all the content people need"
+  ],
+  "check": [
+    "Pick a few deep pages and find each one in two different ways.",
+    "Check that search indexes every content type, not just products.",
+    "In the site map or IA diagram, mark which pages are exempt steps in a process."
+  ],
+  "quiz": {
+    "question": "A product has a main menu that reaches every page. The team wants to add search later. Does the site meet 2.4.5 today?",
+    "options": [
+      "No. The menu is one way, and there needs to be a second",
+      "Yes. A complete menu is enough",
+      "Yes, as long as the menu has sub-menus"
+    ],
+    "answer": 0,
+    "why": "The rule asks for more than one way. A menu alone is one route, however complete. A site map, search or related links would add the second."
+  },
+  "spec": [
+    "Document the ways to reach each kind of page: nav, search, site map, related links.",
+    "Mark pages that are steps or results in a process, so nobody adds them to navigation by mistake.",
+    "Design the search entry point and the site map page, and note where they appear on every page."
+  ],
+  "review": [
+    "If someone cannot use the menu, how else do they reach this page?",
+    "Does search actually return this page?",
+    "Is this page really a step in a process, or is that just an excuse?"
+  ],
+  "tradeoff": "Every extra route costs space and upkeep: search needs indexing and a site map needs maintaining. A small site can often use a simple site map page or a footer list of key pages; save full search for large sets of content.",
+  "system": "Put search and a link to the site map in the shared header or footer component, so every page gets a second route for free.",
+  "pitch": "People who cannot find a page assume we do not have it. A second way to find things is cheap compared to a lost customer."
+}

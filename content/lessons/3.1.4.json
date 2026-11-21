@@ -1,0 +1,50 @@
+{
+  "num": "3.1.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "Screen reader users",
+    "People reading in a second language",
+    "New customers"
+  ],
+  "takeaways": [
+    "There is a way to find the expanded form or meaning of abbreviations, including acronyms like APR, KYC or SLA.",
+    "Abbreviations save space but assume knowledge. Some readers do not know them, and a screen reader may read them as strange words.",
+    "This is Level AAA. You can meet it by writing the full form the first time it appears, linking to a glossary, or giving a definition people can open.",
+    "Designers own where the full form fits: in the label, the helper text, or a definition people can reach by keyboard and touch."
+  ],
+  "failures": [
+    "A pricing table full of acronyms with no key",
+    "Status chips like “PND” and “ACK” with no explanation",
+    "Expansions shown only in a hover tooltip"
+  ],
+  "check": [
+    "Search your copy and labels for abbreviations and acronyms, including status codes.",
+    "For each, find the full form on the same screen or one step away.",
+    "Make sure the expansion can be reached without a mouse."
+  ],
+  "quiz": {
+    "question": "A loan comparison card shows “APR 7.9%”. Space is tight. What meets 3.1.4?",
+    "options": [
+      "Leave it. APR is a standard term",
+      "Show the full form only in the page’s source code",
+      "Add a visible explanation on first use, “Annual percentage rate (APR)”, or a definition people can open"
+    ],
+    "answer": 2,
+    "why": "Standard to the industry is not standard to every reader. A full form on first use or an openable definition reaches everyone, including keyboard and touch users."
+  },
+  "spec": [
+    "List each abbreviation with its full form and plain meaning.",
+    "Mark where the full form is shown, and how a definition opens if it is not visible.",
+    "Note any abbreviation that screen readers should hear spelled out, such as letters instead of a word."
+  ],
+  "review": [
+    "Which abbreviations here would a first-time customer not know?",
+    "Is this abbreviation saving real space, or just habit?",
+    "Where can someone find out what this stands for?"
+  ],
+  "tradeoff": "Full forms make tight UI like chips and tables longer. Use the full form where space allows, and keep a short form with an easy way to expand it where it does not.",
+  "system": "Keep a shared list of approved abbreviations with their expansions, and give chips and table headers an optional definition slot.",
+  "pitch": "Acronyms are insider language. Explaining them once makes our product feel open to newcomers."
+}

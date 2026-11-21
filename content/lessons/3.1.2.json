@@ -1,0 +1,50 @@
+{
+  "num": "3.1.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Braille display users",
+    "Translation tool users",
+    "Language learners"
+  ],
+  "takeaways": [
+    "When a passage or phrase is in a different language from the page, that language can be determined by software.",
+    "Screen readers then switch voice or pronunciation, so a German quote in an English article sounds like German.",
+    "Exceptions: proper names, technical terms, words of no clear language, and words that have become part of the surrounding language, such as “café” in English.",
+    "Developers mark it up. Designers and writers spot the passages and flag them in the file, since only they know which text is in which language."
+  ],
+  "failures": [
+    "A language picker listing “Deutsch” and “Español” with no language marked on each",
+    "A quoted French passage in an English article left unmarked",
+    "A bilingual heading with both languages read in one voice"
+  ],
+  "check": [
+    "Scan each screen for text in another language: quotes, product names in two languages, the language picker.",
+    "Leave out proper names and borrowed words that are now part of the main language.",
+    "In the build, listen to the passage with a screen reader and check it switches."
+  ],
+  "quiz": {
+    "question": "Your language picker shows each option in its own language: “English”, “Français”, “日本語”. What do you annotate?",
+    "options": [
+      "Each option’s language: “Français” as French, “日本語” as Japanese",
+      "Nothing. These are names, so they are exempt",
+      "Translate every option into the page language instead"
+    ],
+    "answer": 0,
+    "why": "Names of languages written in that language are not proper names, and they are meant for speakers of that language. Marking each one lets screen readers say it correctly. Translating them would make the picker harder to use."
+  },
+  "spec": [
+    "Highlight each passage in another language and note its language code.",
+    "Mark the language of each item in the language picker.",
+    "Tell content authors how to mark language in the CMS for quotes they add later."
+  ],
+  "review": [
+    "Is there any text on this screen in another language?",
+    "Is this word now part of our language, or is it still foreign?",
+    "Who marks the language of quotes added after launch?"
+  ],
+  "tradeoff": "Marking every borrowed word is overkill and makes speech jumpy. Mark whole passages and phrases readers would hear wrongly, and leave common loanwords and names alone.",
+  "system": "Give the quote, text and language picker components a language property, and expose it in the CMS.",
+  "pitch": "A quote read in the wrong accent is not just odd, it can be impossible to understand. Marking it is a small step for content we already write."
+}

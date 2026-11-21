@@ -1,0 +1,50 @@
+{
+  "num": "1.4.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "People with attention-related disabilities",
+    "People sensitive to sound",
+    "People in shared or quiet places"
+  ],
+  "takeaways": [
+    "If audio plays automatically for more than 3 seconds, people can pause or stop it, or turn its volume down separately from the system volume. Level A.",
+    "Screen reader users hear their reader through the same speakers. Autoplaying sound can drown it out, so they cannot even find the button to stop it.",
+    "Because it can make a whole page unusable, this rule applies to everything on the page, even parts that are not meant to conform.",
+    "The best fix is to not autoplay sound at all. If sound must play, keep it under 3 seconds, or put the pause or mute control at the very start of the page. Moving video is a separate rule, 2.2.2."
+  ],
+  "failures": [
+    "A hero video that autoplays with sound",
+    "Background music with no pause or mute control",
+    "A mute button placed at the end of the page"
+  ],
+  "check": [
+    "List anything that makes sound without being asked: hero videos, ambient music, chat widgets, ads.",
+    "For each, check it is silent by default, stops within 3 seconds, or has a pause or volume control.",
+    "With a screen reader on, load the page and check you can hear the reader and reach the control quickly."
+  ],
+  "quiz": {
+    "question": "A brand campaign wants a hero video that plays with sound when the page loads. What is the best design?",
+    "options": [
+      "Autoplay with sound, with a pause button in the footer",
+      "Autoplay with sound for 10 seconds, then fade out",
+      "Autoplay muted, with a clear unmute button on the video"
+    ],
+    "answer": 2,
+    "why": "Sound longer than 3 seconds needs a control, and a footer button is hard to reach while audio drowns out a screen reader. Starting muted avoids the problem. The moving video still needs a pause under 2.2.2."
+  },
+  "spec": [
+    "Mark every element that can make sound, and whether it autoplays.",
+    "Specify the default: muted, or the length of any sound that plays automatically.",
+    "Place pause and mute controls first in reading order, and name them clearly, such as “Pause background music”."
+  ],
+  "review": [
+    "What makes noise on this page without anyone pressing play?",
+    "How would a screen reader user stop it while it talks over them?",
+    "Does the moving video also need a pause? That is 2.2.2."
+  ],
+  "tradeoff": "Marketing wants instant impact, and sound grabs attention. Many browsers already block autoplay with sound, so start muted with a visible unmute control and let people choose.",
+  "system": "Make video and audio components start muted when they autoplay, with pause and mute controls built in.",
+  "pitch": "Sound nobody asked for drives people away, and for screen reader users it can make the page unusable. Start muted and let people turn it up."
+}

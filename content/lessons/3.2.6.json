@@ -1,0 +1,50 @@
+{
+  "num": "3.2.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "People under stress",
+    "Screen magnifier users",
+    "Older users"
+  ],
+  "takeaways": [
+    "If help appears on several pages, it is in the same place relative to the other content each time: human contact details, a contact form or chat, a self-help page like an FAQ, or a chatbot.",
+    "New in WCAG 2.2, Level A. It does not require you to offer help. It requires the help you offer to be easy to find again.",
+    "People who need help are often already struggling. If the chat button moves between pages, they may never find it.",
+    "“Same relative order” is about order among the page content, not identical pixels. Users who move help themselves are fine."
+  ],
+  "failures": [
+    "A contact link in the header on some pages and the footer on others",
+    "A chat button that appears in a different corner in checkout",
+    "Help links reordered between templates"
+  ],
+  "check": [
+    "Line up every template at the same screen size and mark where each help item sits.",
+    "Check the order of help items is the same relative to the header, main content and footer.",
+    "Check special templates, like checkout and account pages, that are often built separately."
+  ],
+  "quiz": {
+    "question": "On product pages a “Contact us” link sits in the header. On checkout pages the header is stripped down and the link moves to the footer. Does this fail 3.2.6?",
+    "options": [
+      "No. Checkout is a different section, so it can differ",
+      "Yes. The help link is in a different place relative to the rest of the page",
+      "No. The rule only applies to live chat"
+    ],
+    "answer": 1,
+    "why": "A set of pages includes checkout. The help mechanism has to keep its relative position. Keep the link in the slim header too, or put it in the footer everywhere."
+  },
+  "spec": [
+    "List the help mechanisms offered and their fixed position in each layout.",
+    "Show how each help item appears in minimal templates like checkout.",
+    "Note any user setting that lets people move or hide help."
+  ],
+  "review": [
+    "Where is help on this page, and is it in the same place on the others?",
+    "Did the checkout or sign-in template drop or move it?",
+    "If I were stuck, could I find help without looking?"
+  ],
+  "tradeoff": "Focused flows like checkout often strip the header to reduce distraction. Keep the help item in the same spot, even in a slim header. It is one link and it costs little attention.",
+  "system": "Put help links and the chat launcher in the shared header and footer components, with their position locked across templates.",
+  "pitch": "People who are stuck look for help where they last saw it. If it moves, they leave or call us."
+}

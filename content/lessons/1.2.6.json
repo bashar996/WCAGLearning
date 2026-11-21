@@ -1,0 +1,50 @@
+{
+  "num": "1.2.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Deaf people whose first language is a sign language",
+    "Deaf children still learning to read",
+    "People who find captions too fast",
+    "Deaf people who read written language as a second language"
+  ],
+  "takeaways": [
+    "Prerecorded video with sound includes sign language interpretation of the audio. Level AAA.",
+    "For many Deaf people, a sign language is their first language and written language is a second one. Captions (1.2.2) help, but sign carries tone and meaning more naturally for them.",
+    "Use the sign language your audience uses, such as BSL or ASL. They are full languages in their own right, not signed versions of English.",
+    "Designers decide the layout: an interpreter window large enough to read hands and face, placed so it does not cover content, or a separate signed version. Captions are the realistic bar for most product video; sign is worth it for public services, key announcements and content for Deaf audiences."
+  ],
+  "failures": [
+    "An interpreter window so small the hands blur",
+    "The interpreter cropped out on mobile",
+    "A signed version that is hard to find from the main player"
+  ],
+  "check": [
+    "Decide in the content plan which videos are for audiences who use sign language.",
+    "In the layout, check the interpreter is large enough to read facial expressions and handshapes at phone size.",
+    "In the build, check the signed version or interpreter view is reachable from the main player."
+  ],
+  "quiz": {
+    "question": "A city council records a video about changes to bin collection and wants to reach Deaf residents. Captions are done. What does 1.2.6 add?",
+    "options": [
+      "A downloadable transcript",
+      "An interpreter using the local sign language, in a clear window or a separate signed version",
+      "Larger caption text"
+    ],
+    "answer": 1,
+    "why": "Captions meet 1.2.2, but many Deaf residents read written language as a second language. Sign interpretation gives them the message in their first language."
+  },
+  "spec": [
+    "Specify the interpreter window: size, position and background, for each breakpoint.",
+    "Mark safe areas so the interpreter never covers captions, on-screen text or faces.",
+    "Note which sign language is used and how people switch to the signed version."
+  ],
+  "review": [
+    "Can you read the interpreter’s hands and face on a phone?",
+    "Which sign language does our audience actually use?",
+    "Do the interpreter and the captions fight for the same space?"
+  ],
+  "tradeoff": "Interpreters add cost and screen space, and WCAG does not expect every AAA criterion for all content. Keep captions everywhere, and add sign to videos that are public, legally important or made for Deaf communities.",
+  "system": "Give the video player a layout with a reserved interpreter window, with set sizes and safe areas per breakpoint.",
+  "pitch": "For many Deaf people, sign is their first language. Signing our key videos speaks to them directly, not through a second language."
+}

@@ -1,0 +1,50 @@
+{
+  "num": "1.4.8",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Dyslexia and reading disabilities",
+    "Low vision",
+    "Cognitive disabilities",
+    "People sensitive to bright backgrounds"
+  ],
+  "takeaways": [
+    "For blocks of text, people can get: colors they choose, lines no wider than 80 characters (40 for Chinese, Japanese or Korean), text that is not justified, and generous spacing.",
+    "Spacing means line spacing of at least one and a half within paragraphs, and space between paragraphs at least 1.5 times the line spacing. Text must also resize to 200% without scrolling sideways to read a line, in a full-screen window.",
+    "This is Level AAA. It asks for “a mechanism”, so either your default layout meets each point, or people can switch to a view that does. Browser and system settings can count, if your design does not block them.",
+    "It applies to blocks of text, such as articles, help pages and terms, not to short labels or buttons. It goes further than 1.4.12, which only asks that your layout survives when people change spacing themselves."
+  ],
+  "failures": [
+    "Justified article text with uneven gaps between words",
+    "A full-width text column on a wide screen, 150 characters per line",
+    "Fixed colors that override the reader’s chosen high-contrast or dark settings"
+  ],
+  "check": [
+    "Count the characters on your longest line at the widest breakpoint.",
+    "Check text alignment, line height and paragraph spacing in your text styles.",
+    "In the build, zoom to 200% in a full-screen window and read a long article without scrolling sideways."
+  ],
+  "quiz": {
+    "question": "A long-form article template uses a 1000px column of 16px text, about 120 characters per line. How do you meet 1.4.8 for line width?",
+    "options": [
+      "Set a maximum width so lines stay under 80 characters",
+      "Reduce the font size so more fits comfortably",
+      "Leave it, because readers can resize their browser window"
+    ],
+    "answer": 0,
+    "why": "Long lines make it hard to find the start of the next line, which is the problem this rule addresses. Capping the column width fixes it for everyone, while asking readers to resize their window puts the work on them."
+  },
+  "spec": [
+    "Give the maximum width of each reading column in characters as well as pixels.",
+    "Specify left alignment (or right for right-to-left languages), line height and paragraph spacing for body styles.",
+    "Note that the page must respect user color settings, or show where the theme or color picker sits."
+  ],
+  "review": [
+    "How long is a line of this article on a large monitor?",
+    "Is anything justified, and why?",
+    "If someone needs yellow text on black, what does this page do?"
+  ],
+  "tradeoff": "Narrow, airy columns can feel wasteful on wide screens, and the full set of points is hard to meet everywhere. Meet the width, alignment and spacing points by default in your reading templates, where they cost little, and let the browser or a reading settings panel handle colors.",
+  "system": "Give the article and long-text templates a maximum measure, left alignment and body spacing tokens that already meet these values.",
+  "pitch": "Most of this is good typography: sensible line lengths and breathing room. Building it into our reading templates makes long content easier for everyone."
+}

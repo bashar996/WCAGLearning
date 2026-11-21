@@ -1,0 +1,50 @@
+{
+  "num": "3.1.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Dyslexia and reading disabilities",
+    "People reading in a second language",
+    "Language learners"
+  ],
+  "takeaways": [
+    "Where the meaning of a word is unclear without knowing how to pronounce it, there is a way to find its pronunciation.",
+    "English has words like “lead” (the metal) and “lead” (to guide), or “desert” and “desert”, spelled the same but said differently. Some languages, such as Japanese names in kanji or Hebrew and Arabic without vowel marks, often need pronunciation help.",
+    "This is Level AAA. It only applies where meaning really depends on pronunciation and the context does not make it clear.",
+    "It is mostly a content and development task. Designers decide how pronunciation is shown, for example a phonetic spelling after the word, ruby text above it, an audio button or a glossary."
+  ],
+  "failures": [
+    "A heading where “read” could be past or present and nothing makes it clear",
+    "Japanese personal names in kanji with no reading given",
+    "A glossary entry for a heteronym that never says which pronunciation is meant"
+  ],
+  "check": [
+    "With your writers, list words in your content whose meaning changes with pronunciation.",
+    "For each, check whether the context already makes the meaning clear.",
+    "Where it does not, check there is a pronunciation guide people can reach and read."
+  ],
+  "quiz": {
+    "question": "A language-learning app shows Japanese names in kanji, which can be read several ways. How do you meet 3.1.6?",
+    "options": [
+      "Add a hover tooltip with the romanized name",
+      "Show the reading above the kanji as ruby text (furigana)",
+      "Nothing. Names are always exempt"
+    ],
+    "answer": 1,
+    "why": "Ruby text shows the reading right where the word is, for everyone, without hover. Unlike 3.1.2, this rule has no exception for proper names."
+  },
+  "spec": [
+    "List the words that need pronunciation help, with the pronunciation for each.",
+    "Specify the pattern: phonetic text after the word, ruby text, an audio button or a glossary link.",
+    "If there is an audio button, give it a clear label and a text version of the pronunciation."
+  ],
+  "review": [
+    "Could this word be read two ways, and would that change the meaning?",
+    "Does the sentence around it already make it clear?",
+    "Can someone get the pronunciation without sound?"
+  ],
+  "tradeoff": "Most products have few words where this matters, and rewriting the sentence is often simpler than adding a pronunciation guide. Meet it where your content depends on names, other languages or teaching, such as education or language products.",
+  "system": "Provide a ruby text style and a pronunciation pattern in the type system for products that need them.",
+  "pitch": "If someone cannot tell how a word is said, they may not know what it means. For language content, pronunciation is part of the information."
+}

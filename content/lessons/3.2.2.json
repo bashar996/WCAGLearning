@@ -1,0 +1,50 @@
+{
+  "num": "3.2.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Keyboard users",
+    "Cognitive disabilities",
+    "Screen magnifier users"
+  ],
+  "takeaways": [
+    "Changing the setting of a control, like picking an option in a select, checking a box or choosing a radio button, does not automatically change context, unless people were told beforehand.",
+    "A change of context means a new page or window, a moved focus, or a major change to the page’s content that alters its meaning.",
+    "Keyboard users arrowing through a select can trigger every option on the way. A select that navigates on change throws them off on the first one.",
+    "Revealing a few related fields after a choice, just after the control, is usually fine. Pressing a button is activation, not changing a setting."
+  ],
+  "failures": [
+    "A language select that reloads the page on change",
+    "A filter checkbox that jumps focus to the results",
+    "A form that submits when the last radio is picked"
+  ],
+  "check": [
+    "Use every select, checkbox, radio and toggle in the prototype. Does any of them navigate, submit or move focus?",
+    "For each one that does, check there is a visible message before the control that explains it.",
+    "Check filters that update results leave focus on the control."
+  ],
+  "quiz": {
+    "question": "A country selector in the footer reloads the site in the chosen region as soon as an option is picked. What is the best fix?",
+    "options": [
+      "Add a loading spinner while the page reloads",
+      "Make the select larger so people pick carefully",
+      "Add a “Go” button that applies the choice"
+    ],
+    "answer": 2,
+    "why": "The change then happens on request. A spinner still changes context unannounced, and a larger select does not stop keyboard users from triggering options as they arrow through."
+  },
+  "spec": [
+    "For each form control, note what changes when its value changes.",
+    "Where a change of context is kept, write the advance notice and show it before the control.",
+    "Specify the apply button for selects and filters that navigate or reload."
+  ],
+  "review": [
+    "What happens if someone arrows through this select one option at a time?",
+    "Does any control here act without a button press?",
+    "If this has to happen on change, where are people told first?"
+  ],
+  "tradeoff": "Instant filters and selects feel quick. Keep instant updates for content on the same page, keep focus where it was, and put navigation and submission behind a button.",
+  "system": "Ship select and filter patterns in two documented modes: update in place, or apply with a button. Leave out a navigate-on-change mode.",
+  "pitch": "Controls that act on their own surprise people and drive support calls. A button costs one click and removes the surprise."
+}

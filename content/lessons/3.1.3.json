@@ -1,0 +1,50 @@
+{
+  "num": "3.1.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "People reading in a second language",
+    "Deaf people whose first language is sign language",
+    "Translation tool users"
+  ],
+  "takeaways": [
+    "There is a way to find the specific meaning of words or phrases used in an unusual or restricted way, including idioms and jargon.",
+    "Idioms like “ballpark figure” and jargon like “escrow” or “sprint” can make no sense when read literally or translated.",
+    "This is Level AAA. You can meet it with a definition in the text, a link to a glossary, or a definitions panel.",
+    "It is a content task, but designers decide where definitions live and how people reach them: inline, in a tooltip people can open, or on a glossary page."
+  ],
+  "failures": [
+    "Product jargon like “workspace seat” with no explanation anywhere",
+    "Idioms such as “touch base” in help text",
+    "Definitions shown only on mouse hover"
+  ],
+  "check": [
+    "Highlight every term in your copy that a newcomer might not know, or that means something special in your product.",
+    "For each, check there is a definition people can reach by keyboard, touch and screen reader.",
+    "Replace idioms with plain words where you can, so fewer definitions are needed."
+  ],
+  "quiz": {
+    "question": "A budgeting app’s alert says “You’re in the red this month.” Some readers use translation tools, which turn it into “you are in the color red”. What meets 3.1.3?",
+    "options": [
+      "Make “in the red” bold so it stands out",
+      "Rewrite it as “You have spent more than your budget”, or link the idiom to a definition",
+      "Show the alert in red so the meaning is obvious"
+    ],
+    "answer": 1,
+    "why": "Read literally, an idiom means something else. Plain words remove the problem, and where the idiom stays, a definition meets the rule. Red text adds a color-only cue, which 1.4.1 rules out."
+  },
+  "spec": [
+    "List the terms that need definitions and write each definition.",
+    "Show how each definition is reached: inline text, a toggle or a glossary link.",
+    "Make sure definition toggles work with keyboard and touch, and say how they are announced."
+  ],
+  "review": [
+    "Would someone new to this industry understand every word here?",
+    "Which phrases would make no sense if translated word for word?",
+    "Where does someone go if they do not know what this means?"
+  ],
+  "tradeoff": "Some jargon is precise and the right word. Keep it, and define it. Remove idioms and jargon that are only habit, since a plain word needs no definition.",
+  "system": "Provide a definition component for inline terms and a shared glossary that content teams can link to.",
+  "pitch": "Every word customers do not understand turns into a support call. A glossary and plain language cost less."
+}

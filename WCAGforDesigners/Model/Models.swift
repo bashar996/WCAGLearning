@@ -6,6 +6,7 @@ enum Level: String, Codable, CaseIterable {
 
 enum DemoKind: String, Codable {
     case contrast, color, taps, motion
+    case focus, resize, formErrors, readingOrder
 }
 
 struct Principle: Identifiable, Hashable {

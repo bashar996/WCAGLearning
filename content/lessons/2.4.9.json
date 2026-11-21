@@ -1,0 +1,50 @@
+{
+  "num": "2.4.9",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Voice control users",
+    "Cognitive disabilities",
+    "People who skim"
+  ],
+  "takeaways": [
+    "The purpose of each link can be understood from its text alone, with no help from the sentence or card around it.",
+    "Level AAA. It is the stricter sibling of 2.4.4 (A), which also lets surrounding context explain a link.",
+    "The link text here means its accessible name, so a hidden longer name for a short visible link can count. Visible text that says it all is better for everyone.",
+    "Links whose purpose would be unclear to everyone, such as in a guessing game, are exempt."
+  ],
+  "failures": [
+    "“Read more” that relies on the card title",
+    "“Here” in a sentence that explains where",
+    "“Download (PDF)” repeated for several documents"
+  ],
+  "check": [
+    "List every link on the screen as plain text. Would each one make sense on a sticky note?",
+    "Look for any two links with the same text that go to different places.",
+    "Check that icon links have names that say where they lead, not what the icon looks like."
+  ],
+  "quiz": {
+    "question": "A report page lists six documents. Each row has the title, then a link that says “Download”. Under 2.4.9, what is the cleanest fix?",
+    "options": [
+      "Add “(PDF, 2 MB)” after each “Download”",
+      "Keep “Download”; the row title explains it",
+      "Make the link text “Download annual report 2025 (PDF)”"
+    ],
+    "answer": 2,
+    "why": "At AAA the text alone must explain the link. The row title is context, which only 2.4.4 accepts, and the file size still does not say which document it is."
+  },
+  "spec": [
+    "Write link text that names the destination or action and the thing, like “View invoice 1042”.",
+    "Where the visible text must stay short, write the full accessible name and note it starts with the visible words.",
+    "Flag any repeated link labels in the file so they get unique names."
+  ],
+  "review": [
+    "Out of context, does this link still say where it goes?",
+    "Is the hidden name consistent with what people see, so voice users can still say it?",
+    "Could we put this explanation in the visible link instead?"
+  ],
+  "tradeoff": "Fully descriptive links make dense lists and tables longer. Meeting 2.4.4 is the baseline; aim for 2.4.9 on content pages and lists of downloads, where descriptive links help everyone scan, and use hidden names sparingly elsewhere.",
+  "system": "Give list, table and card components a link name field that defaults to the item title, so “View” or “Download” is never the whole name.",
+  "pitch": "Clear link text is free to write and makes every page easier to scan. It is the cheapest AAA rule we can meet."
+}

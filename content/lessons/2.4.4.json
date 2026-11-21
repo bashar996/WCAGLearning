@@ -1,0 +1,50 @@
+{
+  "num": "2.4.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Voice control users",
+    "Cognitive disabilities",
+    "People who skim"
+  ],
+  "takeaways": [
+    "People can tell where each link goes from its text, or from its text plus the context around it: the same sentence, paragraph, list item, table cell, or the heading above it.",
+    "Screen reader users often pull up a list of every link on the page. “Read more” ten times tells them nothing.",
+    "Text that only appears visually nearby, like a card image or a column far away, may not count as context. Keep the link and its explanation in the same block.",
+    "Level A. The stricter AAA version, 2.4.9, asks that the link text alone is enough."
+  ],
+  "failures": [
+    "A row of cards that each end in “Read more”",
+    "Bare “Click here” links in body copy",
+    "Icon-only links with no name, like a lone arrow"
+  ],
+  "check": [
+    "List every link on the screen as plain text, out of order. Mark each one you cannot explain.",
+    "For each vague link, check the sentence, list item or card it sits in explains it.",
+    "Check that icon and image links have a written name in the annotations."
+  ],
+  "quiz": {
+    "question": "A news page has a list of stories. Each item has a headline, a summary and a link that says “Continue”. What is the best fix?",
+    "options": [
+      "Change every link to “Continue reading”",
+      "Add a small arrow icon after each “Continue”",
+      "Make the headline itself the link"
+    ],
+    "answer": 2,
+    "why": "A headline link describes the story on its own and is a bigger target. “Continue reading” is still the same text ten times, and an arrow adds no meaning."
+  },
+  "spec": [
+    "Write the final text for every link. No “Learn more” placeholders left in the file.",
+    "Where a short visible link must stay, give the longer accessible name, such as “Read more about pricing plans”, and say the visible words come first in it.",
+    "Name every icon or image link, and note which element in a card is the link."
+  ],
+  "review": [
+    "If I heard only the links on this page, could I pick the right one?",
+    "Is the context for this link in the same sentence or card, or just visually nearby?",
+    "Do any two links have the same text but go to different places?"
+  ],
+  "tradeoff": "Short, repeated links keep cards tidy and consistent. Make the card title the link, or keep “Read more” visible and add the topic to its accessible name, so the layout stays calm and every link is still clear.",
+  "system": "Make the card title the link by default in the card component, and give any secondary “More” link a required field for its full name.",
+  "pitch": "Links that say where they go get clicked more. Vague links slow everyone down, not just screen reader users."
+}

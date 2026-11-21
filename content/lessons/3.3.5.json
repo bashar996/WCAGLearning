@@ -1,0 +1,50 @@
+{
+  "num": "3.3.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "People new to a task",
+    "People working in a second language",
+    "Older users"
+  ],
+  "takeaways": [
+    "Context-sensitive help is available: help about the specific field or task where people are, not just a general help center.",
+    "Level AAA. It goes further than 3.3.2 (A), which asks for labels or instructions where input is needed. This adds help at the point of need.",
+    "It can be hint text below a field, a worked example, a “What is this?” link next to a tricky field, or a short guide at the start of a complex form.",
+    "Help is most needed where the label alone is not enough: tax numbers, policy choices, technical settings."
+  ],
+  "failures": [
+    "A tricky field with only a label",
+    "Help that lives only in a separate FAQ",
+    "Hint text that disappears once people start typing"
+  ],
+  "check": [
+    "Walk the form as a first-time user. Mark every field where you would need to ask someone.",
+    "For each mark, point to the help on the same screen.",
+    "Check the help can be reached by keyboard and touch, not only by hover."
+  ],
+  "quiz": {
+    "question": "An insurance form asks people to choose an excess amount. The label says “Excess”. What best meets 3.3.5?",
+    "options": [
+      "A link to the general help center in the footer",
+      "A tooltip that appears only on hover over the label",
+      "A short line below the field explaining what excess means, with an example"
+    ],
+    "answer": 2,
+    "why": "Help that sits with the field and is always visible is context-sensitive and reachable by everyone. A help center link is general, and hover tooltips leave out keyboard and touch users."
+  },
+  "spec": [
+    "Write hint text for every field that needs it, and mark which fields have “More info” links.",
+    "Design the help pattern: inline hint, disclosure or side panel, and say how it opens.",
+    "Link each help item to its field, so it can be read with the field."
+  ],
+  "review": [
+    "Where would a first-time user get stuck here?",
+    "Can I get help without leaving the page?",
+    "Is this help written for experts or for the people filling it in?"
+  ],
+  "tradeoff": "Help text everywhere makes forms long and noisy. Fully meeting this AAA rule rarely means help on every field: add it where research or support tickets show people get stuck, and keep it short.",
+  "system": "Give the field component optional hint and “More info” slots, so help can be added without a custom design.",
+  "pitch": "Every question people cannot answer on the page becomes a support call or an abandoned form. Help in place is cheaper."
+}

@@ -1,0 +1,50 @@
+{
+  "num": "2.4.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Cognitive and memory disabilities",
+    "People with many tabs open",
+    "Search and bookmark users"
+  ],
+  "takeaways": [
+    "Every page or screen has a title that describes its topic or purpose.",
+    "On the web, it is the title shown in the browser tab and read first by screen readers. In apps, it is each screen’s title.",
+    "Good titles are unique and put the specific part first, such as “Order 4821 – Orders – Shopname”, so people can tell tabs and pages apart.",
+    "Designers write the titles, including for single-page apps, dialogs that act as steps, and errors, and hand them to developers."
+  ],
+  "failures": [
+    "Every page titled with just the company name",
+    "A single-page app whose title never changes",
+    "Checkout steps that all share the title “Checkout”"
+  ],
+  "check": [
+    "List every page or screen in the flow and write its title next to the frame.",
+    "Read the titles alone, in a list, and check each one tells you where you are.",
+    "In the build, check the browser tab or screen title changes as you move through the flow."
+  ],
+  "quiz": {
+    "question": "A three-step checkout keeps the same browser tab title on every step. Which titles would you specify?",
+    "options": [
+      "“Delivery – Step 1 of 3 – Checkout – Shopname”, and so on for each step",
+      "“Shopname” on every step, for brand consistency",
+      "“Checkout” on every step, with the step shown in the page heading"
+    ],
+    "answer": 0,
+    "why": "A title that changes with each step tells screen reader users where they landed and helps everyone tell tabs apart. Putting the step first means it is not cut off in a narrow tab."
+  },
+  "spec": [
+    "Write the title for every page and screen, including empty, error and success states.",
+    "Use one pattern across the product, such as “Page – Section – Product”.",
+    "For single-page apps and step flows, note when the title changes."
+  ],
+  "review": [
+    "If this tab were one of twenty open, could you find it?",
+    "Does the title change when the content changes?",
+    "Does the title match the main heading on the page?"
+  ],
+  "tradeoff": "Marketing often wants the brand name first. Put the page first and the brand last: the brand is still there, and people can tell pages apart.",
+  "system": "Give every page template a required title field and a shared title pattern, so no screen ships untitled.",
+  "pitch": "The page title is the first thing a screen reader says and the only thing people see in a crowded tab bar. It should tell them where they are."
+}

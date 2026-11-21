@@ -1,0 +1,50 @@
+{
+  "num": "2.1.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Screen reader users",
+    "Switch users",
+    "Voice control users"
+  ],
+  "takeaways": [
+    "If keyboard focus can move into a component, it can also move out of it using the keyboard alone.",
+    "If leaving needs more than the standard keys, such as Tab, the arrow keys or Esc, people are told how before they get stuck.",
+    "A modal dialog that keeps focus inside on purpose is fine, as long as people can close it with the keyboard and focus returns to the page.",
+    "Developers build the focus handling. Designers decide how every overlay, embed and editor is closed or left, and make that exit visible. A trap anywhere breaks the whole page, so it covers third-party widgets too."
+  ],
+  "failures": [
+    "A modal with no keyboard way to close it",
+    "An embedded video or map player that swallows Tab",
+    "A code or rich text editor where Tab inserts a tab and nothing explains how to leave"
+  ],
+  "check": [
+    "List every place focus can enter something unusual: dialogs, drawers, embeds, editors, date pickers, chat widgets.",
+    "For each one, write down the key or button that gets people out, and where focus lands afterwards.",
+    "In the build, tab into each one and try to leave using only the keyboard."
+  ],
+  "quiz": {
+    "question": "In a notes app, Tab inside the editor indents a line, so Tab cannot be used to leave. What do you design?",
+    "options": [
+      "Nothing. Users can click outside the editor",
+      "Remove indenting, because it is not accessible",
+      "Keep Tab for indenting and show a short hint, such as “Press Esc, then Tab to leave the editor”"
+    ],
+    "answer": 2,
+    "why": "Clicking out needs a mouse, which keyboard users do not have. Indenting is useful, so keep it, but a non-standard exit must be explained where people will see it."
+  },
+  "spec": [
+    "For every dialog, drawer and overlay, state the close methods: Esc, a visible Close button, and where focus returns.",
+    "For editors and other widgets that use Tab themselves, give the exit keys and the hint text that explains them.",
+    "Flag third-party embeds, such as players, maps and chat, so developers test that focus can leave them."
+  ],
+  "review": [
+    "Once someone tabs into this, how do they get out without a mouse?",
+    "Is the way out shown on screen, or only known to us?",
+    "Which parts of this page come from a third party, and has anyone tabbed through them?"
+  ],
+  "tradeoff": "Rich widgets often want to keep Tab or Esc for their own features. Keep the feature if it matters, but pick one clear exit, show it on screen, and make it work the same way in every widget.",
+  "system": "Every overlay component in the library ships with Esc to close, a visible Close button and focus return built in, so teams cannot forget them.",
+  "pitch": "A keyboard trap is a dead end. Someone who cannot use a mouse has to reload the page and lose their work to escape it."
+}

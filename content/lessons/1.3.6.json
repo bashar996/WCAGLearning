@@ -1,0 +1,50 @@
+{
+  "num": "1.3.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "People who use symbol sets",
+    "Screen reader users",
+    "People using personalization tools"
+  ],
+  "takeaways": [
+    "Software can tell the purpose of interface components, icons and page regions, so tools can adapt them, for example by swapping icons for symbols a person knows.",
+    "This is Level AAA. It goes beyond 1.3.1, which is about structure, and 1.3.5, which is only about form fields that collect information about the user.",
+    "Today the most practical way to meet it is with landmark regions, such as header, navigation, main, search and footer. Ways to mark the purpose of each icon and button are still being developed.",
+    "Developers write the code. Designers decide what each region is for, and give each icon one clear, consistent meaning so it can be identified."
+  ],
+  "failures": [
+    "A page with no landmark regions, just stacked boxes",
+    "Two navigation areas with no names to tell them apart",
+    "The same icon meaning “favorite” on one screen and “rate” on another"
+  ],
+  "check": [
+    "Draw the regions on each template: header, navigation, main, search, complementary and footer.",
+    "List every icon in the product with the one purpose it stands for, and look for duplicates.",
+    "In the build, check the regions with a landmarks browser extension or a screen reader’s landmark list."
+  ],
+  "quiz": {
+    "question": "A team wants to aim for 1.3.6 on a new help center. What is the most useful thing the designer can hand off now?",
+    "options": [
+      "An annotation of every region’s purpose and name, plus an icon list with one meaning per icon",
+      "A custom icon set drawn in a softer style",
+      "A note asking developers to add ARIA roles to every element"
+    ],
+    "answer": 0,
+    "why": "Software can only expose a purpose that the design has defined clearly. Named regions and consistent icon meanings give developers something real to mark up. Adding roles everywhere without a plan adds noise."
+  },
+  "spec": [
+    "Annotate each region with its landmark type, and give a name to any type that appears twice, such as “Main menu” and “Footer links”.",
+    "Hand off an icon inventory: each icon, its purpose in plain words and where it is used.",
+    "Note which regions are the same on every page, so they are built once and identified the same way."
+  ],
+  "review": [
+    "What is each part of this page for, in one word?",
+    "Does this icon mean exactly one thing everywhere it appears?",
+    "If a tool replaced every icon with a word, would the words make sense?"
+  ],
+  "tradeoff": "Full purpose markup for every icon depends on standards that are not finished, so this is hard to meet completely today. Meet the parts you can now, regions and consistent icons, because they also help screen reader users find their way.",
+  "system": "Make layout templates set landmark regions by default, and store each icon in the library with a single documented purpose.",
+  "pitch": "Some people understand familiar symbols better than our icons. Clear regions and consistent icons let their tools adapt our product to them."
+}

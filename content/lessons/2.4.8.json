@@ -1,0 +1,50 @@
+{
+  "num": "2.4.8",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Screen magnifier users",
+    "Screen reader users",
+    "People who arrive from search"
+  ],
+  "takeaways": [
+    "People can tell where they are within a set of pages: through breadcrumbs, a highlighted current item in navigation, a step indicator, or a clear page title.",
+    "Someone who lands from a search result, or loses track while zoomed in, needs to know where they are and how it fits the whole.",
+    "Level AAA. It builds on 2.4.2 Page Titled, which only asks for a descriptive title; this asks for location within the set.",
+    "Much of it is cheap and already common. A current-page state in the nav and a “Step 2 of 4” label get you most of the way."
+  ],
+  "failures": [
+    "A nav with no current-page state",
+    "A multi-step form with no step indicator",
+    "Breadcrumbs that show only a color change on the current item"
+  ],
+  "check": [
+    "Open any page in the prototype with no history. Can you say where you are in the site?",
+    "Check every nav, tab set and stepper shows the current item in a way that does not rely on color alone.",
+    "Check that long flows say which step you are on and how many there are."
+  ],
+  "quiz": {
+    "question": "A five-step application form shows numbered dots at the top. The current dot is filled in blue. What best tells people where they are?",
+    "options": [
+      "Make the current dot larger",
+      "Add the text “Step 2 of 5: Your address” above the form",
+      "Animate the dot when the step changes"
+    ],
+    "answer": 1,
+    "why": "Text gives the position and the step name to everyone, including screen reader users and people who cannot tell the dots apart. Size and motion are still only visual cues."
+  },
+  "spec": [
+    "Mark the current-page state for every nav and breadcrumb, and note it should be exposed in code, for example aria-current.",
+    "Write the step indicator text for each step of every flow.",
+    "Show the breadcrumb trail for each template, and how it shortens on small screens."
+  ],
+  "review": [
+    "If I landed here from Google, how would I know where I am?",
+    "Is the current item shown by more than color?",
+    "Do the step names match the headings on each step?"
+  ],
+  "tradeoff": "Breadcrumbs and step labels take space, especially on mobile. Meeting this AAA rule in full is optional, but a current-page state and a step count are cheap and worth doing everywhere; add breadcrumbs where the hierarchy is deep.",
+  "system": "Give nav, tabs, breadcrumbs and steppers a built-in current state with text or a shape change, not just a color swap.",
+  "pitch": "Lost users leave. Showing people where they are is a small cost that keeps them moving."
+}

@@ -1,0 +1,50 @@
+{
+  "num": "2.5.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard and switch users on touch devices",
+    "Voice control users",
+    "Stylus users",
+    "People who mix inputs"
+  ],
+  "takeaways": [
+    "Content does not stop people from using any input the platform offers, such as touch, mouse, keyboard, stylus or voice, and people can switch between them at any time.",
+    "It is Level AAA. Exceptions: the restriction is essential, needed for security, or needed to respect user settings.",
+    "Many people combine inputs: a keyboard with a tablet, a mouse with a touch laptop, voice with a pointer. Locking into one input because of the device blocks them.",
+    "Developers handle input events. Designers decide not to tie layouts or features to a guessed device type, such as “touch device, so no keyboard”."
+  ],
+  "failures": [
+    "A touch laptop where the site turns off mouse input once it detects touch",
+    "A tablet layout that ignores a connected keyboard",
+    "A feature only available to a stylus with no touch or mouse path"
+  ],
+  "check": [
+    "List any place the design changes based on the detected device or input.",
+    "For each, ask whether people could still use every other input they have.",
+    "In the build, try a tablet with a keyboard and a touch laptop with a mouse, switching mid-task."
+  ],
+  "quiz": {
+    "question": "On tablets, the team plans a “touch mode” that hides keyboard focus styles and turns off keyboard shortcuts. What do you say?",
+    "options": [
+      "Fine. Tablet users do not use keyboards",
+      "Fine, as long as there is a desktop version",
+      "Keep keyboard support on in all modes, since many people pair a keyboard with a tablet"
+    ],
+    "answer": 2,
+    "why": "The tablet supports keyboards, so turning them off restricts an input the platform offers, with no security or essential reason. A larger touch layout is fine, as long as keyboard still works."
+  },
+  "spec": [
+    "State that every layout supports every input the platform offers, and that people can switch mid-task.",
+    "Avoid features that depend on guessing the device. If a layout adapts, say what triggers it and confirm other inputs still work.",
+    "Note any restriction kept for security or as essential, and why."
+  ],
+  "review": [
+    "Are we assuming how people will use this device?",
+    "What happens if someone plugs a keyboard into this tablet halfway through?",
+    "Is this restriction essential, or just simpler for us?"
+  ],
+  "tradeoff": "Designing for one input per device is simpler and easier to test. Adapt layouts for touch if it helps, but never turn other inputs off, and test the common pairs, such as a tablet with a keyboard.",
+  "system": "Components respond to pointer, touch and keyboard in every layout, and focus styles are never removed by a touch or mobile mode.",
+  "pitch": "People choose how they use their devices. If we guess wrong and lock them out, we lose them."
+}
