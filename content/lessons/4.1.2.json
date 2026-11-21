@@ -1,0 +1,50 @@
+{
+  "num": "4.1.2",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Voice control users",
+    "Switch users",
+    "People using custom assistive tools"
+  ],
+  "takeaways": [
+    "Every control tells assistive technology what it is (role), what it is called (name) and what state it is in (value and states).",
+    "When the state changes, such as expanded, checked or selected, assistive technology is told.",
+    "Developers build this. Designers decide the name, every state, and which standard component a design really is.",
+    "Native controls do this for free. A custom-drawn dropdown or toggle has to rebuild all of it."
+  ],
+  "failures": [
+    "A clickable div that is not announced as a button",
+    "An icon-only button with no name",
+    "An accordion that never says if it is expanded"
+  ],
+  "check": [
+    "For each custom component, name the standard control it behaves like: button, link, checkbox, tab, switch.",
+    "List every state it can show, and check each one is drawn and named.",
+    "Give every icon-only control a name in the file."
+  ],
+  "quiz": {
+    "question": "Your design shows a “Filters” chip that opens a panel and shows a count when filters are on. What do you hand off?",
+    "options": [
+      "The chip’s visual states only. Developers will work out the rest",
+      "“Make it accessible” on the frame",
+      "Role: button. Name: “Filters”. States: expanded or collapsed, and the active count in the name"
+    ],
+    "answer": 2,
+    "why": "Role, name and state are design decisions. Without them, developers guess, and screen readers hear a generic or misleading control."
+  },
+  "spec": [
+    "Write the role of each custom component, using standard names like button, switch or tab.",
+    "Write the accessible name of every icon-only control.",
+    "List the states to expose, such as expanded, selected, checked, pressed or disabled."
+  ],
+  "review": [
+    "What is this control, really? A link, a button, a tab?",
+    "What would a screen reader call it?",
+    "Which states here exist only visually?"
+  ],
+  "tradeoff": "Custom components give brand control but cost accessibility work in every one. Style native or well-tested library components where you can, and build custom only when the experience truly needs it.",
+  "system": "Document each component’s role, name source and exposed states beside its visual spec, so every use inherits them.",
+  "pitch": "If assistive technology cannot tell what a control is, the control does not exist for its users."
+}

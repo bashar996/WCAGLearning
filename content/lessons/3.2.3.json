@@ -1,0 +1,50 @@
+{
+  "num": "3.2.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Screen reader users",
+    "Low vision with magnification",
+    "Anyone using the site often"
+  ],
+  "takeaways": [
+    "Navigation that repeats across pages, such as a header, side menu or footer, appears in the same relative order each time, unless the user changes it.",
+    "People learn where things are. When the order shifts, they have to find everything again, and some cannot.",
+    "“Relative order” means items can be added or removed, as long as the shared items keep their order.",
+    "Labeling the same function the same way each time is a different rule, 3.2.4."
+  ],
+  "failures": [
+    "Main nav items reordered on different sections",
+    "A footer whose links change order from page to page",
+    "Search moving before the menu on some pages and after it on others"
+  ],
+  "check": [
+    "Line up the headers and nav from every template side by side. Do shared items keep their order?",
+    "Check the footer and side menus the same way.",
+    "Check that any personalised order is something the user chose."
+  ],
+  "quiz": {
+    "question": "In the account area, a “Billing” link is added to the side nav between existing links. Does this fail 3.2.3?",
+    "options": [
+      "Yes. The nav must be identical on every page",
+      "Yes, unless the new link is added at the end",
+      "No. The shared links still keep their relative order"
+    ],
+    "answer": 2,
+    "why": "The rule is about relative order, not identical menus. Adding a link is fine as long as the links that repeat stay in the same order."
+  },
+  "spec": [
+    "Define the order of every repeated nav block once, in one place.",
+    "Show which items may be added on certain sections, and where they go.",
+    "Note any user setting that changes the order, so it is the only exception."
+  ],
+  "review": [
+    "Is this nav built from the same component as on every other page?",
+    "Why is the order different here?",
+    "If someone uses this page every day, could they find the menu with their eyes closed?"
+  ],
+  "tradeoff": "Each team wants its own section promoted first in the nav. Keep the order fixed and show the current section with a selected state instead.",
+  "system": "Make headers, nav and footers shared components, so the order is defined once and cannot drift.",
+  "pitch": "People should not have to relearn our menu on every page. Consistent navigation is faster for everyone."
+}

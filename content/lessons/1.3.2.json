@@ -1,0 +1,50 @@
+{
+  "num": "1.3.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "People using reader modes",
+    "Braille display users",
+    "People using text-to-speech"
+  ],
+  "takeaways": [
+    "When the order of content changes its meaning, the order in code matches the order people should read it in.",
+    "Screen readers read the code order, not the layout. If the two disagree, people hear things in the wrong sequence.",
+    "It only matters where order changes meaning: steps, a price and what it is for, a question and its answer.",
+    "This is about reading order. Where keyboard focus goes next is 2.4.3."
+  ],
+  "failures": [
+    "Columns that read across rows instead of down",
+    "A layout reordered visually so the code order no longer makes sense",
+    "Spaces or tabs used to fake columns of text"
+  ],
+  "check": [
+    "Number the content blocks on each frame in the order they should be read.",
+    "Compare that order with how the layers are stacked in your file.",
+    "In the build, use a screen reader or reader mode and listen for anything out of sequence."
+  ],
+  "quiz": {
+    "question": "Six setup steps are laid out in two columns: 1 to 3 on the left, 4 to 6 on the right. The build is in rows, so the code reads 1, 4, 2, 5, 3, 6. What do you annotate?",
+    "options": [
+      "Nothing. Screen readers follow the visual layout",
+      "Only the tab order, since that is what developers set",
+      "The reading order, 1 to 6, so the code order matches the steps"
+    ],
+    "answer": 2,
+    "why": "Screen readers follow the code, so people would hear the steps jumbled. The steps are not interactive, so tab order does not fix it."
+  },
+  "spec": [
+    "Mark the reading order on frames where it is not simply top to bottom.",
+    "Flag any place where the visual order will differ from the code order, and say which one is right.",
+    "For responsive layouts, confirm the reading order still makes sense at each breakpoint."
+  ],
+  "review": [
+    "If you read this aloud from top to bottom in code, does it still make sense?",
+    "Where does the layout move things away from where they belong in the story?",
+    "Which parts of this page have an order that matters?"
+  ],
+  "tradeoff": "Clever grid layouts can put things in a different place from the code. Keep visual moves small, or design the layout around the reading order so both agree.",
+  "system": "Document the reading order for each pattern and layout template, so teams do not reinvent it frame by frame.",
+  "pitch": "If the code order is wrong, a screen reader user hears step four before step two. The content is there, but it no longer makes sense."
+}

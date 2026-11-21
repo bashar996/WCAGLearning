@@ -1,0 +1,50 @@
+{
+  "num": "2.5.8",
+  "meta": "5 min · interactive",
+  "demo": "taps",
+  "who": [
+    "Tremors and limited dexterity",
+    "Larger fingers",
+    "People on the move",
+    "Older adults"
+  ],
+  "takeaways": [
+    "Targets need at least 24×24 CSS px. 44×44 — 2.5.5, Level AAA — is the comfortable goal.",
+    "Spacing exception: a smaller target passes if a 24px circle centered on it doesn’t touch another target or another small target’s circle.",
+    "Links inside sentences are exempt, as are targets whose size is set by the browser.",
+    "The hit area can be bigger than the visible icon. Pad the glyph; don’t scale it."
+  ],
+  "failures": [
+    "Dense toolbars of 16px icons touching each other",
+    "A tiny × to close a modal",
+    "Pagination and carousel dots"
+  ],
+  "check": [
+    "Overlay a 24×24 square on every target in your file.",
+    "For small targets, draw 24px circles at their centers — do any overlap?",
+    "Annotate hit areas at handoff so developers build them."
+  ],
+  "quiz": {
+    "question": "A 20×20 icon button sits 20px away from the nearest other button. Does it pass?",
+    "options": [
+      "No — it’s under 24px",
+      "Yes — the spacing exception applies",
+      "Only with a tooltip"
+    ],
+    "answer": 1,
+    "why": "A 24px circle centered on it doesn’t reach its neighbor, so the spacing exception applies. Still — bigger is kinder."
+  },
+  "spec": [
+    "Draw the hit area as its own annotated layer, with its size in px.",
+    "Note the minimum spacing between neighboring targets.",
+    "Call out anything under 24px and the exception it relies on."
+  ],
+  "review": [
+    "Where is the smallest target on this screen, and who has to hit it?",
+    "Are dense areas such as tables and toolbars leaning on the spacing exception?",
+    "Is the hit area specified, or only the icon?"
+  ],
+  "tradeoff": "Density against reach. Keep the visual density if you must. Grow the invisible hit area and the spacing, not the glyphs.",
+  "system": "Set a minimum hit area on the base button and icon button: a 24px floor, 44px by default on touch.",
+  "pitch": "A missed tap is an error, a retry or an abandoned task. That is true for anyone on a moving train, not only people with tremors."
+}

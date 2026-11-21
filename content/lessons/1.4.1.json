@@ -1,0 +1,50 @@
+{
+  "num": "1.4.1",
+  "meta": "5 min · interactive",
+  "demo": "color",
+  "who": [
+    "Color vision deficiency — about 1 in 12 men",
+    "Low vision",
+    "Monochrome displays",
+    "Screen glare"
+  ],
+  "takeaways": [
+    "Pair every color cue with a second one: text, an icon, a pattern, a shape or position.",
+    "Links inside body text need an underline — or 3:1 contrast with surrounding text plus a non-color cue on hover and focus.",
+    "In charts, label lines and areas directly instead of relying on a color legend.",
+    "Errors and required fields need words, not just red."
+  ],
+  "failures": [
+    "Form errors shown only by a red border",
+    "Red and green status dots with no label",
+    "Line charts where series differ only by hue"
+  ],
+  "check": [
+    "View the screen in grayscale. Is anything lost?",
+    "Run it through a color-blindness simulator.",
+    "For each color you use, ask: what else tells people this?"
+  ],
+  "quiz": {
+    "question": "Required fields are marked only by red labels. Which fix satisfies 1.4.1?",
+    "options": [
+      "Make the red darker",
+      "Add “(required)” or an asterisk with a legend",
+      "Switch to orange"
+    ],
+    "answer": 1,
+    "why": "Changing the color doesn’t help — the cue can’t depend on color at all. Text or a symbol does."
+  },
+  "spec": [
+    "Beside each status color, write its second cue: icon, label or pattern.",
+    "Specify links inside body text as underlined by default.",
+    "In charts, note the direct label and the marker or pattern for each series."
+  ],
+  "review": [
+    "If this screen were printed in gray, what would be lost?",
+    "Which states differ only by hue?",
+    "Does the chart still read without its legend colors?"
+  ],
+  "tradeoff": "Extra icons and labels add noise. The answer is a quieter second cue, such as weight, position or a small glyph. It is not removing the cue.",
+  "system": "Build the second cue into status components (badge, alert, field error) so nobody can ship color alone.",
+  "pitch": "About 1 in 12 men has a color vision deficiency. A color-only status is invisible to someone in almost every team that uses your product."
+}

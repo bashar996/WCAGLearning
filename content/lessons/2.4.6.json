@@ -1,0 +1,50 @@
+{
+  "num": "2.4.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Cognitive disabilities",
+    "People who skim",
+    "Screen magnifier users"
+  ],
+  "takeaways": [
+    "Headings and labels describe what follows. People should know a section from its heading alone.",
+    "Put the distinguishing words first: “Billing address”, not “Address for billing”.",
+    "Avoid vague headings where clarity is needed: “Overview”, “More”, “Details”.",
+    "This one is about quality. Whether headings exist in code is 1.3.1."
+  ],
+  "failures": [
+    "Several sections all headed “Details”",
+    "Buttons all labelled “Submit” for different actions",
+    "Clever headings that hide what the section contains"
+  ],
+  "check": [
+    "Read only the headings. Could you find what you need?",
+    "Read each label out of context. Is it still clear?",
+    "Look for identical labels that mean different things."
+  ],
+  "quiz": {
+    "question": "Two sections of a settings page are both headed “Options”. What does 2.4.6 ask for?",
+    "options": [
+      "Different heading levels",
+      "Headings that describe each section",
+      "Removing one of the headings"
+    ],
+    "answer": 1,
+    "why": "A heading has to describe its topic. The same heading on different content describes neither."
+  },
+  "spec": [
+    "Write final heading and label copy in the design, not placeholder text.",
+    "Flag labels that need a content review.",
+    "Where a visible label is shortened, note the full name."
+  ],
+  "review": [
+    "If I read only the headings, would I know what this page does?",
+    "Which labels only make sense next to their neighbors?",
+    "Who wrote this copy, and has anyone tested it?"
+  ],
+  "tradeoff": "Brand voice wants personality. Navigation wants clarity. Put the voice in body copy and keep headings and labels literal.",
+  "system": "Publish naming guidance with the components: verbs for buttons, nouns for headings.",
+  "pitch": "Clear headings are how everyone skims. This fix helps every single user."
+}

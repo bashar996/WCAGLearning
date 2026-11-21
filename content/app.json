@@ -1,0 +1,446 @@
+{
+  "paths": [
+    {
+      "id": "first10",
+      "name": "The first ten",
+      "desc": "The criteria decided in your design file. Start here.",
+      "list": [
+        "1.4.3",
+        "1.4.1",
+        "1.4.11",
+        "2.5.8",
+        "2.4.7",
+        "1.1.1",
+        "3.3.2",
+        "1.3.1",
+        "2.4.6",
+        "1.4.4"
+      ]
+    },
+    {
+      "id": "forms",
+      "name": "Forms",
+      "desc": "Labels, errors, sign-in and not asking twice.",
+      "list": [
+        "3.3.2",
+        "3.3.1",
+        "3.3.3",
+        "1.3.5",
+        "3.3.7",
+        "3.3.8",
+        "3.3.4",
+        "1.4.11"
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile and touch",
+      "desc": "Targets, gestures, dragging and orientation.",
+      "list": [
+        "2.5.8",
+        "2.5.1",
+        "2.5.7",
+        "1.3.4",
+        "2.5.4",
+        "1.4.10",
+        "2.5.2"
+      ]
+    },
+    {
+      "id": "motion",
+      "name": "Motion and time",
+      "desc": "Animation, flashing, auto-play and time limits.",
+      "list": [
+        "2.3.3",
+        "2.2.2",
+        "2.3.1",
+        "2.2.1",
+        "1.4.13"
+      ]
+    },
+    {
+      "id": "review",
+      "name": "Reviewing work",
+      "desc": "What to look for in someone else’s flow.",
+      "list": [
+        "1.3.1",
+        "1.3.2",
+        "2.4.3",
+        "2.4.6",
+        "2.1.1",
+        "3.2.3",
+        "3.3.4",
+        "4.1.3"
+      ]
+    },
+    {
+      "id": "systems",
+      "name": "Design systems",
+      "desc": "Rules to build into tokens and components once.",
+      "list": [
+        "1.4.3",
+        "1.4.11",
+        "2.4.7",
+        "2.4.11",
+        "2.4.13",
+        "3.2.4",
+        "2.5.3",
+        "4.1.2",
+        "1.4.12"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "text": "Form errors are shown only by turning the field’s border red.",
+      "options": [
+        "1.4.1",
+        "1.4.3",
+        "3.3.2"
+      ],
+      "answer": 0,
+      "why": "Color is the only cue. Add an error message and an icon — which also satisfies 3.3.1."
+    },
+    {
+      "text": "Caption text is #AAAAAA on a white card.",
+      "options": [
+        "2.4.7",
+        "1.4.3",
+        "1.1.1"
+      ],
+      "answer": 1,
+      "why": "#AAAAAA on white is about 2.3:1. Text at that size needs 4.5:1."
+    },
+    {
+      "text": "A 16×16 close icon sits right against a 16×16 share icon.",
+      "options": [
+        "1.4.10",
+        "2.1.1",
+        "2.5.8"
+      ],
+      "answer": 2,
+      "why": "Both are under 24px and too close together for the spacing exception."
+    },
+    {
+      "text": "A sign-up form’s only labels are placeholders that vanish as you type.",
+      "options": [
+        "3.3.2",
+        "1.3.5",
+        "2.4.2"
+      ],
+      "answer": 0,
+      "why": "Once typing starts, nothing tells people what the field is for. Keep a visible label."
+    },
+    {
+      "text": "The focus outline was removed because it “looked messy”.",
+      "options": [
+        "2.4.3",
+        "2.4.7",
+        "1.4.11"
+      ],
+      "answer": 1,
+      "why": "Keyboard users lose their place entirely. Design a focus style that fits the brand instead."
+    },
+    {
+      "text": "A promo banner image contains the sale price, with no text alternative.",
+      "options": [
+        "1.4.5",
+        "1.1.1",
+        "1.3.1"
+      ],
+      "answer": 1,
+      "why": "Meaningful images need a text alternative. Baking text into the image also runs into 1.4.5."
+    },
+    {
+      "text": "Pages zoom and slide dramatically as you scroll, and there’s no way to turn it off.",
+      "options": [
+        "2.3.1",
+        "2.2.2",
+        "2.3.3"
+      ],
+      "answer": 2,
+      "why": "Interaction-triggered motion must be possible to disable. 2.3.1 is about flashing, not movement."
+    },
+    {
+      "text": "Logging in means solving a puzzle, and password managers can’t paste into the field.",
+      "options": [
+        "3.3.8",
+        "2.2.1",
+        "3.3.7"
+      ],
+      "answer": 0,
+      "why": "New in WCAG 2.2: no cognitive tests to log in unless there’s an alternative such as paste, passkeys or a magic link."
+    }
+  ],
+  "roles": [
+    {
+      "id": "Junior",
+      "desc": "I design screens and components from a brief."
+    },
+    {
+      "id": "Mid",
+      "desc": "I own features end to end and hand them to developers."
+    },
+    {
+      "id": "Senior",
+      "desc": "I shape whole flows and review other designers’ work."
+    },
+    {
+      "id": "Lead",
+      "desc": "I set standards, systems and priorities for a team."
+    }
+  ],
+  "levelBlurbs": {
+    "New": "You are building the foundations. Lessons start with what each rule is and who it helps.",
+    "Working": "You know the common rules. Lessons start with how to apply and specify them.",
+    "Fluent": "You can cite criteria. Lessons start with trade-offs, reviews and systems."
+  },
+  "reviewIntervals": [
+    1,
+    3,
+    7,
+    21,
+    60
+  ],
+  "diagnostic": [
+    {
+      "question": "Pale gray text on a white card is hard to read. Which principle does that touch?",
+      "options": [
+        "Perceivable",
+        "Operable",
+        "Robust"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which WCAG level do most laws and policies point to?",
+      "options": [
+        "Level A",
+        "Level AA",
+        "Level AAA"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is the minimum contrast for 16px regular body text?",
+      "options": [
+        "3:1",
+        "4.5:1",
+        "7:1"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "A text field is shown only by its border. What contrast does that border need against the background?",
+      "options": [
+        "No requirement",
+        "3:1",
+        "4.5:1"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "While tabbing, a sticky footer completely covers the focused button. Which criterion fails?",
+      "options": [
+        "2.4.7 Focus Visible",
+        "2.4.11 Focus Not Obscured",
+        "2.4.3 Focus Order"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "A price slider can only be moved by dragging. What does WCAG 2.2 AA ask for?",
+      "options": [
+        "A way to do it with single taps or clicks",
+        "A larger slider thumb",
+        "Nothing. Sliders are exempt"
+      ],
+      "answer": 0
+    }
+  ],
+  "roleTasks": {
+    "Junior": {
+      "name": "Fix the screen",
+      "desc": "One screen, one problem. Pick the fix you would make in the file.",
+      "questions": [
+        {
+          "text": "A primary button has white text on #6FB1FF. The ratio is about 2.2:1.",
+          "options": [
+            "Darken the blue until white text reaches 4.5:1",
+            "Make the label bold",
+            "Add a soft shadow behind the text"
+          ],
+          "answer": 0,
+          "criterion": "1.4.3",
+          "why": "Bold 16px still is not large text, and a shadow does not change the ratio. Fix the color pair."
+        },
+        {
+          "text": "A toolbar has 16px icons sitting 4px apart.",
+          "options": [
+            "Add tooltips to each icon",
+            "Keep the glyphs, pad each hit area to 24px or more",
+            "Raise the icon contrast"
+          ],
+          "answer": 1,
+          "criterion": "2.5.8",
+          "why": "The glyph can stay small. The area that responds to a tap is what needs room."
+        },
+        {
+          "text": "An invalid field is shown only by a red border.",
+          "options": [
+            "Use a darker red",
+            "Shake the field",
+            "Add an icon and a message that says what is wrong"
+          ],
+          "answer": 2,
+          "criterion": "1.4.1",
+          "why": "The cue cannot depend on color. Words also tell people how to fix it."
+        }
+      ]
+    },
+    "Mid": {
+      "name": "Annotate the handoff",
+      "desc": "The design is done. Decide what the developer needs written down.",
+      "questions": [
+        {
+          "text": "A card has a photo, a title and a “Read more” link. What do you note for the photo?",
+          "options": [
+            "Its export resolution",
+            "Whether it is decorative or meaningful, and its text alternative",
+            "Nothing. Alt text is a developer decision"
+          ],
+          "answer": 1,
+          "criterion": "1.1.1",
+          "why": "Only the person who chose the image knows what it is there to say."
+        },
+        {
+          "text": "A button opens a modal. Which note prevents the most common bug?",
+          "options": [
+            "Focus moves into the modal, stays there, and returns to the button on close",
+            "The overlay opacity",
+            "The easing curve"
+          ],
+          "answer": 0,
+          "criterion": "2.4.3",
+          "why": "Without it, keyboard focus stays on the page behind the modal."
+        },
+        {
+          "text": "Your layout reads in a different order than a developer would guess from the columns.",
+          "options": [
+            "Note the column widths",
+            "Note the layer order",
+            "Number the reading and focus order on the frame"
+          ],
+          "answer": 2,
+          "criterion": "1.3.2",
+          "why": "Screen readers follow code order. If you do not specify it, it is guessed."
+        }
+      ]
+    },
+    "Senior": {
+      "name": "Critique the flow",
+      "desc": "You are reviewing a teammate’s work. Choose what matters most.",
+      "questions": [
+        {
+          "text": "A checkout review finds three issues and there is one sprint. Which goes first?",
+          "options": [
+            "Helper text at 4.2:1",
+            "The Pay button cannot be reached by keyboard",
+            "The promo carousel has no pause control"
+          ],
+          "answer": 1,
+          "criterion": "2.1.1",
+          "why": "A total block on the critical path outranks friction. Some people cannot pay at all."
+        },
+        {
+          "text": "The flow asks for the address at shipping, then again at billing.",
+          "options": [
+            "Fine, as long as both are labelled",
+            "Move billing first",
+            "Offer “same as shipping” or pre-fill it"
+          ],
+          "answer": 2,
+          "criterion": "3.3.7",
+          "why": "New in 2.2: do not make people re-enter what they already gave in the same process."
+        },
+        {
+          "text": "A designer says the 20-minute session timeout is a security requirement.",
+          "options": [
+            "Ask for a warning before it expires, with a way to extend",
+            "Ask to remove the timeout",
+            "Ask for a shorter timeout so it is noticed"
+          ],
+          "answer": 0,
+          "criterion": "2.2.1",
+          "why": "The limit can stay. People need to be warned and able to extend it."
+        }
+      ]
+    },
+    "Lead": {
+      "name": "Make the call",
+      "desc": "No single screen to fix. Decide the rule, the priority, the argument.",
+      "questions": [
+        {
+          "text": "Brand wants white text on the primary yellow, #FFB400. It measures about 1.8:1.",
+          "options": [
+            "Grant a brand exception",
+            "Keep the yellow, pair it with dark text, and ship the pair as a token",
+            "Allow it for text over 24px"
+          ],
+          "answer": 1,
+          "criterion": "1.4.3",
+          "why": "1.8:1 fails even for large text. The hue can stay. The pairing changes, once, for everyone."
+        },
+        {
+          "text": "Where does a contrast rule do the most good?",
+          "options": [
+            "In a pre-launch audit",
+            "In a guidelines document",
+            "In tokens and components every team inherits"
+          ],
+          "answer": 2,
+          "criterion": "1.4.11",
+          "why": "Audits find problems after they are built. Systems stop them being built."
+        },
+        {
+          "text": "A stakeholder says accessibility can wait until after launch.",
+          "options": [
+            "Show the cost of retrofitting and scope the AA essentials into this release",
+            "Say it is the right thing to do",
+            "Agree and add it to the backlog"
+          ],
+          "answer": 0,
+          "criterion": "2.4.7",
+          "why": "Values rarely move a roadmap. Cost, risk and a small, concrete scope do."
+        }
+      ]
+    }
+  },
+  "laws": [
+    {
+      "region": "EUROPEAN UNION",
+      "law": "European Accessibility Act",
+      "note": "Covers many consumer products and services. Its technical standard, EN 301 549, builds on WCAG Level AA."
+    },
+    {
+      "region": "UNITED STATES",
+      "law": "ADA and Section 508",
+      "note": "Section 508 covers federal agencies. ADA rules for state and local government name WCAG Level AA."
+    },
+    {
+      "region": "UNITED KINGDOM",
+      "law": "Public Sector Bodies Accessibility Regulations",
+      "note": "Public sector websites and apps are expected to meet WCAG Level AA."
+    },
+    {
+      "region": "CANADA",
+      "law": "Accessible Canada Act, AODA in Ontario",
+      "note": "Federal and provincial rules that reference WCAG."
+    },
+    {
+      "region": "AUSTRALIA",
+      "law": "Disability Discrimination Act",
+      "note": "Official guidance uses WCAG as the reference."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "num": "2.3.3",
+  "meta": "4 min · interactive",
+  "demo": "motion",
+  "who": [
+    "Vestibular disorders",
+    "Migraine",
+    "Attention-related disabilities",
+    "Motion sensitivity"
+  ],
+  "takeaways": [
+    "Motion triggered by interaction — parallax, zooms, big slides — can cause dizziness, nausea and migraines.",
+    "Respect the system “Reduce motion” setting. Developers read it as prefers-reduced-motion.",
+    "Swap travel for fades or instant changes. Keep the feedback; lose the movement.",
+    "It’s Level AAA, but because every OS exposes the setting, it’s one of the easiest AAA wins."
+  ],
+  "failures": [
+    "Scroll-driven parallax with no off switch",
+    "Full-screen zoom transitions between pages",
+    "Backgrounds that shift as you scroll"
+  ],
+  "check": [
+    "Turn on Reduce motion on your device and walk through the prototype.",
+    "Spec a reduced alternative for every animation at handoff.",
+    "Ask of each animation: is it essential, or decoration?"
+  ],
+  "quiz": {
+    "question": "Your onboarding uses heavy parallax as people scroll. What does 2.3.3 ask for?",
+    "options": [
+      "Remove all animation",
+      "A way to turn that motion off",
+      "Slow it below 3 per second"
+    ],
+    "answer": 1,
+    "why": "Most people can keep the motion — but those affected need to turn it off, for example by honoring Reduce motion."
+  },
+  "spec": [
+    "For every animation, specify a reduced version: a fade, or no transition.",
+    "Mark which motion is essential to understanding, and why.",
+    "Reference the system setting so developers wire up prefers-reduced-motion."
+  ],
+  "review": [
+    "What does this flow look like with Reduce motion on?",
+    "Which animation here is decoration, and which carries meaning?",
+    "Does anything move without the person triggering it? That is 2.2.2."
+  ],
+  "tradeoff": "Motion is part of the brand. Reduced does not mean none: keep opacity and color changes, drop travel, scale and parallax.",
+  "system": "Give every motion token a reduced value, so each component gets the alternative for free.",
+  "pitch": "The setting already exists on every device and people already use it. Ignoring it means making some customers feel ill."
+}

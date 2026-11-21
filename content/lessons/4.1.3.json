@@ -1,0 +1,50 @@
+{
+  "num": "4.1.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Screen magnifier users",
+    "Cognitive disabilities",
+    "People who look away from the screen"
+  ],
+  "takeaways": [
+    "Status messages are announced by assistive technology without moving focus to them.",
+    "A status message reports a result, progress, a wait, or an error, without changing context: “Saved”, “12 results”, “Uploading”, “3 errors”.",
+    "If focus is moved to the message, as with a dialog, it is not a status message under this rule.",
+    "Developers code the announcement. Designers decide which messages exist, their exact words and how urgent each is."
+  ],
+  "failures": [
+    "A toast that appears and fades with no announcement",
+    "Search results updating with no count announced",
+    "A cart badge that changes silently after “Add to cart”"
+  ],
+  "check": [
+    "List every message that appears without a page change: toasts, banners, counts, spinners, inline results.",
+    "For each, write the text a screen reader should say.",
+    "Mark which ones can wait politely and which ones must interrupt."
+  ],
+  "quiz": {
+    "question": "After “Add to cart”, a toast says “Added” and the cart count goes up. Focus stays on the button. What do you annotate?",
+    "options": [
+      "Move focus to the toast so it is read",
+      "Announce the toast as a status message, such as “Added to cart. 3 items”",
+      "Nothing. The cart count changing is enough"
+    ],
+    "answer": 1,
+    "why": "A status message should be announced without taking focus away from where the person is working. Moving focus interrupts them, and a silent change tells them nothing."
+  },
+  "spec": [
+    "Mark each status message, its announced text and whether it is polite or urgent.",
+    "Note that focus stays where it is when the message appears.",
+    "Say how long a toast stays, and where people can find it again."
+  ],
+  "review": [
+    "How would someone who cannot see this know it happened?",
+    "Does focus jump anywhere it should not?",
+    "Is this message an update, or does it need a decision, which makes it a dialog?"
+  ],
+  "tradeoff": "Announcing every small change gets noisy. Announce results and errors, keep the wording short, and do not repeat what the person just did.",
+  "system": "Build toasts, inline alerts and live counts with announcement built in, and document the polite or urgent setting.",
+  "pitch": "A toast nobody hears is a feature that only works for people who can see it."
+}

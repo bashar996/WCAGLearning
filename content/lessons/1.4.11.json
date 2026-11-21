@@ -1,0 +1,50 @@
+{
+  "num": "1.4.11",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Low vision",
+    "Color vision deficiency",
+    "Aging eyes",
+    "Screen glare"
+  ],
+  "takeaways": [
+    "Anything you must see to use a control needs 3:1 against what is next to it: field borders, icons, toggles, checkboxes.",
+    "States count. Focus rings and selected states need 3:1 too.",
+    "In charts and diagrams, the parts needed to understand the graphic need 3:1.",
+    "Inactive controls and purely decorative graphics are exempt."
+  ],
+  "failures": [
+    "Pale gray input borders on white",
+    "Light icon-only buttons",
+    "A toggle whose on and off states differ by a faint tint"
+  ],
+  "check": [
+    "Sample each control edge and icon against its background.",
+    "Check every state: default, hover, focus, selected.",
+    "In charts, check neighboring segments against each other."
+  ],
+  "quiz": {
+    "question": "A text field has a #CCCCCC border on white, about 1.6:1. Nothing else marks its edges. Does it pass?",
+    "options": [
+      "Yes. Borders are decorative",
+      "No. It needs 3:1",
+      "No. It needs 4.5:1"
+    ],
+    "answer": 1,
+    "why": "The border is the only thing showing where the field is, so it needs 3:1. The 4.5:1 rule is for text."
+  },
+  "spec": [
+    "Note the ratio beside each border, icon and state indicator.",
+    "Specify focus and selected states with their own colors.",
+    "For charts, list the palette with neighboring-color ratios, or add separators."
+  ],
+  "review": [
+    "Could you find every input on this screen with your eyes half closed?",
+    "Which icons carry meaning with no label?",
+    "Do selected and unselected look different without color?"
+  ],
+  "tradeoff": "Quiet, barely-there borders are fashionable and they fail. Keep the calm look with a darker hairline that reaches 3:1.",
+  "system": "Define border and icon tokens that reach 3:1 on every surface they are allowed on.",
+  "pitch": "If people cannot see where a field is, they cannot fill it in. That is a conversion problem before it is a compliance one."
+}

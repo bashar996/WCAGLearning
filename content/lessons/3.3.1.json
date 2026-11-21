@@ -1,0 +1,50 @@
+{
+  "num": "3.3.1",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Color vision deficiency",
+    "Cognitive disabilities",
+    "Anyone filling in a long form"
+  ],
+  "takeaways": [
+    "When the system detects an input error, it shows which field is wrong and describes the error in text.",
+    "A red border or a warning icon alone is not enough. Some people cannot see the color, and nobody can read an icon’s meaning for sure.",
+    "The message names the problem: “Enter your email address”, not just “Invalid”.",
+    "This applies to errors the system catches. It does not force you to add validation, but whatever you detect must be explained."
+  ],
+  "failures": [
+    "A field that only turns red",
+    "A banner saying “There were errors” with no field named",
+    "Errors shown only as an icon or a shake animation"
+  ],
+  "check": [
+    "Submit the form empty and with wrong formats. Read every message with the colors turned off.",
+    "Check that each message sits next to its field and says which field it is about.",
+    "For long forms, check that a summary at the top lists each error and links to the field."
+  ],
+  "quiz": {
+    "question": "A sign-up form marks a bad email by turning the field border red. What do you add?",
+    "options": [
+      "A text message by the field: “Enter an email address like name@example.com”",
+      "A red warning icon inside the field",
+      "A tooltip on the border that appears on hover"
+    ],
+    "answer": 0,
+    "why": "The error must be identified and described in text. An icon is still only a visual cue, and a hover tooltip hides the text from keyboard and touch users."
+  },
+  "spec": [
+    "Write the error text for every validation rule on every field.",
+    "Show where each message appears and how it is linked to its field.",
+    "Note when validation runs: on submit, or when leaving the field."
+  ],
+  "review": [
+    "If I could not see red, how would I know which field is wrong?",
+    "Does every error say what went wrong, in words?",
+    "Where does focus go after a failed submit?"
+  ],
+  "tradeoff": "Inline errors that fire while people type feel helpful but can nag before they finish. Validate when they leave the field or submit, then show clear text that stays until the error is fixed.",
+  "system": "Give the field component an error state with a required text slot, so an error cannot be shown with color alone.",
+  "pitch": "A form that only says “something is wrong” is a form people abandon."
+}

@@ -1,0 +1,50 @@
+{
+  "num": "2.5.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Tremors and limited dexterity",
+    "Low vision users who miss targets",
+    "Cognitive disabilities",
+    "Anyone who taps the wrong thing"
+  ],
+  "takeaways": [
+    "For single-pointer actions, pressing down does not complete the action. It completes on release.",
+    "Then people can slide off the target before letting go to cancel. Or, if it fires, they can undo it.",
+    "Press-and-hold that shows something, like a preview, is fine if letting go hides it again.",
+    "Exception: acting on press is essential, such as playing a note on a piano app. This is mostly built by developers; you decide which actions are risky and how undo works."
+  ],
+  "failures": [
+    "Buttons that fire the moment a finger touches them",
+    "A delete that happens on press with no undo",
+    "Drag and drop that cannot be cancelled once picked up"
+  ],
+  "check": [
+    "In the build, press a button, slide off it and release. Did anything happen?",
+    "List the destructive actions and confirm each has undo or a way to cancel.",
+    "Check that drag and drop cancels when dropped outside a valid target."
+  ],
+  "quiz": {
+    "question": "Engineers want a “Delete” button to fire on touch-down so it feels faster. What do you recommend?",
+    "options": [
+      "Fire on press. Speed matters most",
+      "Fire on release, and cancel if the finger slides off",
+      "Fire on press, with a confirmation dialog every time"
+    ],
+    "answer": 1,
+    "why": "Release is the moment people can still change their mind. Acting on press removes that chance, and a dialog on every delete adds friction for everyone."
+  },
+  "spec": [
+    "State that actions complete on release, not on press.",
+    "Design the pressed state, so people see the action is about to happen.",
+    "For risky actions, specify the undo, such as a toast with an Undo button."
+  ],
+  "review": [
+    "What happens if someone touches this by mistake?",
+    "Can this action be undone?",
+    "Is there any reason this must fire on press?"
+  ],
+  "tradeoff": "Acting on press can feel snappier in games and music apps. Outside those cases, a clear pressed state gives the same feeling of speed while keeping the chance to back out.",
+  "system": "Base button and list-item components fire on release, and destructive actions use a standard undo toast.",
+  "pitch": "Everyone has tapped the wrong thing. Firing on release means a slip costs nothing."
+}

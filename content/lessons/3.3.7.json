@@ -1,0 +1,50 @@
+{
+  "num": "3.3.7",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Motor disabilities",
+    "People who use switches or voice",
+    "Anyone on a small screen"
+  ],
+  "takeaways": [
+    "In one process, do not make people type the same information twice. Fill it in for them, or let them pick it.",
+    "The classic fix is a “Same as billing address” checkbox, or a list of addresses they already gave.",
+    "It applies within the same process, such as one checkout or application, not across separate visits.",
+    "Exceptions: when re-entering is essential, needed for security, or the earlier information is no longer valid."
+  ],
+  "failures": [
+    "Shipping and billing addresses both typed in full",
+    "An email asked for on step 1 and again on step 4",
+    "A review step that clears fields when people go back to edit"
+  ],
+  "check": [
+    "Map every field in the flow and look for the same information asked twice.",
+    "Step backward and forward through the prototype. Does entered data survive?",
+    "For each repeat, choose auto-fill or a selectable option, and draw it."
+  ],
+  "quiz": {
+    "question": "A five-step application asks for the applicant’s phone number on step 1 and a contact number on step 4. What is the best design?",
+    "options": [
+      "Ask again, so people can confirm it",
+      "Remove the step 4 question entirely",
+      "Pre-fill step 4 with the step 1 number, still editable"
+    ],
+    "answer": 2,
+    "why": "Auto-populating meets the rule and keeps the option to give a different number. Removing the question may lose a real need."
+  },
+  "spec": [
+    "Mark each field that reuses earlier data, and name its source step.",
+    "Say whether it is pre-filled or offered as a choice, and that it stays editable.",
+    "Note any repeat kept on purpose, and which exception it falls under."
+  ],
+  "review": [
+    "Where in this flow does the person tell us something twice?",
+    "What happens to their data when they press Back?",
+    "Is this repeat really for security, or just how the form was built?"
+  ],
+  "tradeoff": "Pre-filled data can be wrong for this step, like a work address reused as a delivery address. Pre-fill or offer it, but keep it visible and editable.",
+  "system": "Build address and contact patterns with a “use a saved or earlier value” option built in.",
+  "pitch": "Asking for the same thing twice feels careless to every customer, and blocks some of them."
+}

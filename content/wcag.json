@@ -1,0 +1,714 @@
+{
+  "principles": [
+    {
+      "n": 1,
+      "id": "P",
+      "name": "Perceivable",
+      "question": "Can people perceive it?",
+      "desc": "Information and interface components must be presentable in ways people can perceive — whichever senses they rely on."
+    },
+    {
+      "n": 2,
+      "id": "O",
+      "name": "Operable",
+      "question": "Can people operate it?",
+      "desc": "Components and navigation must work for everyone — by keyboard, touch, voice or switch — with enough time and without harm."
+    },
+    {
+      "n": 3,
+      "id": "U",
+      "name": "Understandable",
+      "question": "Can people understand it?",
+      "desc": "Content and behavior must be readable, predictable, and forgiving of mistakes."
+    },
+    {
+      "n": 4,
+      "id": "R",
+      "name": "Robust",
+      "question": "Will it work with assistive tech?",
+      "desc": "Content must be built so browsers and assistive technologies can interpret it reliably — today and as they evolve."
+    }
+  ],
+  "guidelines": [
+    {
+      "num": "1.1",
+      "name": "Text Alternatives",
+      "summary": "Provide text alternatives for any non-text content."
+    },
+    {
+      "num": "1.2",
+      "name": "Time-based Media",
+      "summary": "Provide alternatives for audio and video."
+    },
+    {
+      "num": "1.3",
+      "name": "Adaptable",
+      "summary": "Create content that can be presented in different ways without losing structure."
+    },
+    {
+      "num": "1.4",
+      "name": "Distinguishable",
+      "summary": "Make it easier to see and hear content, including separating foreground from background."
+    },
+    {
+      "num": "2.1",
+      "name": "Keyboard Accessible",
+      "summary": "Make all functionality available from a keyboard."
+    },
+    {
+      "num": "2.2",
+      "name": "Enough Time",
+      "summary": "Give people enough time to read and use content."
+    },
+    {
+      "num": "2.3",
+      "name": "Seizures and Physical Reactions",
+      "summary": "Don’t design content in ways known to cause seizures or physical reactions."
+    },
+    {
+      "num": "2.4",
+      "name": "Navigable",
+      "summary": "Help people navigate, find content, and know where they are."
+    },
+    {
+      "num": "2.5",
+      "name": "Input Modalities",
+      "summary": "Make it easier to operate functionality through inputs beyond the keyboard."
+    },
+    {
+      "num": "3.1",
+      "name": "Readable",
+      "summary": "Make text readable and understandable."
+    },
+    {
+      "num": "3.2",
+      "name": "Predictable",
+      "summary": "Make pages appear and operate in predictable ways."
+    },
+    {
+      "num": "3.3",
+      "name": "Input Assistance",
+      "summary": "Help people avoid and correct mistakes."
+    },
+    {
+      "num": "4.1",
+      "name": "Compatible",
+      "summary": "Maximize compatibility with current and future tools, including assistive technologies."
+    }
+  ],
+  "newIn22": [
+    "2.4.11",
+    "2.4.12",
+    "2.4.13",
+    "2.5.7",
+    "2.5.8",
+    "3.2.6",
+    "3.3.7",
+    "3.3.8",
+    "3.3.9"
+  ],
+  "criteria": [
+    {
+      "num": "1.1.1",
+      "title": "Non-text Content",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Every meaningful image, icon and control has a text alternative. Decorative ones are hidden from assistive tech."
+    },
+    {
+      "num": "1.2.1",
+      "title": "Audio-only and Video-only (Prerecorded)",
+      "level": "A",
+      "designerLed": false,
+      "summary": "Audio-only and video-only recordings come with a transcript or an equivalent alternative."
+    },
+    {
+      "num": "1.2.2",
+      "title": "Captions (Prerecorded)",
+      "level": "A",
+      "designerLed": false,
+      "summary": "Prerecorded video with sound has synchronized captions."
+    },
+    {
+      "num": "1.2.3",
+      "title": "Audio Description or Media Alternative (Prerecorded)",
+      "level": "A",
+      "designerLed": false,
+      "summary": "Prerecorded video has audio description or a full text alternative."
+    },
+    {
+      "num": "1.2.4",
+      "title": "Captions (Live)",
+      "level": "AA",
+      "designerLed": false,
+      "summary": "Live video with sound has captions."
+    },
+    {
+      "num": "1.2.5",
+      "title": "Audio Description (Prerecorded)",
+      "level": "AA",
+      "designerLed": false,
+      "summary": "Prerecorded video describes important visual information in audio."
+    },
+    {
+      "num": "1.2.6",
+      "title": "Sign Language (Prerecorded)",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "Prerecorded video includes sign language interpretation."
+    },
+    {
+      "num": "1.2.7",
+      "title": "Extended Audio Description (Prerecorded)",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "Video pauses for longer descriptions when natural gaps are too short."
+    },
+    {
+      "num": "1.2.8",
+      "title": "Media Alternative (Prerecorded)",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "Prerecorded media has a full text alternative."
+    },
+    {
+      "num": "1.2.9",
+      "title": "Audio-only (Live)",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "Live audio-only content has a text alternative, such as live captions."
+    },
+    {
+      "num": "1.3.1",
+      "title": "Info and Relationships",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Structure you show visually — headings, lists, tables, groups — also exists in code."
+    },
+    {
+      "num": "1.3.2",
+      "title": "Meaningful Sequence",
+      "level": "A",
+      "designerLed": true,
+      "summary": "When order affects meaning, the reading order in code matches it."
+    },
+    {
+      "num": "1.3.3",
+      "title": "Sensory Characteristics",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Instructions don’t rely only on shape, size, position or sound — not just “tap the round button on the right”."
+    },
+    {
+      "num": "1.3.4",
+      "title": "Orientation",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Content works in both portrait and landscape, unless one orientation is essential."
+    },
+    {
+      "num": "1.3.5",
+      "title": "Identify Input Purpose",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Fields that collect personal details are identified, so browsers can autofill them."
+    },
+    {
+      "num": "1.3.6",
+      "title": "Identify Purpose",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "The purpose of components, icons and regions can be determined by software."
+    },
+    {
+      "num": "1.4.1",
+      "title": "Use of Color",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Color is never the only way you show information, prompt an action, or mark an element."
+    },
+    {
+      "num": "1.4.2",
+      "title": "Audio Control",
+      "level": "A",
+      "designerLed": false,
+      "summary": "Audio that plays automatically for more than 3 seconds can be paused or muted."
+    },
+    {
+      "num": "1.4.3",
+      "title": "Contrast (Minimum)",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Text has a contrast ratio of at least 4.5:1 with its background — or 3:1 when it’s large."
+    },
+    {
+      "num": "1.4.4",
+      "title": "Resize Text",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Text can be resized to 200% without losing content or function."
+    },
+    {
+      "num": "1.4.5",
+      "title": "Images of Text",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Use real text rather than images of text, except for logos."
+    },
+    {
+      "num": "1.4.6",
+      "title": "Contrast (Enhanced)",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Text has a contrast ratio of at least 7:1 — or 4.5:1 when it’s large."
+    },
+    {
+      "num": "1.4.7",
+      "title": "Low or No Background Audio",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "Speech recordings have little or no background sound."
+    },
+    {
+      "num": "1.4.8",
+      "title": "Visual Presentation",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Text blocks can be adjusted: under 80 characters wide, not justified, generous line spacing."
+    },
+    {
+      "num": "1.4.9",
+      "title": "Images of Text (No Exception)",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Images of text are used only for decoration, or where the presentation is essential."
+    },
+    {
+      "num": "1.4.10",
+      "title": "Reflow",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Content reflows to a 320px-wide viewport without scrolling in two directions."
+    },
+    {
+      "num": "1.4.11",
+      "title": "Non-text Contrast",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Icons, field borders, focus indicators and meaningful graphics have at least 3:1 contrast."
+    },
+    {
+      "num": "1.4.12",
+      "title": "Text Spacing",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Nothing breaks when people increase line, paragraph, letter and word spacing."
+    },
+    {
+      "num": "1.4.13",
+      "title": "Content on Hover or Focus",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Tooltips and popovers that appear on hover or focus can be dismissed, hovered over, and stay put."
+    },
+    {
+      "num": "2.1.1",
+      "title": "Keyboard",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Everything can be operated with a keyboard alone."
+    },
+    {
+      "num": "2.1.2",
+      "title": "No Keyboard Trap",
+      "level": "A",
+      "designerLed": false,
+      "summary": "Keyboard focus never gets stuck inside a component."
+    },
+    {
+      "num": "2.1.3",
+      "title": "Keyboard (No Exception)",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "Everything can be operated with a keyboard — with no exceptions."
+    },
+    {
+      "num": "2.1.4",
+      "title": "Character Key Shortcuts",
+      "level": "A",
+      "designerLed": false,
+      "summary": "Single-key shortcuts can be turned off or remapped."
+    },
+    {
+      "num": "2.2.1",
+      "title": "Timing Adjustable",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Time limits can be turned off, adjusted or extended."
+    },
+    {
+      "num": "2.2.2",
+      "title": "Pause, Stop, Hide",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Moving, blinking or auto-updating content can be paused, stopped or hidden."
+    },
+    {
+      "num": "2.2.3",
+      "title": "No Timing",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Timing isn’t an essential part of the activity."
+    },
+    {
+      "num": "2.2.4",
+      "title": "Interruptions",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Interruptions such as alerts and updates can be postponed or turned off."
+    },
+    {
+      "num": "2.2.5",
+      "title": "Re-authenticating",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "When a session expires, people can sign back in and continue without losing data."
+    },
+    {
+      "num": "2.2.6",
+      "title": "Timeouts",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "People are told how long they can be inactive before data is lost."
+    },
+    {
+      "num": "2.3.1",
+      "title": "Three Flashes or Below Threshold",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Nothing flashes more than three times in any one second."
+    },
+    {
+      "num": "2.3.2",
+      "title": "Three Flashes",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Nothing flashes more than three times per second — no threshold exception."
+    },
+    {
+      "num": "2.3.3",
+      "title": "Animation from Interactions",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Motion triggered by interaction can be turned off, unless it’s essential."
+    },
+    {
+      "num": "2.4.1",
+      "title": "Bypass Blocks",
+      "level": "A",
+      "designerLed": true,
+      "summary": "There’s a way to skip blocks that repeat on every page, like navigation."
+    },
+    {
+      "num": "2.4.2",
+      "title": "Page Titled",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Every page or screen has a title that describes its topic or purpose."
+    },
+    {
+      "num": "2.4.3",
+      "title": "Focus Order",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Focus moves through the page in an order that preserves meaning."
+    },
+    {
+      "num": "2.4.4",
+      "title": "Link Purpose (In Context)",
+      "level": "A",
+      "designerLed": true,
+      "summary": "The purpose of each link is clear from its text, together with its context."
+    },
+    {
+      "num": "2.4.5",
+      "title": "Multiple Ways",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "There’s more than one way to find a page — search, navigation, a sitemap."
+    },
+    {
+      "num": "2.4.6",
+      "title": "Headings and Labels",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Headings and labels describe their topic or purpose."
+    },
+    {
+      "num": "2.4.7",
+      "title": "Focus Visible",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Keyboard focus is always visible."
+    },
+    {
+      "num": "2.4.8",
+      "title": "Location",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "People can tell where they are — breadcrumbs, current-page states, step indicators."
+    },
+    {
+      "num": "2.4.9",
+      "title": "Link Purpose (Link Only)",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "The purpose of each link is clear from the link text alone."
+    },
+    {
+      "num": "2.4.10",
+      "title": "Section Headings",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Content is organized with section headings."
+    },
+    {
+      "num": "2.4.11",
+      "title": "Focus Not Obscured (Minimum)",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "A focused element is never completely hidden by sticky headers, banners or overlays."
+    },
+    {
+      "num": "2.4.12",
+      "title": "Focus Not Obscured (Enhanced)",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "No part of a focused element is hidden by content you created."
+    },
+    {
+      "num": "2.4.13",
+      "title": "Focus Appearance",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Focus indicators are big and bold: at least as large as a 2px outline, with 3:1 contrast against the unfocused state."
+    },
+    {
+      "num": "2.5.1",
+      "title": "Pointer Gestures",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Multi-finger and path-based gestures have a single-pointer alternative."
+    },
+    {
+      "num": "2.5.2",
+      "title": "Pointer Cancellation",
+      "level": "A",
+      "designerLed": false,
+      "summary": "Actions fire on release, so people can slide off a target to cancel."
+    },
+    {
+      "num": "2.5.3",
+      "title": "Label in Name",
+      "level": "A",
+      "designerLed": true,
+      "summary": "A control’s accessible name contains the text of its visible label."
+    },
+    {
+      "num": "2.5.4",
+      "title": "Motion Actuation",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Shake and tilt actions have an on-screen alternative and can be turned off."
+    },
+    {
+      "num": "2.5.5",
+      "title": "Target Size (Enhanced)",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Pointer targets are at least 44 by 44 CSS pixels."
+    },
+    {
+      "num": "2.5.6",
+      "title": "Concurrent Input Mechanisms",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "People can switch between touch, mouse, keyboard and other inputs at any time."
+    },
+    {
+      "num": "2.5.7",
+      "title": "Dragging Movements",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Anything done by dragging can also be done with single taps or clicks."
+    },
+    {
+      "num": "2.5.8",
+      "title": "Target Size (Minimum)",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Pointer targets are at least 24 by 24 CSS pixels — or spaced far enough from each other."
+    },
+    {
+      "num": "3.1.1",
+      "title": "Language of Page",
+      "level": "A",
+      "designerLed": false,
+      "summary": "The page’s main language is set in code, so screen readers pronounce it correctly."
+    },
+    {
+      "num": "3.1.2",
+      "title": "Language of Parts",
+      "level": "AA",
+      "designerLed": false,
+      "summary": "Passages in a different language are marked up as such."
+    },
+    {
+      "num": "3.1.3",
+      "title": "Unusual Words",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Jargon, idioms and unusual words have definitions available."
+    },
+    {
+      "num": "3.1.4",
+      "title": "Abbreviations",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Abbreviations can be expanded or explained."
+    },
+    {
+      "num": "3.1.5",
+      "title": "Reading Level",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Text above lower-secondary reading level comes with a simpler version or supplement."
+    },
+    {
+      "num": "3.1.6",
+      "title": "Pronunciation",
+      "level": "AAA",
+      "designerLed": false,
+      "summary": "Pronunciation is available where meaning depends on it."
+    },
+    {
+      "num": "3.2.1",
+      "title": "On Focus",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Moving focus onto an element never triggers a surprise change of context."
+    },
+    {
+      "num": "3.2.2",
+      "title": "On Input",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Changing a setting doesn’t unexpectedly change context, unless people are told first."
+    },
+    {
+      "num": "3.2.3",
+      "title": "Consistent Navigation",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Navigation that repeats across pages stays in the same order."
+    },
+    {
+      "num": "3.2.4",
+      "title": "Consistent Identification",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Components that do the same thing are labeled the same way."
+    },
+    {
+      "num": "3.2.5",
+      "title": "Change on Request",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Changes of context only happen when people ask for them."
+    },
+    {
+      "num": "3.2.6",
+      "title": "Consistent Help",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Help — contact details, chat, FAQs — appears in the same place on every page."
+    },
+    {
+      "num": "3.3.1",
+      "title": "Error Identification",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Errors are identified, and described to the person in text."
+    },
+    {
+      "num": "3.3.2",
+      "title": "Labels or Instructions",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Inputs have labels or instructions."
+    },
+    {
+      "num": "3.3.3",
+      "title": "Error Suggestion",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "When an error is detected and a fix is known, suggest it."
+    },
+    {
+      "num": "3.3.4",
+      "title": "Error Prevention (Legal, Financial, Data)",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Legal, financial and data submissions can be reversed, checked, or confirmed."
+    },
+    {
+      "num": "3.3.5",
+      "title": "Help",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Context-sensitive help is available."
+    },
+    {
+      "num": "3.3.6",
+      "title": "Error Prevention (All)",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Every submission can be reversed, checked, or confirmed."
+    },
+    {
+      "num": "3.3.7",
+      "title": "Redundant Entry",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Don’t make people re-enter information they’ve already given in the same process."
+    },
+    {
+      "num": "3.3.8",
+      "title": "Accessible Authentication (Minimum)",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Logging in doesn’t require a memory test or puzzle — unless there’s an alternative such as paste, passkeys or a magic link."
+    },
+    {
+      "num": "3.3.9",
+      "title": "Accessible Authentication (Enhanced)",
+      "level": "AAA",
+      "designerLed": true,
+      "summary": "Logging in doesn’t require any cognitive test — not even recognizing objects or personal images."
+    },
+    {
+      "num": "4.1.2",
+      "title": "Name, Role, Value",
+      "level": "A",
+      "designerLed": true,
+      "summary": "Every component exposes its name, role and current state to assistive technologies."
+    },
+    {
+      "num": "4.1.3",
+      "title": "Status Messages",
+      "level": "AA",
+      "designerLed": true,
+      "summary": "Status messages are announced to assistive tech without moving focus."
+    }
+  ]
+}

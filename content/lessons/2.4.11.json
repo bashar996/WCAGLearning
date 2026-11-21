@@ -1,0 +1,50 @@
+{
+  "num": "2.4.11",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Low vision with magnification",
+    "Switch and voice control users",
+    "Anyone on a small screen"
+  ],
+  "takeaways": [
+    "When an element gets keyboard focus, it is not completely hidden by content you designed, such as sticky headers, footers, banners or chat widgets.",
+    "If people cannot see what has focus, they cannot tell where they are or what Enter will do.",
+    "At AA, part of the element may be covered. At AAA, 2.4.12 asks that no part of it is hidden.",
+    "The fix is usually space: let the page scroll focused items clear of sticky bars."
+  ],
+  "failures": [
+    "A sticky footer that hides fields as people tab down a form",
+    "A cookie banner covering links at the bottom of the page",
+    "A floating chat button sitting over the last item in a list"
+  ],
+  "check": [
+    "Tab through every page with sticky headers, footers and banners showing.",
+    "Watch for any moment when the focused element disappears behind them.",
+    "Repeat at high zoom and on small screens, where sticky bars take more room."
+  ],
+  "quiz": {
+    "question": "Tabbing down a form, a focused button ends up half covered by an 80px sticky footer. Which is true?",
+    "options": [
+      "It passes 2.4.11, but would fail 2.4.12 at AAA. Fix it anyway",
+      "It fails 2.4.11 because part of it is covered",
+      "It passes everything, because sticky footers are allowed"
+    ],
+    "answer": 0,
+    "why": "2.4.11 only fails when the element is entirely hidden. Half hidden is still hard to use, so leaving space for the footer is the better design."
+  },
+  "spec": [
+    "Give the height of every sticky header, footer and banner.",
+    "Ask for scroll padding equal to those heights, so focused items stop clear of them.",
+    "Say how banners and chat panels are dismissed, and whether they can be minimised."
+  ],
+  "review": [
+    "What is sticky on this screen, and how much room does it take at 200% zoom?",
+    "What happens when someone tabs to the last field on the page?",
+    "Does this banner need to cover content at all?"
+  ],
+  "tradeoff": "Sticky bars keep actions in reach but eat into the visible area. Keep them short, let them collapse on small screens, and make sure the page scrolls focused items into the space that is left.",
+  "system": "Expose sticky header and footer heights as tokens that set the page’s scroll padding automatically.",
+  "pitch": "If the focused button is behind our footer, a keyboard user is pressing Enter on something they cannot see."
+}

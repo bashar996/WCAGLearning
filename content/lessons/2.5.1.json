@@ -1,0 +1,50 @@
+{
+  "num": "2.5.1",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Tremors and limited dexterity",
+    "One-handed use",
+    "Head pointer and mouth stick users",
+    "Voice control users"
+  ],
+  "takeaways": [
+    "Anything done with a multi-finger gesture or a path-based gesture also works with a single pointer and no path: a tap, a click or a double tap.",
+    "Multipoint means two or more fingers, like pinch to zoom. Path-based means the route matters, like a swipe or a drawn shape, not just where it starts and ends.",
+    "Give a simple control for each gesture: + and − buttons on a map, arrows on a carousel, a menu for swipe-to-delete.",
+    "Exception: the gesture is essential, such as a signature or freehand drawing. Gestures run by the browser or operating system, not your design, are not covered."
+  ],
+  "failures": [
+    "A map that only zooms by pinching",
+    "A carousel that only moves by swiping",
+    "Swipe-to-archive with no other way to archive"
+  ],
+  "check": [
+    "List every gesture in the prototype, then find its tap or click equivalent.",
+    "Try each task using only one finger and single taps.",
+    "Check that the alternatives are visible, not hidden behind a hint."
+  ],
+  "quiz": {
+    "question": "A store locator map zooms with pinch. What does it need to meet 2.5.1?",
+    "options": [
+      "Visible + and − buttons",
+      "A hint that says “Pinch to zoom”",
+      "Nothing. Pinch is a standard gesture"
+    ],
+    "answer": 0,
+    "why": "Pinch needs two fingers at once, which many people cannot do. A hint explains the gesture but does not replace it; single-tap buttons do."
+  },
+  "spec": [
+    "For each gesture, name its single-pointer alternative and where it lives.",
+    "Mark which gestures are shortcuts and which control is the main path.",
+    "Call out any gesture you treat as essential, and why."
+  ],
+  "review": [
+    "What happens here if someone can only tap?",
+    "Is this swipe the only way to do this?",
+    "Is this a path-based gesture, or a simple drag? A drag where only the endpoints matter is 2.5.7."
+  ],
+  "tradeoff": "Gestures keep screens clean, and visible buttons add clutter. Keep the gesture as a shortcut, and put the alternative somewhere quieter, such as an overflow menu or small controls on the edge.",
+  "system": "Give gesture-driven components, like carousels, maps and swipeable rows, built-in button alternatives that cannot be turned off.",
+  "pitch": "A gesture is a shortcut, not a front door. If it is the only way in, some customers cannot get in."
+}

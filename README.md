@@ -38,7 +38,7 @@ A regular iPhone gets the standard bottom tab bar because that is Apple's guidan
 - **Placement:** scope, then 6 questions, which place you on the knowledge × scope matrix. It sets lesson depth, path and practice task.
 - **Today:** today's lesson poster, review due, the 86-dot WCAG map and your path.
 - **Learn:** six paths, the Atlas (4 principles → 13 guidelines → 86 criteria) with level filters, the three levels and the law map.
-- **Lessons:** all 86 criteria. 11 have full See it / Apply it / Lead it lessons with a quick check, and 4 of those have interactive demos: contrast slider, colour-blindness simulation, simulated taps on a target, and parallax with a Reduce motion switch.
+- **Lessons:** all 86 criteria, with full See it / Apply it / Lead it lessons and a quick check being written for each. 4 lessons have interactive demos: contrast slider, colour-blindness simulation, simulated taps on a target, and parallax with a Reduce motion switch.
 - **Practice:** spaced review (1, 3, 7, 21, 60 days), Name it (8 scenarios), and a task for your scope.
 - **You:** local profile, scope, appearance (Auto / Light / Dark), text size (100 / 115 / 130 %, on top of iOS Dynamic Type), Reduce motion, Hide particles, Mirror layout.
 - **Account:** log in / sign up with Google, Apple, Microsoft, GitHub or email, plus a profile. **These are local only for now:** they create a profile stored on the phone and nothing is sent anywhere.
@@ -56,34 +56,38 @@ Progress, placement, settings and the profile are saved on the device in `UserDe
 ## Project layout
 
 ```
-ios/
-  WCAGforDesigners.xcodeproj
-  WCAGforDesigners/
-    App/          entry point
-    Model/        Library.swift (generated lesson content), Models.swift, AppStore.swift (state + persistence)
-    Design/       Theme (colours, fonts), Components, Particles (poster and demo engine)
-    Views/        Root (layout + rail), Today, Learn, Criterion, Demos, Practice, You, Account, Onboarding
-    Resources/Fonts   Newsreader, Hanken Grotesk, JetBrains Mono (static instances, SIL OFL)
-    Assets.xcassets   App icon (placeholder) and accent colour
-  tools/gen-content.js   regenerates Library.swift from the design file
-  licenses/              font licences
+content/                 lesson copy, shared by iOS, web and Electron
+  wcag.json              principles, guidelines, the 86 criteria
+  app.json               paths, practice scenarios, scope tasks, placement questions, laws
+  lessons/<num>.json     one full lesson per criterion
+tools/gen-content.js     validates content/ and generates Library.swift
+WCAGforDesigners.xcodeproj
+WCAGforDesigners/
+  App/          entry point
+  Model/        Library.swift (generated, do not edit), Models.swift, AppStore.swift (state + persistence)
+  Design/       Theme (colours, fonts), Components, Particles (poster and demo engine)
+  Views/        Root (layout + rail), Today, Learn, Criterion, Demos, Practice, You, Account, Onboarding
+  Resources/Fonts   Newsreader, Hanken Grotesk, JetBrains Mono (static instances, SIL OFL)
+  Assets.xcassets   App icon (placeholder) and accent colour
+licenses/       font licences
 ```
 
 The project uses Xcode 16's folder-synchronised groups: new files dropped into `WCAGforDesigners/` are picked up automatically.
 
-### Regenerating lesson content
+### Editing lesson content
 
-Lesson copy is generated from the design file so that the iOS, web and Electron builds can share one source later:
+Edit the JSON in `content/`, then from the repository root:
 
 ```
-cd ios
-node tools/gen-content.js "../project/WCAG for Designers iOS.dc.html" WCAGforDesigners/Model/Library.swift
+node tools/gen-content.js           # validate and regenerate Library.swift
+node tools/gen-content.js --check   # validate only, and list which path lessons are missing
 ```
+
+The check rejects a lesson with missing fields, a quiz without exactly three options, or a criterion number that isn't in WCAG 2.2.
 
 ## Known gaps
 
-- **Not compiled yet.** This was written on Linux without Xcode, so the first build may show a few compile errors. Paste them back and they'll be fixed.
 - Sign-in is local; the platform buttons use letter monograms until the official logos are added.
 - The app icon is a placeholder.
-- Only 11 of the 86 criteria have full lessons; the rest show their summary, guideline, related criteria and W3C links.
+- Some criteria still have only a summary, guideline, related criteria and W3C links. Run the check above to see which.
 - "WCAG" is a W3C trademark. Check the name before you submit to the App Store.

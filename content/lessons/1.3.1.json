@@ -1,0 +1,50 @@
+{
+  "num": "1.3.1",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Keyboard users who jump by heading",
+    "People using reader modes",
+    "Voice control users"
+  ],
+  "takeaways": [
+    "If it looks like a heading, a list, a table or a group, it must be one in code.",
+    "Heading levels describe structure, not size. Do not skip a level to get a style.",
+    "Labels are tied to their fields. Related fields are grouped under a group label.",
+    "Your layers and annotations are where this structure gets decided."
+  ],
+  "failures": [
+    "Bold text used as a heading",
+    "Tables built from loose boxes",
+    "Radio buttons with no group label"
+  ],
+  "check": [
+    "Outline the page using only its headings. Does it make sense?",
+    "Label each heading with its level in the file.",
+    "Check that every table has its header cells identified."
+  ],
+  "quiz": {
+    "question": "A card title should be smaller than the page’s H2 style. What do you specify?",
+    "options": [
+      "An H4, because it is smaller",
+      "The level the structure needs, styled smaller",
+      "Bold body text"
+    ],
+    "answer": 1,
+    "why": "Level follows structure. Style is separate, and a good system lets you pair any level with any size."
+  },
+  "spec": [
+    "Mark heading levels on the frame.",
+    "Identify lists, tables and their header cells.",
+    "Name each field group and page region."
+  ],
+  "review": [
+    "Read me the heading outline of this page.",
+    "Which groups exist visually but have no name?",
+    "Is this really a table, or a layout?"
+  ],
+  "tradeoff": "Visual hierarchy and document hierarchy sometimes disagree. Separate level from style. Do not pick the level that looks right.",
+  "system": "Let heading components take level and size as separate properties.",
+  "pitch": "Structure is how a screen reader user skims. Without it, they have to listen to everything."
+}
