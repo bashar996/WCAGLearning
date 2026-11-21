@@ -1,0 +1,50 @@
+{
+  "num": "3.1.1",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Braille display users",
+    "Translation tool users",
+    "People using text-to-speech"
+  ],
+  "takeaways": [
+    "The main language of each page can be determined by software. On the web this is the lang attribute on the page; in apps it is the app or content language.",
+    "Screen readers use it to choose the right voice and pronunciation. Without it, a Spanish page may be read with English rules and become nonsense.",
+    "Browsers and translation tools also use it, for example to offer translation or to hyphenate words correctly.",
+    "Developers set the code. Designers and content teams decide which language each page and template is in, and say so at handoff, especially on multilingual products."
+  ],
+  "failures": [
+    "Translated pages that still declare English",
+    "No page language set at all",
+    "A shared template whose language is fixed to the original market"
+  ],
+  "check": [
+    "List every locale your product ships, and the language code for each.",
+    "Check that each translated template or screen is labelled with its language in the file.",
+    "In the build, inspect the page language, or listen with a screen reader for the right accent."
+  ],
+  "quiz": {
+    "question": "Your product launches in Canada with English and French versions built from one template. What do you hand off?",
+    "options": [
+      "Nothing. Screen readers detect the language automatically",
+      "Set the template’s language to English, since it is the source design",
+      "A note that each page’s language must match its locale: en-CA for English, fr-CA for French"
+    ],
+    "answer": 2,
+    "why": "Screen readers do not reliably guess the language, and a fixed English setting makes French pages sound wrong. The language must follow the content of each page."
+  },
+  "spec": [
+    "Give the language code for each locale and template.",
+    "Note that the page language changes with the content, not with the design source.",
+    "For apps, state which language setting the content follows: the device, the account or a picker."
+  ],
+  "review": [
+    "Which language does each version of this page declare?",
+    "Who updates the language when we add a new locale?",
+    "Have we heard this page through a screen reader in each language?"
+  ],
+  "tradeoff": "Localization often happens after design handoff, so nobody owns the language setting. Make it part of the locale checklist, so whoever adds a language also sets it.",
+  "system": "Make the page language a required property of the page template, set from the locale.",
+  "pitch": "One missing attribute can make a whole page sound like gibberish to a screen reader user. It takes seconds to set."
+}

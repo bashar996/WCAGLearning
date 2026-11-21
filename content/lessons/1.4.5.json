@@ -1,0 +1,50 @@
+{
+  "num": "1.4.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Low vision with magnification",
+    "Dyslexia and reading disabilities",
+    "People who change fonts or colors",
+    "Translation tool users"
+  ],
+  "takeaways": [
+    "If you can show it as real text, use real text, not a picture of text.",
+    "Real text can be zoomed sharply, recolored, respaced, read aloud and translated. Text baked into an image cannot, and it blurs when enlarged.",
+    "Logos and brand names are exempt, because their look is essential. So is any image of text that people can customize, for example font, size and colors.",
+    "This is mostly decided in design: hero banners, promo tiles, quote cards and buttons are where text gets flattened into images."
+  ],
+  "failures": [
+    "A marketing banner exported as one image, headline included",
+    "A testimonial quote shared as a styled graphic",
+    "A button made from an image of its label"
+  ],
+  "check": [
+    "In the file, find every frame where text is part of an image layer or exported asset.",
+    "For each, ask whether live text over an image could create the same look.",
+    "In the build, zoom to 200% and try selecting the text. If you cannot select it, it is probably an image."
+  ],
+  "quiz": {
+    "question": "A seasonal campaign banner has a headline in the brand typeface over a photo. Marketing wants to export it as one image. What do you do?",
+    "options": [
+      "Export as one image and put the headline in the alt text",
+      "Keep the photo as an image and set the headline as live text using a web font",
+      "It is fine, because the headline uses the brand typeface"
+    ],
+    "answer": 1,
+    "why": "Alt text helps screen reader users but not people who zoom or change fonts. A brand typeface is not a logo, so live text is required when the technology can show it."
+  },
+  "spec": [
+    "Mark which text is live and which images are background only.",
+    "List the web fonts, weights and effects needed so the look can be built in text.",
+    "Where a logo or wordmark is used, note it as an image with its alt text."
+  ],
+  "review": [
+    "Is this text in an image because it has to be, or because it was quicker?",
+    "Can we get this effect with live text, a font and CSS?",
+    "What happens to this banner when the copy is translated?"
+  ],
+  "tradeoff": "Images give pixel-perfect control and are quicker to produce for campaigns. Live text costs more setup but can be updated, translated and resized without redrawing. Build a banner template with live text once and the cost goes away.",
+  "system": "Offer banner, promo and quote components with text slots over an image slot, so nobody needs to flatten text to get the look.",
+  "pitch": "Text in images cannot be zoomed, translated or found by search. Live text works for more people and saves redrawing every time the copy changes."
+}

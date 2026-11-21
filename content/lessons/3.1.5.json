@@ -1,0 +1,50 @@
+{
+  "num": "3.1.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "Dyslexia and reading disabilities",
+    "People reading in a second language",
+    "Anyone stressed or in a hurry"
+  ],
+  "takeaways": [
+    "When text needs reading ability above lower secondary education, roughly nine years of school, there is supplemental content or a simpler version. Proper names and titles are left out when judging the level.",
+    "Supplemental content can be a plain-language summary, diagrams, illustrations, or audio or video that explains the same thing.",
+    "This is Level AAA. It does not ban complex writing; it asks that a simpler way in is available.",
+    "Writers usually own the words. Designers own where the summary or simpler version sits, so people find it before they give up."
+  ],
+  "failures": [
+    "Terms and policies written only in legal language",
+    "A dense medical explanation with no summary",
+    "An “easy read” version hidden at the bottom of a long page"
+  ],
+  "check": [
+    "Run long text through a readability tool to estimate its level, and confirm with real readers where you can.",
+    "For text above the threshold, check a summary or simpler version exists.",
+    "Check it is placed where people meet the complex text, such as at the top or as a clear link."
+  ],
+  "quiz": {
+    "question": "Your privacy policy reads at university level and legal says it must stay as written. How do you meet 3.1.5?",
+    "options": [
+      "Add a plain-language summary at the top, with key points and simple diagrams",
+      "Shorten the policy by removing sections",
+      "Nothing. Legal text is exempt"
+    ],
+    "answer": 0,
+    "why": "The rule allows the original text to stay if supplemental content or a simpler version is available. Cutting sections may break the legal meaning, and there is no exception for legal text."
+  },
+  "spec": [
+    "Mark which pages need a summary or simpler version, and where it sits on the page.",
+    "Design the summary block or the switch between versions.",
+    "Note who writes and updates the simpler version when the original changes."
+  ],
+  "review": [
+    "Who is this text written for, and who will actually read it?",
+    "If someone reads only the first paragraph, do they get the main point?",
+    "Who keeps the simple version in step with the full one?"
+  ],
+  "tradeoff": "Two versions of a text can drift apart. Start with a short summary of key points, which is cheaper to maintain, and save full simpler versions for high-stakes content like health, money and legal terms.",
+  "system": "Offer a summary or key-points component for the top of long pages, and a pattern for linking to a simpler version.",
+  "pitch": "Plain-language summaries help everyone decide faster, and they reduce support requests about what our policies mean."
+}

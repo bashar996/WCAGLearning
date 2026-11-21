@@ -38,7 +38,7 @@ A regular iPhone gets the standard bottom tab bar because that is Apple's guidan
 - **Placement:** scope, then 6 questions, which place you on the knowledge × scope matrix. It sets lesson depth, path and practice task.
 - **Today:** today's lesson poster, review due, the 86-dot WCAG map and your path.
 - **Learn:** six paths, the Atlas (4 principles → 13 guidelines → 86 criteria) with level filters, the three levels and the law map.
-- **Lessons:** all 86 criteria, with full See it / Apply it / Lead it lessons and a quick check being written for each. 4 lessons have interactive demos: contrast slider, colour-blindness simulation, simulated taps on a target, and parallax with a Reduce motion switch.
+- **Lessons:** all 86 WCAG 2.2 criteria, each with a full See it / Apply it / Lead it lesson and a quick check. 4 lessons have interactive demos: contrast slider, colour-blindness simulation, simulated taps on a target, and parallax with a Reduce motion switch.
 - **Practice:** spaced review (1, 3, 7, 21, 60 days), Name it (8 scenarios), and a task for your scope.
 - **You:** local profile, scope, appearance (Auto / Light / Dark), text size (100 / 115 / 130 %, on top of iOS Dynamic Type), Reduce motion, Hide particles, Mirror layout.
 - **Account:** log in / sign up with Google, Apple, Microsoft, GitHub or email, plus a profile. **These are local only for now:** they create a profile stored on the phone and nothing is sent anywhere.
@@ -89,5 +89,4 @@ The check rejects a lesson with missing fields, a quiz without exactly three opt
 
 - Sign-in is local; the platform buttons use letter monograms until the official logos are added.
 - The app icon is a placeholder.
-- Some criteria still have only a summary, guideline, related criteria and W3C links. Run the check above to see which.
 - "WCAG" is a W3C trademark. Check the name before you submit to the App Store.

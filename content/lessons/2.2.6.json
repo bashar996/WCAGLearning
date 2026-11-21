@@ -1,0 +1,50 @@
+{
+  "num": "2.2.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Motor disabilities",
+    "People who need breaks",
+    "People working in a second language"
+  ],
+  "takeaways": [
+    "People are told how long they can be inactive before they lose data, unless the data is kept for more than 20 hours of inactivity.",
+    "It is Level AAA. 2.2.1 is about warning and extending a limit as it runs out. 2.2.6 is about telling people the limit up front, so they can plan breaks.",
+    "People who need to rest, check documents or ask for help can do so safely when they know how long they have.",
+    "Designers decide where and how the limit is stated, such as at the start of a flow. The simplest way to meet it is often to keep data for more than 20 hours."
+  ],
+  "failures": [
+    "A booking form that clears after 15 minutes of inactivity, with no mention of it",
+    "A basket that empties after an hour, and nobody was told",
+    "The limit only mentioned in the terms of service"
+  ],
+  "check": [
+    "Ask developers how long each flow keeps data while people are inactive.",
+    "For every limit under 20 hours, find where people are told about it before they start.",
+    "Read the message as a first-time visitor and check it gives a clear length of time."
+  ],
+  "quiz": {
+    "question": "An insurance quote form loses answers after 30 minutes of inactivity. What is the best way to meet 2.2.6?",
+    "options": [
+      "Save drafts for more than 20 hours, or state at the start: “Your answers are kept for 30 minutes if you are inactive”",
+      "Show “Your session has timed out” after the answers are lost",
+      "Add a Save button at the end of the form"
+    ],
+    "answer": 0,
+    "why": "Telling people after the loss is too late, and a Save button at the end does not protect a half-filled form. Either keep the data for over 20 hours, or tell people the limit before they begin."
+  },
+  "spec": [
+    "List each flow, how long it keeps data while inactive, and whether it is over 20 hours.",
+    "For limits under 20 hours, place and word the notice, such as on the first step and near the start button.",
+    "Say whether autosave or drafts could remove the need for a notice."
+  ],
+  "review": [
+    "If someone stops to find a document, how long until they lose their work?",
+    "Where do we tell them that, and will they see it before starting?",
+    "Could we just keep the data longer instead?"
+  ],
+  "tradeoff": "Keeping data longer raises privacy and storage questions, while a notice adds words to a busy screen. Prefer saving drafts for over 20 hours where it is safe, and where it is not, use one short line at the start of the flow.",
+  "system": "Add an inactivity notice to the flow start template that shows the time limit, and default form components to saving drafts.",
+  "pitch": "Telling people how long they have costs one sentence. Not telling them costs a lost form and a lost customer."
+}

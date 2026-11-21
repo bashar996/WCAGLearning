@@ -1,0 +1,50 @@
+{
+  "num": "2.2.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Motor disabilities",
+    "Screen reader users",
+    "People who get interrupted"
+  ],
+  "takeaways": [
+    "When a signed-in session expires, people can sign back in and continue what they were doing without losing any data.",
+    "It is Level AAA. 2.2.1 asks for a warning and a way to extend before time runs out. 2.2.5 is about what happens after it has run out.",
+    "People who take longer, or step away, are the ones most likely to hit a timeout. Losing a long form can mean giving up.",
+    "Developers keep the data and restore it. Designers decide where people sign in again, where they land after, and what they see restored."
+  ],
+  "failures": [
+    "Signing back in lands on the home page instead of the form",
+    "A half-written message disappears after the session ends",
+    "Signing back in restarts a multi-step application from step one"
+  ],
+  "check": [
+    "Map every flow where a session could expire mid-task: long forms, checkouts, editors, applications.",
+    "For each, design what happens on the next action after expiry: the sign-in screen, then the return to the same place.",
+    "In the build, let a session expire mid-task, sign in again and check every entered value is still there."
+  ],
+  "quiz": {
+    "question": "Someone spends 25 minutes on a grant application, the session expires, and they press Submit. What should happen?",
+    "options": [
+      "Show “Your session has expired” and send them to the home page",
+      "Ask them to sign in, then return them to the application with their answers kept, ready to submit",
+      "Ask them to sign in, then start a fresh application so data is not stale"
+    ],
+    "answer": 1,
+    "why": "The rule is that people can carry on without losing data after signing in again. Sending them home or starting again throws away 25 minutes of work."
+  },
+  "spec": [
+    "Specify where the sign-in appears after expiry, such as a dialog over the page or a full screen, and where people return after.",
+    "List which data must be kept and restored for each flow, such as form fields, uploads and the current step.",
+    "Write the message people see when they come back, for example “Welcome back. Your answers are saved.”"
+  ],
+  "review": [
+    "What does someone lose if they go to make a cup of tea halfway through?",
+    "After signing in again, where exactly do they land?",
+    "Is any data deliberately not kept, and does the person know?"
+  ],
+  "tradeoff": "Security teams may not want to keep data for an expired session. Keep it only for the same account, ask people to sign in again before showing it, and say plainly if anything sensitive, such as card details, has to be re-entered.",
+  "system": "Make a re-authentication dialog the standard expiry pattern, returning people to the same screen and state, instead of a redirect to the home page.",
+  "pitch": "A timeout should cost someone a password, not their work."
+}

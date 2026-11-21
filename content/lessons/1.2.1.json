@@ -1,0 +1,50 @@
+{
+  "num": "1.2.1",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Deaf and hard of hearing people",
+    "Blind and low vision people",
+    "Deafblind people using braille",
+    "People who cannot play sound"
+  ],
+  "takeaways": [
+    "A prerecorded audio-only recording, such as a podcast episode, needs a text alternative that gives the same information: a transcript. A prerecorded video with no sound needs a text alternative or an audio track that tells the same story. Level A.",
+    "The transcript serves Deaf and hard of hearing people, and deafblind people can read it on a braille display. The alternative for silent video serves blind people following a silent demo or animation.",
+    "Exception: the recording is itself an alternative to text already on the page, and is clearly labelled that way, such as “Listen to this article”.",
+    "Writers and producers make the alternative. Designers decide where it lives, how it is labelled, and that it ships at launch. Video with sound is a different rule: captions are 1.2.2 and the visual information is 1.2.3."
+  ],
+  "failures": [
+    "A podcast page with only a play button",
+    "A silent how-to loop with no description of the steps",
+    "A transcript promised “coming soon”"
+  ],
+  "check": [
+    "List every recording in the plan and mark it: audio only, video only, or video with sound.",
+    "In the file, find the transcript or description link next to each audio-only or video-only player.",
+    "In the build, read the alternative without playing the media. Check it names speakers and, for silent video, every step shown."
+  ],
+  "quiz": {
+    "question": "A product page has a 20-second silent video showing how to fold a stroller. What meets 1.2.1?",
+    "options": [
+      "Captions on the video",
+      "A “Watch again” button so people can replay it",
+      "A text description of each folding step next to the video, or a narration track that describes them"
+    ],
+    "answer": 2,
+    "why": "There is no sound, so captions have nothing to carry. A blind person needs the steps in text or in an added audio track, and replaying does not help them."
+  },
+  "spec": [
+    "Place a “Read transcript” link directly beside or under each audio-only player.",
+    "For silent video, attach the text description or name the audio track the player offers.",
+    "Mark any recording that is an alternative to text on the page, and show the label that says so."
+  ],
+  "review": [
+    "Where is the text version of this recording?",
+    "If you could not hear this, or could not see this, what would you miss?",
+    "Is this audio only, video only, or video with sound? That decides which rule applies."
+  ],
+  "tradeoff": "Transcripts take time for every episode, and teams want to publish first and add them later. Put the transcript in the publishing checklist so nothing goes live without it. The same text also makes episodes searchable and quotable.",
+  "system": "Give the audio player component a transcript slot and a visible “Read transcript” link, so every instance asks for one.",
+  "pitch": "A transcript makes every episode readable, searchable and quotable. One piece of work serves Deaf listeners and search engines alike."
+}

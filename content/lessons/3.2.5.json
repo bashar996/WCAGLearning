@@ -1,0 +1,50 @@
+{
+  "num": "3.2.5",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive disabilities",
+    "Screen reader users",
+    "Screen magnifier users",
+    "Keyboard users"
+  ],
+  "takeaways": [
+    "Changes of context happen only when the user asks for them, or there is a way to turn automatic changes off.",
+    "Level AAA. It goes further than 3.2.1 and 3.2.2, which only cover focus and input. This covers any change not requested, such as timed redirects, pop-up windows on load or automatic page refreshes.",
+    "Content that updates in place, like a live score, is not a change of context. Opening a new window or sending people to another page without asking is.",
+    "Sending people somewhere they did not choose can lose their place, their reading and their work."
+  ],
+  "failures": [
+    "A “You will be redirected in 5 seconds” page",
+    "A pop-up window that opens when the page loads",
+    "A page that reloads itself every minute"
+  ],
+  "check": [
+    "List every change of page, window or focus in the flow. Mark which ones the user did not trigger.",
+    "For each one not triggered by the user, find the setting that turns it off, or change it to a button.",
+    "Check links that open a new window say so, so people can choose."
+  ],
+  "quiz": {
+    "question": "After people save their settings, the design shows a success page that sends them to the dashboard after 3 seconds. What meets 3.2.5?",
+    "options": [
+      "Show the success message with a “Go to dashboard” button",
+      "Extend the delay to 10 seconds",
+      "Add a countdown so people know it is coming"
+    ],
+    "answer": 0,
+    "why": "A button lets people move when they choose. A longer delay or a countdown is still an automatic change they did not ask for."
+  },
+  "spec": [
+    "Mark every change of context and what triggers it.",
+    "Replace automatic redirects and refreshes with buttons, or design the setting that turns them off.",
+    "Note which links open a new window, with the visible or spoken label that says so."
+  ],
+  "review": [
+    "Did the user ask for this to happen?",
+    "If it is automatic, where is the switch to turn it off?",
+    "What happens to someone halfway through reading when this fires?"
+  ],
+  "tradeoff": "Automatic redirects and auto-opening chats can lift short-term metrics. Full AAA compliance is worth aiming for in focused tools and forms; at minimum, remove timed redirects and auto-opening windows, which cost little to fix.",
+  "system": "Remove auto-redirect and auto-open options from page templates and chat widgets in the library, or ship them off by default.",
+  "pitch": "When we move people without asking, some of them get lost. Letting them choose when to go keeps them with us."
+}

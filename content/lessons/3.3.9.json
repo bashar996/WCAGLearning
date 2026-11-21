@@ -1,0 +1,50 @@
+{
+  "num": "3.3.9",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "People with dyslexia or dyscalculia",
+    "Password manager users",
+    "People with low vision"
+  ],
+  "takeaways": [
+    "No step of logging in may rely on a cognitive function test, such as remembering, transcribing or solving, unless there is another method or something to help.",
+    "Level AAA. It is 3.3.8 (AA) without its exceptions: recognizing objects, or picking a photo the user provided, is not allowed as the only way in.",
+    "Image CAPTCHAs like “select all the buses” and “pick your own photo” checks fail here unless there is another way.",
+    "Passkeys, email links, password managers with paste, and login through another account all avoid a test."
+  ],
+  "failures": [
+    "An image-grid CAPTCHA with no other option",
+    "A “pick the image you chose at sign-up” step",
+    "Security questions as the only account recovery"
+  ],
+  "check": [
+    "Walk every login, sign-up, recovery and step-up check. Note every point that asks people to recognize, remember or copy something.",
+    "For each one, name the alternative method that needs no test.",
+    "Check that alternatives are offered on the same screen, not hidden in support pages."
+  ],
+  "quiz": {
+    "question": "To stop bots at sign-in, the security team proposes a “pick all the bicycles” image test. You are aiming for AAA. What do you choose?",
+    "options": [
+      "Use the image test; recognizing objects is allowed",
+      "Use invisible bot detection, or offer a passkey or email link as another way in",
+      "Use a distorted-text CAPTCHA instead"
+    ],
+    "answer": 1,
+    "why": "Object recognition is allowed at AA but not under 3.3.9. A distorted-text CAPTCHA is a transcription test. Bot checks that ask nothing of people, or a method with no test, keep the login open to everyone."
+  },
+  "spec": [
+    "List every login method offered and confirm at least one involves no cognitive test.",
+    "State that all credential and code fields allow paste and autofill.",
+    "Document the bot protection used and confirm it asks nothing of the person."
+  ],
+  "review": [
+    "What does this step ask someone to recognize, remember or copy?",
+    "Is there a way in that asks for none of that?",
+    "Are we relying on the object-recognition exception that AAA removes?"
+  ],
+  "tradeoff": "Image and personal-photo checks are cheap and familiar, which is why AA allows them. For AAA, move to passkeys, email links and invisible bot checks. Products for wide public use, like health and government services, gain the most from meeting it.",
+  "system": "Offer passkey and email-link login as standard options in the authentication pattern, and leave image puzzles out of the library.",
+  "pitch": "Every puzzle at the door turns some people away. Passkeys are both easier and more secure."
+}

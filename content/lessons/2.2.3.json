@@ -1,0 +1,50 @@
+{
+  "num": "2.2.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and reading disabilities",
+    "Motor disabilities",
+    "Screen reader users",
+    "People working in a second language"
+  ],
+  "takeaways": [
+    "Timing is not an essential part of any activity, except non-interactive synchronized media, such as a video, and real-time events, such as a live auction.",
+    "It is Level AAA. At Level A, 2.2.1 allows time limits if people can turn them off, adjust or extend them. 2.2.3 asks for no time limits at all.",
+    "Unlike 2.2.1, there is no exception for limits that are essential. A timed quiz would fail.",
+    "It is worth meeting in learning, forms and anything people do at their own pace, where a timer adds pressure but no value."
+  ],
+  "failures": [
+    "A training quiz with a timer on each question",
+    "A game level that must be finished before a countdown ends",
+    "An onboarding carousel that moves on before people have read it"
+  ],
+  "check": [
+    "List every timer in the product, visible or hidden, and what each one protects.",
+    "For each, ask whether it is a real-time event, a non-interactive video, or neither.",
+    "Remove or redesign every timer in the third group, and recheck the flow with no time pressure at all."
+  ],
+  "quiz": {
+    "question": "A compliance training course has a 30 second limit on each quiz question. The team wants to meet 2.2.3. What do you do?",
+    "options": [
+      "Let people extend each question by another 30 seconds",
+      "Keep the limit, but show a visible countdown",
+      "Remove the limit and let people answer at their own pace"
+    ],
+    "answer": 2,
+    "why": "Extending would meet 2.2.1, and a countdown only makes the limit visible. Under 2.2.3 timing must not be part of the activity at all, and a training quiz is not a real-time event."
+  },
+  "spec": [
+    "List each time-based behavior and whether it is removed, user-controlled or an allowed exception.",
+    "For auto-advancing content, specify manual Next and Previous controls with no auto-advance.",
+    "Where a timer stays because the event is real-time, note why and what people see."
+  ],
+  "review": [
+    "What is this timer protecting, and is it a real-time event?",
+    "Would the task lose anything if people had as long as they needed?",
+    "Are we keeping this limit because it is essential, or because it was always there?"
+  ],
+  "tradeoff": "Some products are built around time, such as games, timed tests and flash sales, and AAA cannot be met there without changing the product. Meet it in self-paced flows like learning and forms, and use 2.2.1 controls where time really is the point.",
+  "system": "Make the default carousel, stepper and quiz components untimed, with auto-advance and timers as opt-in settings that need a reason.",
+  "pitch": "A timer measures speed, not understanding. Removing it lets more people finish, and it costs us nothing."
+}

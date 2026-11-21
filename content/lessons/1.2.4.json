@@ -1,0 +1,50 @@
+{
+  "num": "1.2.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Deaf and hard of hearing people",
+    "People in noisy places or on mute",
+    "People working in a second language",
+    "People who need to read along to follow speech"
+  ],
+  "takeaways": [
+    "Live video with sound, such as webinars, livestreams and town halls, has captions in real time. Level AA.",
+    "Live captions are usually typed by a trained human captioner or made by speech recognition. Accuracy matters: a wrong name or number is wrong information.",
+    "It covers video with sound. Live audio with no video, like a live radio show, is 1.2.9. Once the recording is published, it is prerecorded and needs captions under 1.2.2.",
+    "Designers own the event plan and the player: booking captions in time, where they appear, the control to show them, and space so they do not cover slides."
+  ],
+  "failures": [
+    "A livestream with no captions",
+    "Captions that only appear on the replay",
+    "Only the host’s microphone captioned, not guests or audience questions"
+  ],
+  "check": [
+    "In the event plan, confirm who provides captions and that they are booked before the date.",
+    "In the player design, check captions show without covering slides, names or the speaker.",
+    "In a rehearsal, mute the stream and follow the whole session from captions alone, including guests and questions."
+  ],
+  "quiz": {
+    "question": "Your company runs a quarterly all-hands livestream. Budget is tight. What meets 1.2.4?",
+    "options": [
+      "A captioned recording published the next day",
+      "The slide deck shared before the event",
+      "Captions shown in real time during the stream"
+    ],
+    "answer": 2,
+    "why": "Live viewers need the words while it is happening. A captioned recording helps later viewers under 1.2.2, and slides do not carry what people say."
+  },
+  "spec": [
+    "Show where live captions appear in the player and the event page, and the control to turn them on.",
+    "Note the caption provider, how their text reaches the stream, and the names and terms to send them in advance.",
+    "Reserve space in the layout so captions never cover slides, names or the chat."
+  ],
+  "review": [
+    "Who is captioning this, and are they booked?",
+    "Are guest speakers and audience questions captioned too?",
+    "What happens to the recording and its captions afterwards?"
+  ],
+  "tradeoff": "Human captioners cost more than automatic captions but handle names, accents and jargon far better. Book a human for high-stakes events. For routine streams, test automatic captions with your own vocabulary and check people can really follow them.",
+  "system": "Make captions on by default in your livestream template and player, with a caption area reserved in the layout.",
+  "pitch": "If someone cannot hear the town hall, they did not attend it. Live captions put them in the room."
+}

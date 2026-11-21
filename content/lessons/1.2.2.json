@@ -1,0 +1,50 @@
+{
+  "num": "1.2.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Deaf and hard of hearing people",
+    "People watching with the sound off",
+    "People working in a second language",
+    "People with auditory processing difficulties"
+  ],
+  "takeaways": [
+    "Prerecorded video with sound has captions: text of the audio, shown in time with it. Level A.",
+    "Captions carry more than dialogue. They say who is speaking when that is not obvious, and include sounds that matter, such as [door slams] or [phone rings].",
+    "Exception: the video is a media alternative for text already on the page, and clearly labelled as such.",
+    "Producers make the caption files. Designers own the player: the captions button, where captions sit so they do not cover key content, and making captions part of launch. A transcript alone does not meet this rule, and what is only shown, not heard, is 1.2.3 and 1.2.5."
+  ],
+  "failures": [
+    "A promo video with voiceover and no captions",
+    "Automatic captions published with names and terms wrong",
+    "Captions with dialogue only, missing who spoke and key sounds"
+  ],
+  "check": [
+    "List every video with sound in the plan, and who writes and checks its captions.",
+    "In the player design, check where captions sit and that they never cover on-screen text, charts or names.",
+    "In the build, watch with the sound off. Could you follow every word, who said it, and every sound that matters?"
+  ],
+  "quiz": {
+    "question": "A marketing video will launch with a “Read transcript” link below it but no captions. Does it meet 1.2.2?",
+    "options": [
+      "No. It needs captions in time with the audio. The transcript is a good extra",
+      "Yes. The transcript has the same words",
+      "Yes, as long as the transcript lists the sound effects too"
+    ],
+    "answer": 0,
+    "why": "Captions let people follow speech and sound while watching the picture. A transcript separates the words from the images and the timing, so for video with sound it does not replace captions."
+  },
+  "spec": [
+    "Show the captions button in every player state, and its on and off appearance.",
+    "Mark the area where captions appear, and keep on-screen text and graphics out of it.",
+    "Note the caption file and languages each video ships with, and who signs them off."
+  ],
+  "review": [
+    "Watch it muted. What did you miss?",
+    "Do the captions say who is speaking when they are off screen?",
+    "Do captions ever cover the text or chart the video is showing?"
+  ],
+  "tradeoff": "Open captions burned into the video always show and match the brand, but people cannot turn them off, resize them or switch language. Use closed captions in your own player, and keep burned-in versions for social feeds that autoplay muted.",
+  "system": "Make a caption file a required field in the video component and the media library, so a video cannot be published without one.",
+  "pitch": "Many people watch with the sound off. One caption file reaches them and Deaf viewers at the same time."
+}

@@ -1,0 +1,50 @@
+{
+  "num": "2.1.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Switch users",
+    "Voice control users",
+    "People who cannot use a pointer at all"
+  ],
+  "takeaways": [
+    "Everything can be done with a keyboard alone, with no exceptions, and without needing to press keys at a certain speed.",
+    "It is Level AAA. At Level A, 2.1.1 makes an exception for tasks where the result depends on the path of movement, such as freehand drawing. 2.1.3 removes that exception.",
+    "Developers build keyboard support. Designers decide what the keyboard version of a path-based task looks like, such as placing points, typing coordinates or picking from shapes.",
+    "It is worth aiming for in drawing, signing, map and design tools, where whole tasks are otherwise closed to people who cannot use a pointer."
+  ],
+  "failures": [
+    "A signature pad that only accepts a drawn signature",
+    "A drawing tool with no way to place or move points by keyboard",
+    "A map where an area can only be selected by tracing it"
+  ],
+  "check": [
+    "List every task that depends on drawing, tracing or a freehand path.",
+    "For each, design and write down the keyboard way to reach the same result, even if it is slower.",
+    "In the build, complete each task without touching the mouse or trackpad."
+  ],
+  "quiz": {
+    "question": "A contract flow asks people to draw their signature with a mouse or finger. You want to meet 2.1.3. What do you add?",
+    "options": [
+      "An option to type their name and choose a signature style",
+      "A larger drawing area so it is easier to sign",
+      "A note that keyboard users should contact support to sign"
+    ],
+    "answer": 0,
+    "why": "A drawn signature is path-based, so 2.1.1 makes an exception for it, but 2.1.3 does not. Typing the name reaches the same result by keyboard, while a bigger pad or a support route still leaves keyboard users unable to finish on their own."
+  },
+  "spec": [
+    "For each path-based task, specify the keyboard alternative and the keys that drive it.",
+    "Show the alternative in the main flow, not only in settings or help.",
+    "Note any part where the keyboard result differs from the drawn one, and why that is acceptable."
+  ],
+  "review": [
+    "Is there anything here that only a pointer can do?",
+    "If this were AA, would we lean on the freehand exception, and do we need to?",
+    "Can someone finish the whole flow without ever touching the mouse?"
+  ],
+  "tradeoff": "A keyboard version of drawing can take real design and build effort, and few products need AAA across the board. Meet it where drawing is the main way to finish a task, such as signing or marking areas, and accept the 2.1.1 exception for truly artistic tools.",
+  "system": "Pair every canvas, signature and drawing component with a keyboard alternative in the library, such as typed signatures and point-by-point shape tools.",
+  "pitch": "If signing our contract needs a mouse, someone who cannot use one cannot become our customer."
+}

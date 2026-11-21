@@ -1,0 +1,50 @@
+{
+  "num": "1.3.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Color vision deficiency",
+    "Low vision with magnification",
+    "Deaf and hard of hearing"
+  ],
+  "takeaways": [
+    "Instructions must not rely only on shape, color, size, visual location, orientation or sound to tell people what to do.",
+    "“Tap the round button on the right” means nothing to someone who cannot see the screen, or whose screen has reflowed so “right” is now “below”.",
+    "You can still mention how things look. Pair it with something that does not depend on sight or hearing: “Select Continue, the green button”.",
+    "This covers your copy as much as your layout: onboarding tips, empty states, help text and error messages. Color used alone to carry meaning is also covered by 1.4.1."
+  ],
+  "failures": [
+    "“Click the icon in the top right to save”",
+    "“Required fields are in red” with no other marker",
+    "A quiz that says “Start when you hear the beep” with no visual cue"
+  ],
+  "check": [
+    "Search your copy for words like left, right, above, below, round, square, green, red, large and sound.",
+    "For each one, check the instruction also names the thing by its visible label or text.",
+    "Look at the instruction on the mobile layout too, where positions change."
+  ],
+  "quiz": {
+    "question": "An onboarding coach mark says “Tap the star to save a recipe”. The star icon has no visible label. What is the best fix?",
+    "options": [
+      "Add an arrow pointing from the coach mark to the star",
+      "Make the star bigger and yellow so it stands out",
+      "Give the button a visible “Save” label and write “Tap Save (the star) to keep this recipe”"
+    ],
+    "answer": 2,
+    "why": "An arrow, a size or a color are still visual cues only. Naming the control by a text label gives everyone, including screen reader users, something to find."
+  },
+  "spec": [
+    "In every instruction, refer to controls by their visible label, and make sure that label matches the accessible name.",
+    "Where a sound signals something, specify the visual or text cue that goes with it.",
+    "Flag any copy that mentions position, so content designers keep it accurate when layouts change."
+  ],
+  "review": [
+    "If you read this instruction aloud to someone over the phone, could they follow it?",
+    "Does this still make sense when the layout stacks on mobile?",
+    "Which controls here are named only by their shape or color?"
+  ],
+  "tradeoff": "Pointing at things by look is quick and friendly, and label-only copy can feel dry. Keep the visual hint, but always add the name: “Choose Next, at the bottom of the card”.",
+  "system": "In the content guidelines, add a rule that instructions name controls by their label, and give icon-only buttons a visible or tooltip label people can refer to.",
+  "pitch": "“The button on the right” is a bug the moment the layout changes. Naming things by their label works on every screen and for every user."
+}

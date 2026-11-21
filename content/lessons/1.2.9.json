@@ -1,0 +1,50 @@
+{
+  "num": "1.2.9",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Deaf and hard of hearing people",
+    "Deafblind people using braille",
+    "People in noisy places",
+    "People working in a second language"
+  ],
+  "takeaways": [
+    "Live audio-only content, such as a live radio show, an audio-only stream or a live call broadcast to listeners, has a text alternative with the same information, usually live captions shown as text. Level AAA.",
+    "It fills a gap between siblings: 1.2.4 covers live video with sound, and 1.2.1 covers prerecorded audio. Live audio with no picture sits here.",
+    "If the speaker reads a prepared script word for word, such as a press statement, providing that script can serve as the alternative.",
+    "Designers decide where the live text appears beside the player and how people open it. It is worth meeting for public broadcasts, results calls and emergency or civic information."
+  ],
+  "failures": [
+    "A live radio stream with nothing to read",
+    "A results call whose transcript appears days later",
+    "A live text panel hidden in a menu"
+  ],
+  "check": [
+    "List every live audio stream in the plan, and who will produce the live text.",
+    "In the player design, check the live text sits next to the play control and opens in one step.",
+    "In a rehearsal, follow the whole stream from the text alone."
+  ],
+  "quiz": {
+    "question": "An audio-only investor call is streamed live to the public. What does 1.2.9 ask for?",
+    "options": [
+      "A recording posted after the call",
+      "Live text of what is said, shown alongside the stream",
+      "A slide listing the speakers’ names"
+    ],
+    "answer": 1,
+    "why": "Deaf listeners need the information while the call is happening, when it matters. A recording or transcript afterwards serves later listeners, which is 1.2.1."
+  },
+  "spec": [
+    "Place the live text panel next to the player, with a clear “Show live text” control.",
+    "Note the provider, how the text reaches the page, and the names and terms to brief them on.",
+    "Say what happens to the text afterwards, such as becoming the reviewed transcript for the recording."
+  ],
+  "review": [
+    "If I could not hear, could I follow this as it happens?",
+    "Is this stream scripted, and could we publish the script as it is read?",
+    "Who reviews the live text before it becomes the permanent transcript?"
+  ],
+  "tradeoff": "Live text for audio streams costs money for every broadcast, and as AAA it is not expected everywhere. Meet it where timing matters, such as results, public announcements and live Q&A. For casual shows, a prompt transcript of the recording under 1.2.1 may be the realistic bar.",
+  "system": "Give the audio player a live text panel option, so any stream can show captions without a custom build.",
+  "pitch": "If the announcement happens live, Deaf listeners need it live too. A text panel next to the stream is a small cost for public moments."
+}

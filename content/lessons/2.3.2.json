@@ -1,0 +1,50 @@
+{
+  "num": "2.3.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Photosensitive epilepsy",
+    "Migraine",
+    "Vestibular and visual sensitivity",
+    "Attention disabilities"
+  ],
+  "takeaways": [
+    "Nothing on the page flashes more than three times in any one second.",
+    "It is Level AAA. At Level A, 2.3.1 allows faster flashing if it stays below the general flash and red flash thresholds, for example if it is small enough. 2.3.2 has no such exception.",
+    "Measuring thresholds needs tools and expertise. Under 2.3.2 you only count: more than three flashes in a second fails, whatever the size.",
+    "It is easy and cheap to meet in most interfaces, so it is worth adopting as a design rule even if you only aim for AA."
+  ],
+  "failures": [
+    "A small notification dot that blinks five times a second",
+    "A strobing “Live” badge on a stream thumbnail",
+    "A loading icon that flickers rapidly between light and dark"
+  ],
+  "check": [
+    "List every animation that blinks, pulses or flickers, including icons, badges, ads and videos.",
+    "Count the flashes in each second, using slow motion or frame-by-frame playback in the prototype.",
+    "Replace anything above three in a second, however small it is."
+  ],
+  "quiz": {
+    "question": "A tiny red “Recording” dot, well below the size thresholds, blinks four times a second. Which is true?",
+    "options": [
+      "It fails both 2.3.1 and 2.3.2, because it is red",
+      "It passes both, because it is too small to matter",
+      "It may pass 2.3.1, but it fails 2.3.2"
+    ],
+    "answer": 2,
+    "why": "2.3.1 lets small flashes below the thresholds pass. 2.3.2 has no size or threshold exception, so four flashes in a second fails at AAA. A steady dot or a slow pulse fixes both."
+  },
+  "spec": [
+    "For every blinking or pulsing animation, give the rate in flashes per second, at three or fewer.",
+    "Prefer a steady state or a slow fade instead of a blink.",
+    "Flag third-party ads and videos that need checking before they go on the page."
+  ],
+  "review": [
+    "Does anything here blink faster than three times a second?",
+    "Why does this need to flash, rather than change color or size once?",
+    "Who checks the ads and videos we do not make ourselves?"
+  ],
+  "tradeoff": "Flashing gets attention quickly. A single pulse, a color change or a steady badge gets attention too, so the cost of meeting AAA here is close to zero.",
+  "system": "Set motion tokens so no blink or pulse animation in the library runs faster than three times a second.",
+  "pitch": "We do not need flashing to get attention, and removing it means we never have to argue about thresholds."
+}

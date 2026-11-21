@@ -1,0 +1,50 @@
+{
+  "num": "1.2.7",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Blind people",
+    "Low vision people",
+    "People watching dense training videos",
+    "People who listen without watching"
+  ],
+  "takeaways": [
+    "Where pauses in the soundtrack are too short to describe what is shown, the video pauses so the description can play, then carries on. This is extended audio description. Level AAA.",
+    "It builds on 1.2.5 (AA). Standard audio description has to fit into natural gaps. Extended description makes the gap by freezing the picture.",
+    "It matters most in dense content: training, demos and lectures where someone talks constantly while important things happen on screen.",
+    "The designer’s part is planning videos with room to describe, and a player that makes the extended version easy to choose. It is worth meeting for learning content where a missed step means a failed task."
+  ],
+  "failures": [
+    "Descriptions rushed so fast they talk over the presenter",
+    "Key steps left undescribed because there was no gap",
+    "An extended version that exists but cannot be found"
+  ],
+  "check": [
+    "Go through the description script and mark any visual with no gap long enough to describe it.",
+    "For each, decide: rewrite the main narration, or pause the video for extended description.",
+    "In the build, check the player offers the extended version and that it resumes smoothly after each pause."
+  ],
+  "quiz": {
+    "question": "A software training video is narrated nonstop while the presenter clicks through settings. The description writer cannot fit the steps into the gaps. What does 1.2.7 call for?",
+    "options": [
+      "Speed up the descriptions so they fit",
+      "Leave out the steps that do not fit",
+      "Pause the video at those points to play the description, then resume"
+    ],
+    "answer": 2,
+    "why": "Rushed descriptions talk over the presenter and lose meaning, and dropped steps lose the lesson. Extended description makes time by pausing the picture, so nothing is lost."
+  },
+  "spec": [
+    "Mark each point where the video must pause for description, and roughly for how long.",
+    "Specify how people choose the extended version and how the player shows it is paused for description.",
+    "Note whether the extended version is a separate edit or a player feature."
+  ],
+  "review": [
+    "Is any visual left undescribed because the gaps are too short?",
+    "Would slowing or rewriting the narration solve it without pausing?",
+    "Is this content important enough to aim for AAA?"
+  ],
+  "tradeoff": "Extended description makes videos longer and needs a separate edit or a player that can pause. Often the cheaper fix is a slower script that says what is happening. Save extended description for dense training where every step matters.",
+  "system": "Make sure the video player can pause for description and resume, or switch to an extended edit, so it is ready when a video needs it.",
+  "pitch": "In a training video, a missed step is a failed task. Pausing to describe it costs seconds and saves a support call."
+}

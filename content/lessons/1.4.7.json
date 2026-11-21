@@ -1,0 +1,50 @@
+{
+  "num": "1.4.7",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Hard of hearing people",
+    "People with auditory processing difficulties",
+    "Hearing aid users",
+    "People listening in a second language"
+  ],
+  "takeaways": [
+    "In prerecorded audio-only content that is mainly speech, background sound is absent, can be turned off, or is at least 20 dB quieter than the speech. Level AAA.",
+    "20 dB lower is about four times quieter. Occasional sounds lasting only a second or two, like a short sting between segments, are fine.",
+    "It does not apply to audio CAPTCHAs, audio logos, or vocals meant mainly as music, such as singing or rap. It covers audio-only recordings, not video soundtracks.",
+    "Producers do the mixing. Designers and content leads set the standard in the audio brief, and can design a background on or off control in the player. Set before recording, it is a cheap AAA win."
+  ],
+  "failures": [
+    "A music bed under the whole podcast at nearly speech volume",
+    "Interviews recorded in a noisy café and left unedited",
+    "Ambient sound under narration with no way to turn it off"
+  ],
+  "check": [
+    "Listen to each audio-only recording on cheap earbuds. Is the speech always clearly on top?",
+    "Ask the producer for the mix levels, and check background stays at least 20 dB below speech.",
+    "If you offer a background control, check it is visible in the player and works."
+  ],
+  "quiz": {
+    "question": "Your podcast has a music bed under every episode. The producer says it is about 10 dB below the voices. What meets 1.4.7?",
+    "options": [
+      "Lower the music to at least 20 dB below the speech, remove it, or let people turn it off",
+      "Keep it. 10 dB is already clearly quieter",
+      "Add a transcript to each episode"
+    ],
+    "answer": 0,
+    "why": "The rule sets 20 dB as the minimum gap, because people with hearing loss struggle to pick speech out of steady background sound. A transcript is 1.2.1 and does not help people who are listening."
+  },
+  "spec": [
+    "Write the mix rule into the audio brief: background at least 20 dB below speech, or none.",
+    "If background can be turned off, design the control in the player and its label.",
+    "Note any parts outside the rule, such as a sung intro or an audio logo."
+  ],
+  "review": [
+    "Can you hear every word over the music on a phone speaker?",
+    "Is that music bed doing anything listeners need?",
+    "Is this audio only? Video soundtracks are outside this rule."
+  ],
+  "tradeoff": "Music beds make podcasts feel polished, and producers like them. Keep music for intros, outros and transitions, and keep it low or out under speech. Because it is set at the mixing desk, not in code, this is one of the easier AAA criteria to meet.",
+  "system": "Put the 20 dB rule in your audio production guidelines, and give the audio player an optional background sound control.",
+  "pitch": "Clear speech is what people came for. A quieter music bed helps listeners with hearing loss and everyone on a noisy train."
+}

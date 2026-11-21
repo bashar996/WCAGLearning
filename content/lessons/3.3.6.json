@@ -1,0 +1,50 @@
+{
+  "num": "3.3.6",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "Motor disabilities and tremors",
+    "Screen reader users",
+    "Anyone who misclicks"
+  ],
+  "takeaways": [
+    "Every submission of information can be reversed, checked for errors with a chance to correct, or confirmed before it is final.",
+    "Level AAA. It extends 3.3.4 (AA), which only covers legal, financial, data-changing and test submissions, to every form.",
+    "One of the three is enough: undo, input checking with a chance to fix, or a review step.",
+    "For simple forms, checking input and letting people correct it is often all it takes."
+  ],
+  "failures": [
+    "A feedback form that sends on Enter with no checks",
+    "Settings that save instantly with no undo",
+    "A comment that posts with no edit or delete"
+  ],
+  "check": [
+    "List every form and every action that submits information.",
+    "For each one, name the safeguard: undo, check and correct, or confirm.",
+    "Try submitting each with mistakes. Do you get a chance to fix them before they count?"
+  ],
+  "quiz": {
+    "question": "A support form sends a message as soon as people press Submit. The team wants to meet 3.3.6 with the least friction. What do you add?",
+    "options": [
+      "Check required fields and formats, and let people fix errors before sending",
+      "A confirmation email after sending",
+      "A “Thanks for your message” page"
+    ],
+    "answer": 0,
+    "why": "Checking input with a chance to correct is one of the three options and adds no steps when there are no mistakes. An email or thank-you page comes after the fact and fixes nothing."
+  },
+  "spec": [
+    "Mark the safeguard for every submission in the flow.",
+    "Design the edit, undo or delete states for things people post or save.",
+    "Write the validation rules and messages for every field."
+  ],
+  "review": [
+    "If I sent this by mistake, what would I do?",
+    "Does this need a review step, or is checking enough?",
+    "Can people edit or delete what they posted?"
+  ],
+  "tradeoff": "A review step on every form would slow everyone. For most forms, checking input or offering edit and undo meets this AAA rule with no extra screens, so it is often worth meeting.",
+  "system": "Give the form patterns built-in validation and give posted content edit and delete actions by default.",
+  "pitch": "Every mistake people cannot fix becomes a support ticket. Building undo in from the start is cheaper than handling them."
+}

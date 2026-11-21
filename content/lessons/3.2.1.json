@@ -1,0 +1,50 @@
+{
+  "num": "3.2.1",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Screen reader users",
+    "Cognitive disabilities",
+    "Screen magnifier users"
+  ],
+  "takeaways": [
+    "When an element receives focus, it does not start a change of context, such as opening a new page or window, submitting a form, or moving focus somewhere else.",
+    "Keyboard users move focus just to look around. If focusing something acts on it, they lose their place or land somewhere they did not choose.",
+    "Showing more content on focus is fine when it does not change context: a tooltip, a dropdown menu opening, or a focus ring.",
+    "Changing a setting is a different rule, 3.2.2. Context changes on request at AAA are 3.2.5."
+  ],
+  "failures": [
+    "A field that opens a date picker in a new window on focus",
+    "A link that navigates as soon as it is tabbed to",
+    "A menu that opens a page as soon as an item is arrowed to"
+  ],
+  "check": [
+    "Tab through every screen in the prototype. Does anything happen without pressing Enter or Space?",
+    "List every interaction triggered on focus, and check each is only a reveal, not a page change or focus move.",
+    "Check that auto-advancing fields, such as code inputs, only move after typing, not on focus."
+  ],
+  "quiz": {
+    "question": "In a long form, the design opens a help panel and moves focus into it when people tab into the tax ID field. What do you change?",
+    "options": [
+      "Keep it, but add a close button to the panel",
+      "Show the help next to the field and leave focus on the field",
+      "Open the panel only on the first visit"
+    ],
+    "answer": 1,
+    "why": "Moving focus away on focus is a change of context. Showing help nearby while focus stays in the field gives the same information without the surprise."
+  },
+  "spec": [
+    "Note for each component what happens on focus, and confirm it is only a visual change.",
+    "Specify that navigation, submission and new windows only happen on activation, with Enter, Space or a click.",
+    "Where content appears on focus, say that focus stays where it is."
+  ],
+  "review": [
+    "What happens if I just tab past this?",
+    "Does anything here act before I press a key or click?",
+    "Is this a reveal or a change of context?"
+  ],
+  "tradeoff": "Acting on focus can feel efficient, like a menu that navigates as you arrow through it. It is only efficient for people who meant it. Let focus show and preview, and save the action for a deliberate press.",
+  "system": "Document focus and activation as separate states in every interactive component, with “no context change on focus” as a rule in the library.",
+  "pitch": "Keyboard users explore by moving focus. If looking at a thing triggers it, our product punishes them for looking."
+}

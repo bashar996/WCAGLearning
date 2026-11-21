@@ -1,0 +1,50 @@
+{
+  "num": "2.2.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Attention and memory disabilities",
+    "Screen reader users",
+    "Low vision with magnification",
+    "Anyone doing focused work"
+  ],
+  "takeaways": [
+    "People can postpone or turn off interruptions, such as pop-ups, alerts and automatic updates, except interruptions about an emergency.",
+    "It is Level AAA. 2.2.2 covers moving and auto-updating content, and 4.1.3 covers whether status messages are announced. 2.2.4 is about letting people choose when interruptions reach them.",
+    "Interruptions break concentration and can move a screen reader or magnifier away from where someone is working. Getting back costs real time.",
+    "Designers own most of this: which messages interrupt at all, how they can be snoozed or muted, and where they wait until people are ready."
+  ],
+  "failures": [
+    "A newsletter pop-up that appears mid-article with no way to stop it",
+    "A news feed that refreshes and jumps while people read",
+    "Chat messages that pop over the form people are filling in, with no mute"
+  ],
+  "check": [
+    "List everything that can appear without the person asking: pop-ups, chat, notifications, alerts, refreshes.",
+    "For each, find the control to postpone or turn it off, such as snooze, Do not disturb or a notification setting.",
+    "Mark which items are true emergencies, such as safety alerts, and keep that list short."
+  ],
+  "quiz": {
+    "question": "A dashboard shows a pop-up every time a new comment arrives. Which design meets 2.2.4?",
+    "options": [
+      "Add a Do not disturb setting, and collect comments in an inbox people can open when ready",
+      "Make the pop-up smaller and move it to the corner",
+      "Close the pop-up automatically after 5 seconds"
+    ],
+    "answer": 0,
+    "why": "A smaller or self-closing pop-up still interrupts, and a timed close can take away the message before people read it. Letting people mute or delay comments, and find them later, puts them in control."
+  },
+  "spec": [
+    "List each interruption, what triggers it, and whether it can be postponed or turned off.",
+    "Design the controls: snooze, Do not disturb, notification settings, and where held messages wait.",
+    "Name any emergency messages that cannot be suppressed, and why."
+  ],
+  "review": [
+    "Who asked for this to interrupt, and could it wait?",
+    "Where can people turn this off, and will they find it?",
+    "Is this really an emergency, or just important to us?"
+  ],
+  "tradeoff": "Growth and support teams want messages to be seen right away. Hold non-urgent messages in a place people will check, and keep the right to interrupt for real emergencies only.",
+  "system": "Give the notification component a priority level and a user setting, so only emergency alerts bypass Do not disturb.",
+  "pitch": "Every pop-up costs someone their place. Letting people choose when to see updates keeps them working, and keeps them coming back."
+}

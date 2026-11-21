@@ -1,0 +1,50 @@
+{
+  "num": "1.4.9",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Low vision with magnification",
+    "Dyslexia and reading disabilities",
+    "People who change fonts or colors",
+    "Translation tool users"
+  ],
+  "takeaways": [
+    "Images of text are used only for pure decoration, or where that exact presentation is essential to the information.",
+    "This is Level AAA, the strict version of 1.4.5. At AA an image of text can pass if people can customize it; at AAA that exception is gone.",
+    "Logos and brand names still count as essential. So do things like a font specimen or a photo of a historic document, where the look itself is the point.",
+    "In practice, if text carries meaning and the look is not the point, set it as live text."
+  ],
+  "failures": [
+    "A quote card exported as an image for the web page",
+    "A chart image with its labels and values baked in",
+    "An image of text with a font and color picker, which passes 1.4.5 but not this"
+  ],
+  "check": [
+    "List every image in the file that contains words.",
+    "Sort each into logo, decoration, essential presentation, or none of these.",
+    "Rebuild anything in the last group as live text."
+  ],
+  "quiz": {
+    "question": "A museum site shows a photo of a handwritten letter from 1890. Does the image of text fail 1.4.9?",
+    "options": [
+      "Yes. All text must be live text at AAA",
+      "No. The handwriting itself is the point, so the presentation is essential. Provide a transcript as well",
+      "No, as long as the photo has short alt text"
+    ],
+    "answer": 1,
+    "why": "The look of the original letter is the information being shown, so it is essential. A transcript gives people the words in a form they can read their own way."
+  },
+  "spec": [
+    "Mark each image that contains text with its reason: logo, decoration or essential.",
+    "For essential images, plan where the text version or transcript sits.",
+    "For charts, specify labels and values as live text, not part of the image."
+  ],
+  "review": [
+    "Why is this text in an image?",
+    "Would anyone lose information if we set this as real text?",
+    "Is this image decoration, or does it say something?"
+  ],
+  "tradeoff": "Some styled text is genuinely hard to rebuild live, like complex lettering in campaign art. At AAA you rebuild it or treat it as decoration with the message in live text nearby. For most products, meeting 1.4.5 well is enough, and 1.4.9 suits text-heavy services.",
+  "system": "Document in the library that images never hold meaningful text, and give chart and banner components live text layers.",
+  "pitch": "If the words matter, they should be text. Then everyone can zoom, recolor, translate and search them."
+}

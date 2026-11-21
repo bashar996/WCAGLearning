@@ -1,0 +1,50 @@
+{
+  "num": "1.2.3",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Blind people",
+    "Low vision people",
+    "Deafblind people using braille",
+    "People who listen without watching"
+  ],
+  "takeaways": [
+    "Prerecorded video with sound gives people the visual information in one of two ways: audio description, or a full text alternative (called a media alternative). Level A.",
+    "Audio description is narration added in natural pauses: “She signs the form and leaves.” A media alternative is a written version of the whole video, with dialogue and what happens on screen, like a screenplay.",
+    "If the soundtrack already says everything that matters visually, nothing extra is needed. Scripts where presenters say what they show are the cheapest fix.",
+    "This is the Level A version. At AA, 1.2.5 requires audio description, so the text route alone is no longer enough. Captions for the sound are 1.2.2."
+  ],
+  "failures": [
+    "A demo where the presenter says “click here” and never names it",
+    "Prices, steps or on-screen text that are never spoken",
+    "A transcript of the dialogue only, with nothing about the visuals"
+  ],
+  "check": [
+    "Watch the video with your eyes closed. Note every moment you lose the thread.",
+    "Check that the audio description or text alternative covers each of those moments.",
+    "In the file, check the described version or text alternative link sits with the player and is clearly labelled."
+  ],
+  "quiz": {
+    "question": "A recipe video shows ingredient amounts only as on-screen text while the cook chats. You cannot re-edit it this sprint. What meets 1.2.3?",
+    "options": [
+      "Captions of the cook’s chat",
+      "A full text alternative linked by the video, covering the chat, the amounts and each step shown",
+      "Alt text on the video’s poster image"
+    ],
+    "answer": 1,
+    "why": "At Level A, a media alternative that includes the visual information is enough. Captions only cover what is said, and poster alt text says nothing about what plays. If you aim for AA, 1.2.5 still asks for audio description."
+  },
+  "spec": [
+    "Mark each piece of visual information the soundtrack leaves out: on-screen text, actions, scene changes.",
+    "Say which route each video uses, audio description or text alternative, and where its control or link sits.",
+    "For new videos, annotate the script so presenters describe what they show as they go."
+  ],
+  "review": [
+    "With your eyes closed, what do you miss?",
+    "Does the text alternative describe what happens, not just what is said?",
+    "Are we aiming for AA? Then where is the audio description?"
+  ],
+  "tradeoff": "A text alternative is cheaper than recording description, but it only meets Level A and asks blind viewers to read instead of watch along. The best value is a script that already describes the visuals, which can make extra description unnecessary at both levels.",
+  "system": "Give the video player a slot for a described version and a link for the full text alternative, so every video has a place for both.",
+  "pitch": "If a video only makes sense when you watch it, blind customers get nothing from it. A presenter who says what they are doing fixes most of that for free."
+}

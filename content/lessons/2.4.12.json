@@ -1,0 +1,50 @@
+{
+  "num": "2.4.12",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Low vision with magnification",
+    "Switch and voice control users",
+    "Anyone on a small screen"
+  ],
+  "takeaways": [
+    "When an element has keyboard focus, no part of it is hidden by content you designed, such as sticky bars, banners or floating buttons.",
+    "It is Level AAA. At AA, 2.4.11 only fails when the focused element is completely hidden. 2.4.12 fails if any part is covered.",
+    "A partly covered field or button can hide its label, its value or its focus ring, so people cannot be sure what they are on.",
+    "It is often worth meeting, because the fix is the same as for 2.4.11, just done fully: leave room for every sticky and floating element."
+  ],
+  "failures": [
+    "A floating feedback tab covering the right edge of focused fields",
+    "A sticky header cutting off the top of a focused card",
+    "A chat button covering the corner of the last focused link"
+  ],
+  "check": [
+    "Tab through each page with every sticky, fixed and floating element visible.",
+    "Look at the whole focused element each time, including its focus ring, not just whether it is visible.",
+    "Repeat at 200% zoom and on small screens, where fixed elements take up more room."
+  ],
+  "quiz": {
+    "question": "A floating “Feedback” tab is fixed to the right edge. When people tab through a form, it covers the right quarter of each focused field. Which is true?",
+    "options": [
+      "It fails 2.4.11 and 2.4.12",
+      "It passes 2.4.11, but fails 2.4.12",
+      "It passes both, because most of the field is visible"
+    ],
+    "answer": 1,
+    "why": "2.4.11 fails only when the focused element is entirely hidden, so it passes at AA. 2.4.12 does not allow any part to be hidden, so it fails at AAA. Moving the tab or adding space fixes both."
+  },
+  "spec": [
+    "Give the size and position of every sticky and floating element, and the space content needs around them.",
+    "Ask for scroll padding on all sides, so focused items, including their focus ring, stop fully clear.",
+    "Say whether floating elements can be moved, collapsed or dismissed."
+  ],
+  "review": [
+    "When this is focused, can you see all of it, including the focus ring?",
+    "Do we need this element to float over content, or could it sit in the layout?",
+    "What does it cover at 400% zoom?"
+  ],
+  "tradeoff": "Floating buttons and sticky bars are convenient but always cover something. Keep fewer of them, let them collapse, and use layout space instead of overlays, then AAA comes with little extra cost.",
+  "system": "Set the size of every sticky and floating component as tokens that feed the page’s scroll padding, focus ring included.",
+  "pitch": "Half a button is not good enough. If people can see all of what they are on, they make fewer mistakes."
+}

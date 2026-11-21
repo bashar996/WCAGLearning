@@ -131,6 +131,123 @@ enum Library {
             system: "Make the accessible name a required property on icon button and image components.",
             pitch: "Alt text is content. If nobody owns it, it ships empty."
         ),
+        "1.2.1": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Deaf and hard of hearing people", "Blind and low vision people", "Deafblind people using braille", "People who cannot play sound"],
+            takeaways: ["A prerecorded audio-only recording, such as a podcast episode, needs a text alternative that gives the same information: a transcript. A prerecorded video with no sound needs a text alternative or an audio track that tells the same story. Level A.", "The transcript serves Deaf and hard of hearing people, and deafblind people can read it on a braille display. The alternative for silent video serves blind people following a silent demo or animation.", "Exception: the recording is itself an alternative to text already on the page, and is clearly labelled that way, such as “Listen to this article”.", "Writers and producers make the alternative. Designers decide where it lives, how it is labelled, and that it ships at launch. Video with sound is a different rule: captions are 1.2.2 and the visual information is 1.2.3."],
+            failures: ["A podcast page with only a play button", "A silent how-to loop with no description of the steps", "A transcript promised “coming soon”"],
+            check: ["List every recording in the plan and mark it: audio only, video only, or video with sound.", "In the file, find the transcript or description link next to each audio-only or video-only player.", "In the build, read the alternative without playing the media. Check it names speakers and, for silent video, every step shown."],
+            quiz: Quiz(question: "A product page has a 20-second silent video showing how to fold a stroller. What meets 1.2.1?", options: ["Captions on the video", "A “Watch again” button so people can replay it", "A text description of each folding step next to the video, or a narration track that describes them"], answer: 2, why: "There is no sound, so captions have nothing to carry. A blind person needs the steps in text or in an added audio track, and replaying does not help them."),
+            spec: ["Place a “Read transcript” link directly beside or under each audio-only player.", "For silent video, attach the text description or name the audio track the player offers.", "Mark any recording that is an alternative to text on the page, and show the label that says so."],
+            review: ["Where is the text version of this recording?", "If you could not hear this, or could not see this, what would you miss?", "Is this audio only, video only, or video with sound? That decides which rule applies."],
+            tradeoff: "Transcripts take time for every episode, and teams want to publish first and add them later. Put the transcript in the publishing checklist so nothing goes live without it. The same text also makes episodes searchable and quotable.",
+            system: "Give the audio player component a transcript slot and a visible “Read transcript” link, so every instance asks for one.",
+            pitch: "A transcript makes every episode readable, searchable and quotable. One piece of work serves Deaf listeners and search engines alike."
+        ),
+        "1.2.2": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Deaf and hard of hearing people", "People watching with the sound off", "People working in a second language", "People with auditory processing difficulties"],
+            takeaways: ["Prerecorded video with sound has captions: text of the audio, shown in time with it. Level A.", "Captions carry more than dialogue. They say who is speaking when that is not obvious, and include sounds that matter, such as [door slams] or [phone rings].", "Exception: the video is a media alternative for text already on the page, and clearly labelled as such.", "Producers make the caption files. Designers own the player: the captions button, where captions sit so they do not cover key content, and making captions part of launch. A transcript alone does not meet this rule, and what is only shown, not heard, is 1.2.3 and 1.2.5."],
+            failures: ["A promo video with voiceover and no captions", "Automatic captions published with names and terms wrong", "Captions with dialogue only, missing who spoke and key sounds"],
+            check: ["List every video with sound in the plan, and who writes and checks its captions.", "In the player design, check where captions sit and that they never cover on-screen text, charts or names.", "In the build, watch with the sound off. Could you follow every word, who said it, and every sound that matters?"],
+            quiz: Quiz(question: "A marketing video will launch with a “Read transcript” link below it but no captions. Does it meet 1.2.2?", options: ["No. It needs captions in time with the audio. The transcript is a good extra", "Yes. The transcript has the same words", "Yes, as long as the transcript lists the sound effects too"], answer: 0, why: "Captions let people follow speech and sound while watching the picture. A transcript separates the words from the images and the timing, so for video with sound it does not replace captions."),
+            spec: ["Show the captions button in every player state, and its on and off appearance.", "Mark the area where captions appear, and keep on-screen text and graphics out of it.", "Note the caption file and languages each video ships with, and who signs them off."],
+            review: ["Watch it muted. What did you miss?", "Do the captions say who is speaking when they are off screen?", "Do captions ever cover the text or chart the video is showing?"],
+            tradeoff: "Open captions burned into the video always show and match the brand, but people cannot turn them off, resize them or switch language. Use closed captions in your own player, and keep burned-in versions for social feeds that autoplay muted.",
+            system: "Make a caption file a required field in the video component and the media library, so a video cannot be published without one.",
+            pitch: "Many people watch with the sound off. One caption file reaches them and Deaf viewers at the same time."
+        ),
+        "1.2.3": DeepLesson(
+            meta: "5 min read", demo: nil,
+            who: ["Blind people", "Low vision people", "Deafblind people using braille", "People who listen without watching"],
+            takeaways: ["Prerecorded video with sound gives people the visual information in one of two ways: audio description, or a full text alternative (called a media alternative). Level A.", "Audio description is narration added in natural pauses: “She signs the form and leaves.” A media alternative is a written version of the whole video, with dialogue and what happens on screen, like a screenplay.", "If the soundtrack already says everything that matters visually, nothing extra is needed. Scripts where presenters say what they show are the cheapest fix.", "This is the Level A version. At AA, 1.2.5 requires audio description, so the text route alone is no longer enough. Captions for the sound are 1.2.2."],
+            failures: ["A demo where the presenter says “click here” and never names it", "Prices, steps or on-screen text that are never spoken", "A transcript of the dialogue only, with nothing about the visuals"],
+            check: ["Watch the video with your eyes closed. Note every moment you lose the thread.", "Check that the audio description or text alternative covers each of those moments.", "In the file, check the described version or text alternative link sits with the player and is clearly labelled."],
+            quiz: Quiz(question: "A recipe video shows ingredient amounts only as on-screen text while the cook chats. You cannot re-edit it this sprint. What meets 1.2.3?", options: ["Captions of the cook’s chat", "A full text alternative linked by the video, covering the chat, the amounts and each step shown", "Alt text on the video’s poster image"], answer: 1, why: "At Level A, a media alternative that includes the visual information is enough. Captions only cover what is said, and poster alt text says nothing about what plays. If you aim for AA, 1.2.5 still asks for audio description."),
+            spec: ["Mark each piece of visual information the soundtrack leaves out: on-screen text, actions, scene changes.", "Say which route each video uses, audio description or text alternative, and where its control or link sits.", "For new videos, annotate the script so presenters describe what they show as they go."],
+            review: ["With your eyes closed, what do you miss?", "Does the text alternative describe what happens, not just what is said?", "Are we aiming for AA? Then where is the audio description?"],
+            tradeoff: "A text alternative is cheaper than recording description, but it only meets Level A and asks blind viewers to read instead of watch along. The best value is a script that already describes the visuals, which can make extra description unnecessary at both levels.",
+            system: "Give the video player a slot for a described version and a link for the full text alternative, so every video has a place for both.",
+            pitch: "If a video only makes sense when you watch it, blind customers get nothing from it. A presenter who says what they are doing fixes most of that for free."
+        ),
+        "1.2.4": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Deaf and hard of hearing people", "People in noisy places or on mute", "People working in a second language", "People who need to read along to follow speech"],
+            takeaways: ["Live video with sound, such as webinars, livestreams and town halls, has captions in real time. Level AA.", "Live captions are usually typed by a trained human captioner or made by speech recognition. Accuracy matters: a wrong name or number is wrong information.", "It covers video with sound. Live audio with no video, like a live radio show, is 1.2.9. Once the recording is published, it is prerecorded and needs captions under 1.2.2.", "Designers own the event plan and the player: booking captions in time, where they appear, the control to show them, and space so they do not cover slides."],
+            failures: ["A livestream with no captions", "Captions that only appear on the replay", "Only the host’s microphone captioned, not guests or audience questions"],
+            check: ["In the event plan, confirm who provides captions and that they are booked before the date.", "In the player design, check captions show without covering slides, names or the speaker.", "In a rehearsal, mute the stream and follow the whole session from captions alone, including guests and questions."],
+            quiz: Quiz(question: "Your company runs a quarterly all-hands livestream. Budget is tight. What meets 1.2.4?", options: ["A captioned recording published the next day", "The slide deck shared before the event", "Captions shown in real time during the stream"], answer: 2, why: "Live viewers need the words while it is happening. A captioned recording helps later viewers under 1.2.2, and slides do not carry what people say."),
+            spec: ["Show where live captions appear in the player and the event page, and the control to turn them on.", "Note the caption provider, how their text reaches the stream, and the names and terms to send them in advance.", "Reserve space in the layout so captions never cover slides, names or the chat."],
+            review: ["Who is captioning this, and are they booked?", "Are guest speakers and audience questions captioned too?", "What happens to the recording and its captions afterwards?"],
+            tradeoff: "Human captioners cost more than automatic captions but handle names, accents and jargon far better. Book a human for high-stakes events. For routine streams, test automatic captions with your own vocabulary and check people can really follow them.",
+            system: "Make captions on by default in your livestream template and player, with a caption area reserved in the layout.",
+            pitch: "If someone cannot hear the town hall, they did not attend it. Live captions put them in the room."
+        ),
+        "1.2.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Blind people", "Low vision people", "People who cannot read small on-screen text", "People listening on the go"],
+            takeaways: ["Prerecorded video with sound has audio description: narration of the important visual information, fitted into natural pauses. Level AA.", "This is stricter than 1.2.3. At Level A a full text alternative can stand in. At AA you need audio description, though a text alternative is still a welcome extra.", "If the main soundtrack already describes everything that matters, no separate description track is needed. Plan this at script and storyboard stage, where it costs least.", "If the pauses are too short to fit the description, pausing the video for longer description is extended audio description, 1.2.7 (AAA)."],
+            failures: ["A product tour where key screens appear under music only", "Prices, names or step titles shown on screen and never spoken", "A described version that exists but has no control to find it"],
+            check: ["In the storyboard, mark every shot where the meaning is only in the picture.", "For each, decide whether the main script will say it or a description track will.", "In the build, listen with the screen off, and check the described version or description control is easy to find."],
+            quiz: Quiz(question: "You are planning a new two-minute explainer video. What is the most efficient way to meet 1.2.5?", options: ["Write the voiceover so it says what is on screen as it happens", "Publish a transcript next to the video", "Add alt text to the video’s poster image"], answer: 0, why: "When the main narration already carries the visual information, no extra description track is needed. A transcript is not enough at AA, and poster alt text says nothing about what plays."),
+            spec: ["Annotate the storyboard, shot by shot, with the visual information that must be spoken.", "Specify the player control for the described version or description track, and its label.", "Flag any shot where the pauses are too short, so the team can decide how to handle it."],
+            review: ["Close your eyes. Can you still follow it?", "Is that on-screen text read out anywhere?", "Where does a blind viewer turn on the described version?"],
+            tradeoff: "Adding description after the edit is costly, and sometimes impossible when there are no gaps. Writing it into the script from the start costs almost nothing and usually makes the video clearer for everyone.",
+            system: "Add “Is the visual information spoken?” to the video brief template, and give the player a standard audio description control.",
+            pitch: "A video that only works with your eyes open leaves blind customers out. Planning description into the script is cheaper than adding it later."
+        ),
+        "1.2.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Deaf people whose first language is a sign language", "Deaf children still learning to read", "People who find captions too fast", "Deaf people who read written language as a second language"],
+            takeaways: ["Prerecorded video with sound includes sign language interpretation of the audio. Level AAA.", "For many Deaf people, a sign language is their first language and written language is a second one. Captions (1.2.2) help, but sign carries tone and meaning more naturally for them.", "Use the sign language your audience uses, such as BSL or ASL. They are full languages in their own right, not signed versions of English.", "Designers decide the layout: an interpreter window large enough to read hands and face, placed so it does not cover content, or a separate signed version. Captions are the realistic bar for most product video; sign is worth it for public services, key announcements and content for Deaf audiences."],
+            failures: ["An interpreter window so small the hands blur", "The interpreter cropped out on mobile", "A signed version that is hard to find from the main player"],
+            check: ["Decide in the content plan which videos are for audiences who use sign language.", "In the layout, check the interpreter is large enough to read facial expressions and handshapes at phone size.", "In the build, check the signed version or interpreter view is reachable from the main player."],
+            quiz: Quiz(question: "A city council records a video about changes to bin collection and wants to reach Deaf residents. Captions are done. What does 1.2.6 add?", options: ["A downloadable transcript", "An interpreter using the local sign language, in a clear window or a separate signed version", "Larger caption text"], answer: 1, why: "Captions meet 1.2.2, but many Deaf residents read written language as a second language. Sign interpretation gives them the message in their first language."),
+            spec: ["Specify the interpreter window: size, position and background, for each breakpoint.", "Mark safe areas so the interpreter never covers captions, on-screen text or faces.", "Note which sign language is used and how people switch to the signed version."],
+            review: ["Can you read the interpreter’s hands and face on a phone?", "Which sign language does our audience actually use?", "Do the interpreter and the captions fight for the same space?"],
+            tradeoff: "Interpreters add cost and screen space, and WCAG does not expect every AAA criterion for all content. Keep captions everywhere, and add sign to videos that are public, legally important or made for Deaf communities.",
+            system: "Give the video player a layout with a reserved interpreter window, with set sizes and safe areas per breakpoint.",
+            pitch: "For many Deaf people, sign is their first language. Signing our key videos speaks to them directly, not through a second language."
+        ),
+        "1.2.7": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Blind people", "Low vision people", "People watching dense training videos", "People who listen without watching"],
+            takeaways: ["Where pauses in the soundtrack are too short to describe what is shown, the video pauses so the description can play, then carries on. This is extended audio description. Level AAA.", "It builds on 1.2.5 (AA). Standard audio description has to fit into natural gaps. Extended description makes the gap by freezing the picture.", "It matters most in dense content: training, demos and lectures where someone talks constantly while important things happen on screen.", "The designer’s part is planning videos with room to describe, and a player that makes the extended version easy to choose. It is worth meeting for learning content where a missed step means a failed task."],
+            failures: ["Descriptions rushed so fast they talk over the presenter", "Key steps left undescribed because there was no gap", "An extended version that exists but cannot be found"],
+            check: ["Go through the description script and mark any visual with no gap long enough to describe it.", "For each, decide: rewrite the main narration, or pause the video for extended description.", "In the build, check the player offers the extended version and that it resumes smoothly after each pause."],
+            quiz: Quiz(question: "A software training video is narrated nonstop while the presenter clicks through settings. The description writer cannot fit the steps into the gaps. What does 1.2.7 call for?", options: ["Speed up the descriptions so they fit", "Leave out the steps that do not fit", "Pause the video at those points to play the description, then resume"], answer: 2, why: "Rushed descriptions talk over the presenter and lose meaning, and dropped steps lose the lesson. Extended description makes time by pausing the picture, so nothing is lost."),
+            spec: ["Mark each point where the video must pause for description, and roughly for how long.", "Specify how people choose the extended version and how the player shows it is paused for description.", "Note whether the extended version is a separate edit or a player feature."],
+            review: ["Is any visual left undescribed because the gaps are too short?", "Would slowing or rewriting the narration solve it without pausing?", "Is this content important enough to aim for AAA?"],
+            tradeoff: "Extended description makes videos longer and needs a separate edit or a player that can pause. Often the cheaper fix is a slower script that says what is happening. Save extended description for dense training where every step matters.",
+            system: "Make sure the video player can pause for description and resume, or switch to an extended edit, so it is ready when a video needs it.",
+            pitch: "In a training video, a missed step is a failed task. Pausing to describe it costs seconds and saves a support call."
+        ),
+        "1.2.8": DeepLesson(
+            meta: "5 min read", demo: nil,
+            who: ["Deafblind people using braille", "Blind people who prefer to read", "Deaf and hard of hearing people", "People who need to read at their own pace"],
+            takeaways: ["All prerecorded video with sound, and all prerecorded video-only content, has a full text alternative: a written version with the dialogue, sounds and visual information in order. Level AAA.", "It goes further than its siblings. 1.2.3 accepts audio description or text, and 1.2.1 accepts an audio track for silent video. At AAA, the full text is required for both.", "A media alternative reads like a screenplay: who speaks, what they say, what happens. It is the only way a deafblind person using braille gets the whole video, and it helps anyone who wants to skim or search.", "Designers own where the alternative lives and how it is labelled. Writers often have the script already, so it is one of the more achievable AAA criteria, especially for tutorials and anything people come back to."],
+            failures: ["A transcript of the dialogue only", "Visual steps written as “as you can see here”", "A text version left out of date after the video is re-edited"],
+            check: ["For each video, check the text alternative covers what is shown, not only what is said.", "Read the alternative without the video. Could you do the task or follow the story?", "In the file, check the link to it sits with the player and is clearly labelled."],
+            quiz: Quiz(question: "Your tutorial videos already have captions and audio description. What does 1.2.8 add?", options: ["A full text version of each video, including the visual steps, linked from the player", "Sign language interpretation", "A transcript of the narration"], answer: 0, why: "1.2.8 asks for a media alternative: everything in the video, in text. A narration transcript misses the visuals, and sign language is 1.2.6."),
+            spec: ["Place a “Read the full text version” link with each player, and say where it opens.", "Specify the structure: speaker names, descriptions of action, and headings for each section.", "Note who updates the text when the video is re-edited."],
+            review: ["Could someone do this tutorial from the text alone?", "Does it say what happens, or only what is said?", "Who keeps the text in step with the video after edits?"],
+            tradeoff: "A full text version takes effort for every video, but the script is a head start and the result can double as a help article. Start with videos that teach tasks. For brand films, 1.2.3 and 1.2.5 may be the realistic bar.",
+            system: "Give the video component a text alternative field and a standard link, and keep the text in the same content entry as the video.",
+            pitch: "A good text version turns every tutorial into a help article, readable in braille, by search engines and by anyone in a hurry."
+        ),
+        "1.2.9": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Deaf and hard of hearing people", "Deafblind people using braille", "People in noisy places", "People working in a second language"],
+            takeaways: ["Live audio-only content, such as a live radio show, an audio-only stream or a live call broadcast to listeners, has a text alternative with the same information, usually live captions shown as text. Level AAA.", "It fills a gap between siblings: 1.2.4 covers live video with sound, and 1.2.1 covers prerecorded audio. Live audio with no picture sits here.", "If the speaker reads a prepared script word for word, such as a press statement, providing that script can serve as the alternative.", "Designers decide where the live text appears beside the player and how people open it. It is worth meeting for public broadcasts, results calls and emergency or civic information."],
+            failures: ["A live radio stream with nothing to read", "A results call whose transcript appears days later", "A live text panel hidden in a menu"],
+            check: ["List every live audio stream in the plan, and who will produce the live text.", "In the player design, check the live text sits next to the play control and opens in one step.", "In a rehearsal, follow the whole stream from the text alone."],
+            quiz: Quiz(question: "An audio-only investor call is streamed live to the public. What does 1.2.9 ask for?", options: ["A recording posted after the call", "Live text of what is said, shown alongside the stream", "A slide listing the speakers’ names"], answer: 1, why: "Deaf listeners need the information while the call is happening, when it matters. A recording or transcript afterwards serves later listeners, which is 1.2.1."),
+            spec: ["Place the live text panel next to the player, with a clear “Show live text” control.", "Note the provider, how the text reaches the page, and the names and terms to brief them on.", "Say what happens to the text afterwards, such as becoming the reviewed transcript for the recording."],
+            review: ["If I could not hear, could I follow this as it happens?", "Is this stream scripted, and could we publish the script as it is read?", "Who reviews the live text before it becomes the permanent transcript?"],
+            tradeoff: "Live text for audio streams costs money for every broadcast, and as AAA it is not expected everywhere. Meet it where timing matters, such as results, public announcements and live Q&A. For casual shows, a prompt transcript of the recording under 1.2.1 may be the realistic bar.",
+            system: "Give the audio player a live text panel option, so any stream can show captions without a custom build.",
+            pitch: "If the announcement happens live, Deaf listeners need it live too. A text panel next to the stream is a small cost for public moments."
+        ),
         "1.3.1": DeepLesson(
             meta: "5 min read", demo: nil,
             who: ["Screen reader users", "Keyboard users who jump by heading", "People using reader modes", "Voice control users"],
@@ -157,6 +274,19 @@ enum Library {
             system: "Document the reading order for each pattern and layout template, so teams do not reinvent it frame by frame.",
             pitch: "If the code order is wrong, a screen reader user hears step four before step two. The content is there, but it no longer makes sense."
         ),
+        "1.3.3": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Color vision deficiency", "Low vision with magnification", "Deaf and hard of hearing"],
+            takeaways: ["Instructions must not rely only on shape, color, size, visual location, orientation or sound to tell people what to do.", "“Tap the round button on the right” means nothing to someone who cannot see the screen, or whose screen has reflowed so “right” is now “below”.", "You can still mention how things look. Pair it with something that does not depend on sight or hearing: “Select Continue, the green button”.", "This covers your copy as much as your layout: onboarding tips, empty states, help text and error messages. Color used alone to carry meaning is also covered by 1.4.1."],
+            failures: ["“Click the icon in the top right to save”", "“Required fields are in red” with no other marker", "A quiz that says “Start when you hear the beep” with no visual cue"],
+            check: ["Search your copy for words like left, right, above, below, round, square, green, red, large and sound.", "For each one, check the instruction also names the thing by its visible label or text.", "Look at the instruction on the mobile layout too, where positions change."],
+            quiz: Quiz(question: "An onboarding coach mark says “Tap the star to save a recipe”. The star icon has no visible label. What is the best fix?", options: ["Add an arrow pointing from the coach mark to the star", "Make the star bigger and yellow so it stands out", "Give the button a visible “Save” label and write “Tap Save (the star) to keep this recipe”"], answer: 2, why: "An arrow, a size or a color are still visual cues only. Naming the control by a text label gives everyone, including screen reader users, something to find."),
+            spec: ["In every instruction, refer to controls by their visible label, and make sure that label matches the accessible name.", "Where a sound signals something, specify the visual or text cue that goes with it.", "Flag any copy that mentions position, so content designers keep it accurate when layouts change."],
+            review: ["If you read this instruction aloud to someone over the phone, could they follow it?", "Does this still make sense when the layout stacks on mobile?", "Which controls here are named only by their shape or color?"],
+            tradeoff: "Pointing at things by look is quick and friendly, and label-only copy can feel dry. Keep the visual hint, but always add the name: “Choose Next, at the bottom of the card”.",
+            system: "In the content guidelines, add a rule that instructions name controls by their label, and give icon-only buttons a visible or tooltip label people can refer to.",
+            pitch: "“The button on the right” is a bug the moment the layout changes. Naming things by their label works on every screen and for every user."
+        ),
         "1.3.4": DeepLesson(
             meta: "4 min read", demo: nil,
             who: ["Devices mounted on wheelchairs", "People who cannot rotate a device", "Low vision users who prefer landscape", "Anyone with a phone on a stand"],
@@ -182,6 +312,19 @@ enum Library {
             tradeoff: "Teams sometimes turn off autofill to avoid wrong entries. Use correct tokens instead. Correct tokens give good fills, and turning autofill off hurts the people who need it most.",
             system: "Give the input component an autocomplete property, and preset it in patterns like address and contact forms.",
             pitch: "Autofill done right means fewer keystrokes and fewer typos, and checkouts finish faster."
+        ),
+        "1.3.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and learning disabilities", "People who use symbol sets", "Screen reader users", "People using personalization tools"],
+            takeaways: ["Software can tell the purpose of interface components, icons and page regions, so tools can adapt them, for example by swapping icons for symbols a person knows.", "This is Level AAA. It goes beyond 1.3.1, which is about structure, and 1.3.5, which is only about form fields that collect information about the user.", "Today the most practical way to meet it is with landmark regions, such as header, navigation, main, search and footer. Ways to mark the purpose of each icon and button are still being developed.", "Developers write the code. Designers decide what each region is for, and give each icon one clear, consistent meaning so it can be identified."],
+            failures: ["A page with no landmark regions, just stacked boxes", "Two navigation areas with no names to tell them apart", "The same icon meaning “favorite” on one screen and “rate” on another"],
+            check: ["Draw the regions on each template: header, navigation, main, search, complementary and footer.", "List every icon in the product with the one purpose it stands for, and look for duplicates.", "In the build, check the regions with a landmarks browser extension or a screen reader’s landmark list."],
+            quiz: Quiz(question: "A team wants to aim for 1.3.6 on a new help center. What is the most useful thing the designer can hand off now?", options: ["An annotation of every region’s purpose and name, plus an icon list with one meaning per icon", "A custom icon set drawn in a softer style", "A note asking developers to add ARIA roles to every element"], answer: 0, why: "Software can only expose a purpose that the design has defined clearly. Named regions and consistent icon meanings give developers something real to mark up. Adding roles everywhere without a plan adds noise."),
+            spec: ["Annotate each region with its landmark type, and give a name to any type that appears twice, such as “Main menu” and “Footer links”.", "Hand off an icon inventory: each icon, its purpose in plain words and where it is used.", "Note which regions are the same on every page, so they are built once and identified the same way."],
+            review: ["What is each part of this page for, in one word?", "Does this icon mean exactly one thing everywhere it appears?", "If a tool replaced every icon with a word, would the words make sense?"],
+            tradeoff: "Full purpose markup for every icon depends on standards that are not finished, so this is hard to meet completely today. Meet the parts you can now, regions and consistent icons, because they also help screen reader users find their way.",
+            system: "Make layout templates set landmark regions by default, and store each icon in the library with a single documented purpose.",
+            pitch: "Some people understand familiar symbols better than our icons. Clear regions and consistent icons let their tools adapt our product to them."
         ),
         "1.4.1": DeepLesson(
             meta: "5 min · interactive", demo: .color,
@@ -248,6 +391,19 @@ enum Library {
             system: "Build one tooltip and one popover component with Esc dismissal, hoverability and no timeout, and ban custom hover reveals outside them.",
             pitch: "People who magnify the screen see one small piece at a time. A tooltip that vanishes when they move toward it is help they can never read."
         ),
+        "1.4.2": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "People with attention-related disabilities", "People sensitive to sound", "People in shared or quiet places"],
+            takeaways: ["If audio plays automatically for more than 3 seconds, people can pause or stop it, or turn its volume down separately from the system volume. Level A.", "Screen reader users hear their reader through the same speakers. Autoplaying sound can drown it out, so they cannot even find the button to stop it.", "Because it can make a whole page unusable, this rule applies to everything on the page, even parts that are not meant to conform.", "The best fix is to not autoplay sound at all. If sound must play, keep it under 3 seconds, or put the pause or mute control at the very start of the page. Moving video is a separate rule, 2.2.2."],
+            failures: ["A hero video that autoplays with sound", "Background music with no pause or mute control", "A mute button placed at the end of the page"],
+            check: ["List anything that makes sound without being asked: hero videos, ambient music, chat widgets, ads.", "For each, check it is silent by default, stops within 3 seconds, or has a pause or volume control.", "With a screen reader on, load the page and check you can hear the reader and reach the control quickly."],
+            quiz: Quiz(question: "A brand campaign wants a hero video that plays with sound when the page loads. What is the best design?", options: ["Autoplay with sound, with a pause button in the footer", "Autoplay with sound for 10 seconds, then fade out", "Autoplay muted, with a clear unmute button on the video"], answer: 2, why: "Sound longer than 3 seconds needs a control, and a footer button is hard to reach while audio drowns out a screen reader. Starting muted avoids the problem. The moving video still needs a pause under 2.2.2."),
+            spec: ["Mark every element that can make sound, and whether it autoplays.", "Specify the default: muted, or the length of any sound that plays automatically.", "Place pause and mute controls first in reading order, and name them clearly, such as “Pause background music”."],
+            review: ["What makes noise on this page without anyone pressing play?", "How would a screen reader user stop it while it talks over them?", "Does the moving video also need a pause? That is 2.2.2."],
+            tradeoff: "Marketing wants instant impact, and sound grabs attention. Many browsers already block autoplay with sound, so start muted with a visible unmute control and let people choose.",
+            system: "Make video and audio components start muted when they autoplay, with pause and mute controls built in.",
+            pitch: "Sound nobody asked for drives people away, and for screen reader users it can make the page unusable. Start muted and let people turn it up."
+        ),
         "1.4.3": DeepLesson(
             meta: "6 min · interactive", demo: .contrast,
             who: ["Low vision", "Color vision deficiency", "Aging eyes", "Anyone in bright sunlight", "Cheap or dim screens"],
@@ -274,6 +430,71 @@ enum Library {
             system: "Build components with auto layout and test each one at 200% before release.",
             pitch: "Many people run their phone at a larger text size. A layout that breaks under it breaks for them every day."
         ),
+        "1.4.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Low vision with magnification", "Dyslexia and reading disabilities", "People who change fonts or colors", "Translation tool users"],
+            takeaways: ["If you can show it as real text, use real text, not a picture of text.", "Real text can be zoomed sharply, recolored, respaced, read aloud and translated. Text baked into an image cannot, and it blurs when enlarged.", "Logos and brand names are exempt, because their look is essential. So is any image of text that people can customize, for example font, size and colors.", "This is mostly decided in design: hero banners, promo tiles, quote cards and buttons are where text gets flattened into images."],
+            failures: ["A marketing banner exported as one image, headline included", "A testimonial quote shared as a styled graphic", "A button made from an image of its label"],
+            check: ["In the file, find every frame where text is part of an image layer or exported asset.", "For each, ask whether live text over an image could create the same look.", "In the build, zoom to 200% and try selecting the text. If you cannot select it, it is probably an image."],
+            quiz: Quiz(question: "A seasonal campaign banner has a headline in the brand typeface over a photo. Marketing wants to export it as one image. What do you do?", options: ["Export as one image and put the headline in the alt text", "Keep the photo as an image and set the headline as live text using a web font", "It is fine, because the headline uses the brand typeface"], answer: 1, why: "Alt text helps screen reader users but not people who zoom or change fonts. A brand typeface is not a logo, so live text is required when the technology can show it."),
+            spec: ["Mark which text is live and which images are background only.", "List the web fonts, weights and effects needed so the look can be built in text.", "Where a logo or wordmark is used, note it as an image with its alt text."],
+            review: ["Is this text in an image because it has to be, or because it was quicker?", "Can we get this effect with live text, a font and CSS?", "What happens to this banner when the copy is translated?"],
+            tradeoff: "Images give pixel-perfect control and are quicker to produce for campaigns. Live text costs more setup but can be updated, translated and resized without redrawing. Build a banner template with live text once and the cost goes away.",
+            system: "Offer banner, promo and quote components with text slots over an image slot, so nobody needs to flatten text to get the look.",
+            pitch: "Text in images cannot be zoomed, translated or found by search. Live text works for more people and saves redrawing every time the copy changes."
+        ),
+        "1.4.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Low vision", "Aging eyes", "Color vision deficiency", "Anyone reading on a dim or glary screen"],
+            takeaways: ["Text needs a contrast ratio of at least 7:1. Large text, at least 24px regular or about 18.66px bold, needs 4.5:1.", "This is Level AAA, the stricter version of 1.4.3, which asks for 4.5:1 and 3:1.", "The same exceptions apply: logos, purely decorative text, text in inactive controls and text that is part of a picture.", "On white, #595959 is about the lightest gray that reaches 7:1. Most dark body text already passes; secondary and helper text usually does not."],
+            failures: ["Mid-gray captions and timestamps that only reach 4.5:1", "White text on a mid-blue brand button", "Placeholder text styled as light gray"],
+            check: ["Measure each text style against every background it appears on, with a contrast checker.", "Decide whether each style is large or not using its real size and weight, not how it looks.", "Check dark mode separately, because pale text on dark gray often drops below 7:1."],
+            quiz: Quiz(question: "A 20px bold section title is #6B6B6B on white, about 5.3:1. Does it meet 1.4.6?", options: ["No. All text needs 7:1 at AAA", "No. Bold text needs 7:1 at any size", "Yes. At 20px bold it counts as large text, which needs 4.5:1"], answer: 2, why: "Bold text from about 18.66px counts as large, and large text needs 4.5:1 at AAA. Body text below that size would need 7:1."),
+            spec: ["Write the measured ratio next to each text color pair, and mark which pairs reach 7:1.", "Mark each text style as large or normal, so developers know which threshold applies.", "If you offer a high-contrast theme to meet this, specify its token values and where people switch it on."],
+            review: ["Is this product aiming for AAA contrast everywhere, or only in some places?", "Which secondary text styles fall between 4.5:1 and 7:1?", "Does the brand color still work as a text color at this level?"],
+            tradeoff: "7:1 limits your palette: fewer grays and brand colors can carry text. It is worth meeting for long reading, older audiences and health or government services. Elsewhere, meet 1.4.3 everywhere and consider an optional high-contrast theme.",
+            system: "Mark each text color token with its contrast level, AA or AAA, so teams can choose the stricter pairs when they need them.",
+            pitch: "Stronger contrast makes text easier to read for everyone over 40 and for anyone outdoors. It costs a few palette choices, not a redesign."
+        ),
+        "1.4.7": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Hard of hearing people", "People with auditory processing difficulties", "Hearing aid users", "People listening in a second language"],
+            takeaways: ["In prerecorded audio-only content that is mainly speech, background sound is absent, can be turned off, or is at least 20 dB quieter than the speech. Level AAA.", "20 dB lower is about four times quieter. Occasional sounds lasting only a second or two, like a short sting between segments, are fine.", "It does not apply to audio CAPTCHAs, audio logos, or vocals meant mainly as music, such as singing or rap. It covers audio-only recordings, not video soundtracks.", "Producers do the mixing. Designers and content leads set the standard in the audio brief, and can design a background on or off control in the player. Set before recording, it is a cheap AAA win."],
+            failures: ["A music bed under the whole podcast at nearly speech volume", "Interviews recorded in a noisy café and left unedited", "Ambient sound under narration with no way to turn it off"],
+            check: ["Listen to each audio-only recording on cheap earbuds. Is the speech always clearly on top?", "Ask the producer for the mix levels, and check background stays at least 20 dB below speech.", "If you offer a background control, check it is visible in the player and works."],
+            quiz: Quiz(question: "Your podcast has a music bed under every episode. The producer says it is about 10 dB below the voices. What meets 1.4.7?", options: ["Lower the music to at least 20 dB below the speech, remove it, or let people turn it off", "Keep it. 10 dB is already clearly quieter", "Add a transcript to each episode"], answer: 0, why: "The rule sets 20 dB as the minimum gap, because people with hearing loss struggle to pick speech out of steady background sound. A transcript is 1.2.1 and does not help people who are listening."),
+            spec: ["Write the mix rule into the audio brief: background at least 20 dB below speech, or none.", "If background can be turned off, design the control in the player and its label.", "Note any parts outside the rule, such as a sung intro or an audio logo."],
+            review: ["Can you hear every word over the music on a phone speaker?", "Is that music bed doing anything listeners need?", "Is this audio only? Video soundtracks are outside this rule."],
+            tradeoff: "Music beds make podcasts feel polished, and producers like them. Keep music for intros, outros and transitions, and keep it low or out under speech. Because it is set at the mixing desk, not in code, this is one of the easier AAA criteria to meet.",
+            system: "Put the 20 dB rule in your audio production guidelines, and give the audio player an optional background sound control.",
+            pitch: "Clear speech is what people came for. A quieter music bed helps listeners with hearing loss and everyone on a noisy train."
+        ),
+        "1.4.8": DeepLesson(
+            meta: "5 min read", demo: nil,
+            who: ["Dyslexia and reading disabilities", "Low vision", "Cognitive disabilities", "People sensitive to bright backgrounds"],
+            takeaways: ["For blocks of text, people can get: colors they choose, lines no wider than 80 characters (40 for Chinese, Japanese or Korean), text that is not justified, and generous spacing.", "Spacing means line spacing of at least one and a half within paragraphs, and space between paragraphs at least 1.5 times the line spacing. Text must also resize to 200% without scrolling sideways to read a line, in a full-screen window.", "This is Level AAA. It asks for “a mechanism”, so either your default layout meets each point, or people can switch to a view that does. Browser and system settings can count, if your design does not block them.", "It applies to blocks of text, such as articles, help pages and terms, not to short labels or buttons. It goes further than 1.4.12, which only asks that your layout survives when people change spacing themselves."],
+            failures: ["Justified article text with uneven gaps between words", "A full-width text column on a wide screen, 150 characters per line", "Fixed colors that override the reader’s chosen high-contrast or dark settings"],
+            check: ["Count the characters on your longest line at the widest breakpoint.", "Check text alignment, line height and paragraph spacing in your text styles.", "In the build, zoom to 200% in a full-screen window and read a long article without scrolling sideways."],
+            quiz: Quiz(question: "A long-form article template uses a 1000px column of 16px text, about 120 characters per line. How do you meet 1.4.8 for line width?", options: ["Set a maximum width so lines stay under 80 characters", "Reduce the font size so more fits comfortably", "Leave it, because readers can resize their browser window"], answer: 0, why: "Long lines make it hard to find the start of the next line, which is the problem this rule addresses. Capping the column width fixes it for everyone, while asking readers to resize their window puts the work on them."),
+            spec: ["Give the maximum width of each reading column in characters as well as pixels.", "Specify left alignment (or right for right-to-left languages), line height and paragraph spacing for body styles.", "Note that the page must respect user color settings, or show where the theme or color picker sits."],
+            review: ["How long is a line of this article on a large monitor?", "Is anything justified, and why?", "If someone needs yellow text on black, what does this page do?"],
+            tradeoff: "Narrow, airy columns can feel wasteful on wide screens, and the full set of points is hard to meet everywhere. Meet the width, alignment and spacing points by default in your reading templates, where they cost little, and let the browser or a reading settings panel handle colors.",
+            system: "Give the article and long-text templates a maximum measure, left alignment and body spacing tokens that already meet these values.",
+            pitch: "Most of this is good typography: sensible line lengths and breathing room. Building it into our reading templates makes long content easier for everyone."
+        ),
+        "1.4.9": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Low vision with magnification", "Dyslexia and reading disabilities", "People who change fonts or colors", "Translation tool users"],
+            takeaways: ["Images of text are used only for pure decoration, or where that exact presentation is essential to the information.", "This is Level AAA, the strict version of 1.4.5. At AA an image of text can pass if people can customize it; at AAA that exception is gone.", "Logos and brand names still count as essential. So do things like a font specimen or a photo of a historic document, where the look itself is the point.", "In practice, if text carries meaning and the look is not the point, set it as live text."],
+            failures: ["A quote card exported as an image for the web page", "A chart image with its labels and values baked in", "An image of text with a font and color picker, which passes 1.4.5 but not this"],
+            check: ["List every image in the file that contains words.", "Sort each into logo, decoration, essential presentation, or none of these.", "Rebuild anything in the last group as live text."],
+            quiz: Quiz(question: "A museum site shows a photo of a handwritten letter from 1890. Does the image of text fail 1.4.9?", options: ["Yes. All text must be live text at AAA", "No. The handwriting itself is the point, so the presentation is essential. Provide a transcript as well", "No, as long as the photo has short alt text"], answer: 1, why: "The look of the original letter is the information being shown, so it is essential. A transcript gives people the words in a form they can read their own way."),
+            spec: ["Mark each image that contains text with its reason: logo, decoration or essential.", "For essential images, plan where the text version or transcript sits.", "For charts, specify labels and values as live text, not part of the image."],
+            review: ["Why is this text in an image?", "Would anyone lose information if we set this as real text?", "Is this image decoration, or does it say something?"],
+            tradeoff: "Some styled text is genuinely hard to rebuild live, like complex lettering in campaign art. At AAA you rebuild it or treat it as decoration with the message in live text nearby. For most products, meeting 1.4.5 well is enough, and 1.4.9 suits text-heavy services.",
+            system: "Document in the library that images never hold meaningful text, and give chart and banner components live text layers.",
+            pitch: "If the words matter, they should be text. Then everyone can zoom, recolor, translate and search them."
+        ),
         "2.1.1": DeepLesson(
             meta: "5 min read", demo: nil,
             who: ["Keyboard users", "Screen reader users", "Switch and voice control users", "People with tremors"],
@@ -286,6 +507,45 @@ enum Library {
             tradeoff: "Hiding actions until hover keeps cards clean, but leaves keyboard users out. Show the actions on focus as well as hover, or keep one visible “More” button that opens them all.",
             system: "Document the keyboard behavior in every component’s spec, next to its states, and prefer standard controls over custom ones.",
             pitch: "Keyboard access is the base layer that screen readers, switches and voice control all depend on. Without it, the feature does not exist for them."
+        ),
+        "2.1.2": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Keyboard users", "Screen reader users", "Switch users", "Voice control users"],
+            takeaways: ["If keyboard focus can move into a component, it can also move out of it using the keyboard alone.", "If leaving needs more than the standard keys, such as Tab, the arrow keys or Esc, people are told how before they get stuck.", "A modal dialog that keeps focus inside on purpose is fine, as long as people can close it with the keyboard and focus returns to the page.", "Developers build the focus handling. Designers decide how every overlay, embed and editor is closed or left, and make that exit visible. A trap anywhere breaks the whole page, so it covers third-party widgets too."],
+            failures: ["A modal with no keyboard way to close it", "An embedded video or map player that swallows Tab", "A code or rich text editor where Tab inserts a tab and nothing explains how to leave"],
+            check: ["List every place focus can enter something unusual: dialogs, drawers, embeds, editors, date pickers, chat widgets.", "For each one, write down the key or button that gets people out, and where focus lands afterwards.", "In the build, tab into each one and try to leave using only the keyboard."],
+            quiz: Quiz(question: "In a notes app, Tab inside the editor indents a line, so Tab cannot be used to leave. What do you design?", options: ["Nothing. Users can click outside the editor", "Remove indenting, because it is not accessible", "Keep Tab for indenting and show a short hint, such as “Press Esc, then Tab to leave the editor”"], answer: 2, why: "Clicking out needs a mouse, which keyboard users do not have. Indenting is useful, so keep it, but a non-standard exit must be explained where people will see it."),
+            spec: ["For every dialog, drawer and overlay, state the close methods: Esc, a visible Close button, and where focus returns.", "For editors and other widgets that use Tab themselves, give the exit keys and the hint text that explains them.", "Flag third-party embeds, such as players, maps and chat, so developers test that focus can leave them."],
+            review: ["Once someone tabs into this, how do they get out without a mouse?", "Is the way out shown on screen, or only known to us?", "Which parts of this page come from a third party, and has anyone tabbed through them?"],
+            tradeoff: "Rich widgets often want to keep Tab or Esc for their own features. Keep the feature if it matters, but pick one clear exit, show it on screen, and make it work the same way in every widget.",
+            system: "Every overlay component in the library ships with Esc to close, a visible Close button and focus return built in, so teams cannot forget them.",
+            pitch: "A keyboard trap is a dead end. Someone who cannot use a mouse has to reload the page and lose their work to escape it."
+        ),
+        "2.1.3": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Keyboard users", "Switch users", "Voice control users", "People who cannot use a pointer at all"],
+            takeaways: ["Everything can be done with a keyboard alone, with no exceptions, and without needing to press keys at a certain speed.", "It is Level AAA. At Level A, 2.1.1 makes an exception for tasks where the result depends on the path of movement, such as freehand drawing. 2.1.3 removes that exception.", "Developers build keyboard support. Designers decide what the keyboard version of a path-based task looks like, such as placing points, typing coordinates or picking from shapes.", "It is worth aiming for in drawing, signing, map and design tools, where whole tasks are otherwise closed to people who cannot use a pointer."],
+            failures: ["A signature pad that only accepts a drawn signature", "A drawing tool with no way to place or move points by keyboard", "A map where an area can only be selected by tracing it"],
+            check: ["List every task that depends on drawing, tracing or a freehand path.", "For each, design and write down the keyboard way to reach the same result, even if it is slower.", "In the build, complete each task without touching the mouse or trackpad."],
+            quiz: Quiz(question: "A contract flow asks people to draw their signature with a mouse or finger. You want to meet 2.1.3. What do you add?", options: ["An option to type their name and choose a signature style", "A larger drawing area so it is easier to sign", "A note that keyboard users should contact support to sign"], answer: 0, why: "A drawn signature is path-based, so 2.1.1 makes an exception for it, but 2.1.3 does not. Typing the name reaches the same result by keyboard, while a bigger pad or a support route still leaves keyboard users unable to finish on their own."),
+            spec: ["For each path-based task, specify the keyboard alternative and the keys that drive it.", "Show the alternative in the main flow, not only in settings or help.", "Note any part where the keyboard result differs from the drawn one, and why that is acceptable."],
+            review: ["Is there anything here that only a pointer can do?", "If this were AA, would we lean on the freehand exception, and do we need to?", "Can someone finish the whole flow without ever touching the mouse?"],
+            tradeoff: "A keyboard version of drawing can take real design and build effort, and few products need AAA across the board. Meet it where drawing is the main way to finish a task, such as signing or marking areas, and accept the 2.1.1 exception for truly artistic tools.",
+            system: "Pair every canvas, signature and drawing component with a keyboard alternative in the library, such as typed signatures and point-by-point shape tools.",
+            pitch: "If signing our contract needs a mouse, someone who cannot use one cannot become our customer."
+        ),
+        "2.1.4": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Voice control users", "Tremors and limited dexterity", "Keyboard users", "People who mistype"],
+            takeaways: ["If a keyboard shortcut uses only a letter, number, punctuation or symbol key, people can turn it off, remap it to include a modifier such as Ctrl or Alt, or it only works while that component has focus.", "Voice control users dictate words, which arrive as a stream of letters. Every letter can fire a single-key shortcut, so one spoken sentence can archive, delete or send things by accident.", "Shortcuts like Ctrl+S or Alt+N are not covered. Shift does not count as a modifier here, because Shift plus a letter is still a letter.", "Developers build the shortcuts. Designers decide which ones exist, where people turn them off or change them, and how they are listed."],
+            failures: ["An email app where pressing “e” archives the open message, with no way to switch it off", "A video player where “k” and “j” work anywhere on the page", "A shortcuts list that cannot be edited or disabled"],
+            check: ["List every single-key shortcut in the product, including ones from third-party components.", "For each, find the setting that turns it off or remaps it, or confirm it only works while its component has focus.", "Check that the setting is easy to find, for example in Settings and in the shortcuts help panel."],
+            quiz: Quiz(question: "A task app uses “d” to mark the selected task done, anywhere on the page. Which change meets 2.1.4?", options: ["Show the shortcut in a tooltip on the Done button", "Add a setting to turn single-key shortcuts off, or change them to include Ctrl or Alt", "Change the shortcut to Shift+D"], answer: 1, why: "A tooltip tells people the shortcut exists but does not stop accidental use. Shift+D is still just a letter key. Turning it off, or remapping it to include a modifier, stops voice users firing it by accident."),
+            spec: ["List every single-key shortcut, what it does and where it is active.", "Design the setting that turns shortcuts off or remaps them, and where it lives.", "For shortcuts meant to work only inside a component, such as a player, note that they work only while it has focus."],
+            review: ["What happens if someone dictates a sentence while this screen is open?", "Could any of these shortcuts delete, send or archive something without a confirmation?", "Where would someone go to turn these off?"],
+            tradeoff: "Power users love single-key shortcuts because they are fast. Keep them, but add one switch in settings to turn them off or remap them, and scope player shortcuts to the player.",
+            system: "Register shortcuts in one place, so a single settings screen can list, remap and turn off all of them.",
+            pitch: "For someone using voice control, a single-key shortcut means one spoken word can delete their work. One settings toggle prevents it."
         ),
         "2.2.1": DeepLesson(
             meta: "5 min read", demo: nil,
@@ -313,6 +573,58 @@ enum Library {
             system: "Give the carousel, video background and ticker components a built-in pause control that cannot be turned off.",
             pitch: "If people cannot stop the carousel, many of them stop reading the page instead."
         ),
+        "2.2.3": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and reading disabilities", "Motor disabilities", "Screen reader users", "People working in a second language"],
+            takeaways: ["Timing is not an essential part of any activity, except non-interactive synchronized media, such as a video, and real-time events, such as a live auction.", "It is Level AAA. At Level A, 2.2.1 allows time limits if people can turn them off, adjust or extend them. 2.2.3 asks for no time limits at all.", "Unlike 2.2.1, there is no exception for limits that are essential. A timed quiz would fail.", "It is worth meeting in learning, forms and anything people do at their own pace, where a timer adds pressure but no value."],
+            failures: ["A training quiz with a timer on each question", "A game level that must be finished before a countdown ends", "An onboarding carousel that moves on before people have read it"],
+            check: ["List every timer in the product, visible or hidden, and what each one protects.", "For each, ask whether it is a real-time event, a non-interactive video, or neither.", "Remove or redesign every timer in the third group, and recheck the flow with no time pressure at all."],
+            quiz: Quiz(question: "A compliance training course has a 30 second limit on each quiz question. The team wants to meet 2.2.3. What do you do?", options: ["Let people extend each question by another 30 seconds", "Keep the limit, but show a visible countdown", "Remove the limit and let people answer at their own pace"], answer: 2, why: "Extending would meet 2.2.1, and a countdown only makes the limit visible. Under 2.2.3 timing must not be part of the activity at all, and a training quiz is not a real-time event."),
+            spec: ["List each time-based behavior and whether it is removed, user-controlled or an allowed exception.", "For auto-advancing content, specify manual Next and Previous controls with no auto-advance.", "Where a timer stays because the event is real-time, note why and what people see."],
+            review: ["What is this timer protecting, and is it a real-time event?", "Would the task lose anything if people had as long as they needed?", "Are we keeping this limit because it is essential, or because it was always there?"],
+            tradeoff: "Some products are built around time, such as games, timed tests and flash sales, and AAA cannot be met there without changing the product. Meet it in self-paced flows like learning and forms, and use 2.2.1 controls where time really is the point.",
+            system: "Make the default carousel, stepper and quiz components untimed, with auto-advance and timers as opt-in settings that need a reason.",
+            pitch: "A timer measures speed, not understanding. Removing it lets more people finish, and it costs us nothing."
+        ),
+        "2.2.4": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Attention and memory disabilities", "Screen reader users", "Low vision with magnification", "Anyone doing focused work"],
+            takeaways: ["People can postpone or turn off interruptions, such as pop-ups, alerts and automatic updates, except interruptions about an emergency.", "It is Level AAA. 2.2.2 covers moving and auto-updating content, and 4.1.3 covers whether status messages are announced. 2.2.4 is about letting people choose when interruptions reach them.", "Interruptions break concentration and can move a screen reader or magnifier away from where someone is working. Getting back costs real time.", "Designers own most of this: which messages interrupt at all, how they can be snoozed or muted, and where they wait until people are ready."],
+            failures: ["A newsletter pop-up that appears mid-article with no way to stop it", "A news feed that refreshes and jumps while people read", "Chat messages that pop over the form people are filling in, with no mute"],
+            check: ["List everything that can appear without the person asking: pop-ups, chat, notifications, alerts, refreshes.", "For each, find the control to postpone or turn it off, such as snooze, Do not disturb or a notification setting.", "Mark which items are true emergencies, such as safety alerts, and keep that list short."],
+            quiz: Quiz(question: "A dashboard shows a pop-up every time a new comment arrives. Which design meets 2.2.4?", options: ["Add a Do not disturb setting, and collect comments in an inbox people can open when ready", "Make the pop-up smaller and move it to the corner", "Close the pop-up automatically after 5 seconds"], answer: 0, why: "A smaller or self-closing pop-up still interrupts, and a timed close can take away the message before people read it. Letting people mute or delay comments, and find them later, puts them in control."),
+            spec: ["List each interruption, what triggers it, and whether it can be postponed or turned off.", "Design the controls: snooze, Do not disturb, notification settings, and where held messages wait.", "Name any emergency messages that cannot be suppressed, and why."],
+            review: ["Who asked for this to interrupt, and could it wait?", "Where can people turn this off, and will they find it?", "Is this really an emergency, or just important to us?"],
+            tradeoff: "Growth and support teams want messages to be seen right away. Hold non-urgent messages in a place people will check, and keep the right to interrupt for real emergencies only.",
+            system: "Give the notification component a priority level and a user setting, so only emergency alerts bypass Do not disturb.",
+            pitch: "Every pop-up costs someone their place. Letting people choose when to see updates keeps them working, and keeps them coming back."
+        ),
+        "2.2.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and memory disabilities", "Motor disabilities", "Screen reader users", "People who get interrupted"],
+            takeaways: ["When a signed-in session expires, people can sign back in and continue what they were doing without losing any data.", "It is Level AAA. 2.2.1 asks for a warning and a way to extend before time runs out. 2.2.5 is about what happens after it has run out.", "People who take longer, or step away, are the ones most likely to hit a timeout. Losing a long form can mean giving up.", "Developers keep the data and restore it. Designers decide where people sign in again, where they land after, and what they see restored."],
+            failures: ["Signing back in lands on the home page instead of the form", "A half-written message disappears after the session ends", "Signing back in restarts a multi-step application from step one"],
+            check: ["Map every flow where a session could expire mid-task: long forms, checkouts, editors, applications.", "For each, design what happens on the next action after expiry: the sign-in screen, then the return to the same place.", "In the build, let a session expire mid-task, sign in again and check every entered value is still there."],
+            quiz: Quiz(question: "Someone spends 25 minutes on a grant application, the session expires, and they press Submit. What should happen?", options: ["Show “Your session has expired” and send them to the home page", "Ask them to sign in, then return them to the application with their answers kept, ready to submit", "Ask them to sign in, then start a fresh application so data is not stale"], answer: 1, why: "The rule is that people can carry on without losing data after signing in again. Sending them home or starting again throws away 25 minutes of work."),
+            spec: ["Specify where the sign-in appears after expiry, such as a dialog over the page or a full screen, and where people return after.", "List which data must be kept and restored for each flow, such as form fields, uploads and the current step.", "Write the message people see when they come back, for example “Welcome back. Your answers are saved.”"],
+            review: ["What does someone lose if they go to make a cup of tea halfway through?", "After signing in again, where exactly do they land?", "Is any data deliberately not kept, and does the person know?"],
+            tradeoff: "Security teams may not want to keep data for an expired session. Keep it only for the same account, ask people to sign in again before showing it, and say plainly if anything sensitive, such as card details, has to be re-entered.",
+            system: "Make a re-authentication dialog the standard expiry pattern, returning people to the same screen and state, instead of a redirect to the home page.",
+            pitch: "A timeout should cost someone a password, not their work."
+        ),
+        "2.2.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and memory disabilities", "Motor disabilities", "People who need breaks", "People working in a second language"],
+            takeaways: ["People are told how long they can be inactive before they lose data, unless the data is kept for more than 20 hours of inactivity.", "It is Level AAA. 2.2.1 is about warning and extending a limit as it runs out. 2.2.6 is about telling people the limit up front, so they can plan breaks.", "People who need to rest, check documents or ask for help can do so safely when they know how long they have.", "Designers decide where and how the limit is stated, such as at the start of a flow. The simplest way to meet it is often to keep data for more than 20 hours."],
+            failures: ["A booking form that clears after 15 minutes of inactivity, with no mention of it", "A basket that empties after an hour, and nobody was told", "The limit only mentioned in the terms of service"],
+            check: ["Ask developers how long each flow keeps data while people are inactive.", "For every limit under 20 hours, find where people are told about it before they start.", "Read the message as a first-time visitor and check it gives a clear length of time."],
+            quiz: Quiz(question: "An insurance quote form loses answers after 30 minutes of inactivity. What is the best way to meet 2.2.6?", options: ["Save drafts for more than 20 hours, or state at the start: “Your answers are kept for 30 minutes if you are inactive”", "Show “Your session has timed out” after the answers are lost", "Add a Save button at the end of the form"], answer: 0, why: "Telling people after the loss is too late, and a Save button at the end does not protect a half-filled form. Either keep the data for over 20 hours, or tell people the limit before they begin."),
+            spec: ["List each flow, how long it keeps data while inactive, and whether it is over 20 hours.", "For limits under 20 hours, place and word the notice, such as on the first step and near the start button.", "Say whether autosave or drafts could remove the need for a notice."],
+            review: ["If someone stops to find a document, how long until they lose their work?", "Where do we tell them that, and will they see it before starting?", "Could we just keep the data longer instead?"],
+            tradeoff: "Keeping data longer raises privacy and storage questions, while a notice adds words to a busy screen. Prefer saving drafts for over 20 hours where it is safe, and where it is not, use one short line at the start of the flow.",
+            system: "Add an inactivity notice to the flow start template that shows the time limit, and default form components to saving drafts.",
+            pitch: "Telling people how long they have costs one sentence. Not telling them costs a lost form and a lost customer."
+        ),
         "2.3.1": DeepLesson(
             meta: "4 min read", demo: nil,
             who: ["Photosensitive epilepsy", "Other seizure disorders", "Migraine", "Anyone who has not been diagnosed yet"],
@@ -325,6 +637,19 @@ enum Library {
             tradeoff: "Flashing grabs attention, which is why people reach for it. Use color, size or a single pulse instead. They get attention without the risk.",
             system: "Set motion tokens so no blink or pulse can run faster than three times a second, and forbid full-screen flashing in the guidelines.",
             pitch: "This is the one rule where getting it wrong can put someone in hospital. It costs us nothing to avoid."
+        ),
+        "2.3.2": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Photosensitive epilepsy", "Migraine", "Vestibular and visual sensitivity", "Attention disabilities"],
+            takeaways: ["Nothing on the page flashes more than three times in any one second.", "It is Level AAA. At Level A, 2.3.1 allows faster flashing if it stays below the general flash and red flash thresholds, for example if it is small enough. 2.3.2 has no such exception.", "Measuring thresholds needs tools and expertise. Under 2.3.2 you only count: more than three flashes in a second fails, whatever the size.", "It is easy and cheap to meet in most interfaces, so it is worth adopting as a design rule even if you only aim for AA."],
+            failures: ["A small notification dot that blinks five times a second", "A strobing “Live” badge on a stream thumbnail", "A loading icon that flickers rapidly between light and dark"],
+            check: ["List every animation that blinks, pulses or flickers, including icons, badges, ads and videos.", "Count the flashes in each second, using slow motion or frame-by-frame playback in the prototype.", "Replace anything above three in a second, however small it is."],
+            quiz: Quiz(question: "A tiny red “Recording” dot, well below the size thresholds, blinks four times a second. Which is true?", options: ["It fails both 2.3.1 and 2.3.2, because it is red", "It passes both, because it is too small to matter", "It may pass 2.3.1, but it fails 2.3.2"], answer: 2, why: "2.3.1 lets small flashes below the thresholds pass. 2.3.2 has no size or threshold exception, so four flashes in a second fails at AAA. A steady dot or a slow pulse fixes both."),
+            spec: ["For every blinking or pulsing animation, give the rate in flashes per second, at three or fewer.", "Prefer a steady state or a slow fade instead of a blink.", "Flag third-party ads and videos that need checking before they go on the page."],
+            review: ["Does anything here blink faster than three times a second?", "Why does this need to flash, rather than change color or size once?", "Who checks the ads and videos we do not make ourselves?"],
+            tradeoff: "Flashing gets attention quickly. A single pulse, a color change or a steady badge gets attention too, so the cost of meeting AAA here is close to zero.",
+            system: "Set motion tokens so no blink or pulse animation in the library runs faster than three times a second.",
+            pitch: "We do not need flashing to get attention, and removing it means we never have to argue about thresholds."
         ),
         "2.3.3": DeepLesson(
             meta: "4 min · interactive", demo: .motion,
@@ -339,6 +664,32 @@ enum Library {
             system: "Give every motion token a reduced value, so each component gets the alternative for free.",
             pitch: "The setting already exists on every device and people already use it. Ignoring it means making some customers feel ill."
         ),
+        "2.4.1": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Keyboard users", "Screen reader users", "Switch users", "Low vision with magnification"],
+            takeaways: ["There is a way to skip blocks of content that repeat on many pages, such as the header, navigation and side menus.", "Without it, keyboard and switch users press Tab through every navigation link on every page before reaching the content.", "Common ways to meet it are a “Skip to main content” link, headings at the start of each section, and landmark regions such as header, nav and main.", "Designers decide the skip link’s design and position, the heading structure and the regions of each template. Developers build them."],
+            failures: ["Fifty navigation links before the main content, with no skip link", "A skip link that is hidden even when it receives focus", "A skip link that goes to the wrong place, or nowhere"],
+            check: ["In each page template, mark the blocks that repeat and the regions: header, navigation, main, footer.", "Design the skip link’s focused state and check it appears first in the focus order.", "In the build, press Tab once on a page and Enter on the skip link, then check that the next Tab lands inside the main content."],
+            quiz: Quiz(question: "The team wants a skip link but feels it looks out of place in the header. What do you design?", options: ["Leave it out, because screen readers can use headings instead", "Hide it until it receives keyboard focus, then show it clearly at the top left", "Put it in the footer so it does not disturb the design"], answer: 1, why: "A skip link that appears on focus keeps the header clean and helps sighted keyboard users, who cannot jump by headings. In the footer, people would already have tabbed past everything."),
+            spec: ["Design the skip link’s focused state: wording, position, size and contrast.", "Mark the regions of each template, such as header, navigation, main and footer, and where the skip link goes.", "If there are several repeated blocks, such as a long filter panel, note any extra skip links."],
+            review: ["How many Tab presses does it take to reach the content?", "Where does the skip link appear, and can sighted keyboard users see it?", "Are the page regions marked in the file?"],
+            tradeoff: "A visible skip link can feel like clutter. Showing it only on keyboard focus keeps the look clean, while still being there for the people who need it.",
+            system: "Build the skip link and page regions into the page layout template, so every new page has them by default.",
+            pitch: "Without a skip link, a keyboard user presses Tab through our whole menu on every single page. One link fixes that."
+        ),
+        "2.4.10": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Cognitive and reading disabilities", "People who skim", "Screen magnifier users"],
+            takeaways: ["Where content is organized into sections, section headings mark them.", "Level AAA. It applies to sections of writing, such as articles, help pages and long documents, not to UI components like buttons or cards.", "Headings let people jump to the part they need and see the shape of a long text before reading it.", "Related rules: whether headings are marked up in code is 1.3.1; whether they describe their content is 2.4.6. This one asks that the headings are there at all."],
+            failures: ["A long help article with no headings, only paragraphs", "Sections set apart by spacing or a divider line alone", "Bold lead-in sentences standing in for headings"],
+            check: ["Scroll a long page in the file. Where does the topic change, and is there a heading there?", "Read only the headings. Do they show the structure of the content?", "Check that the content templates in the system let writers add headings."],
+            quiz: Quiz(question: "A policy page is one long block of text split into topics with extra white space. What does 2.4.10 ask for?", options: ["Add a heading at the start of each topic", "Add more white space between topics", "Put each topic in a collapsible accordion"], answer: 0, why: "The rule asks for section headings where content is organized into sections. White space shows a break but does not name it, and an accordion still needs headings for its sections."),
+            spec: ["Mark each section heading and its level in long content templates.", "Note which visual styles are real headings and which are just large text.", "Give writers guidance on when a section needs a heading."],
+            review: ["Could I find the part I need by reading only the headings?", "Is this bold line a heading or just styled text?", "Does the template let writers add headings, or does it squeeze everything into one block?"],
+            tradeoff: "Headings add length and can make short content feel bureaucratic. Short pieces with one topic do not need them; any page people scan or come back to should have them. Meeting this AAA rule is usually cheap and worth it.",
+            system: "Build content templates and rich text components with heading styles mapped to heading levels, so writers can structure content without custom styling.",
+            pitch: "Nobody reads a wall of text. Headings make our content findable for everyone and cost nothing but a little editing."
+        ),
         "2.4.11": DeepLesson(
             meta: "4 min read", demo: nil,
             who: ["Keyboard users", "Low vision with magnification", "Switch and voice control users", "Anyone on a small screen"],
@@ -351,6 +702,19 @@ enum Library {
             tradeoff: "Sticky bars keep actions in reach but eat into the visible area. Keep them short, let them collapse on small screens, and make sure the page scrolls focused items into the space that is left.",
             system: "Expose sticky header and footer heights as tokens that set the page’s scroll padding automatically.",
             pitch: "If the focused button is behind our footer, a keyboard user is pressing Enter on something they cannot see."
+        ),
+        "2.4.12": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Keyboard users", "Low vision with magnification", "Switch and voice control users", "Anyone on a small screen"],
+            takeaways: ["When an element has keyboard focus, no part of it is hidden by content you designed, such as sticky bars, banners or floating buttons.", "It is Level AAA. At AA, 2.4.11 only fails when the focused element is completely hidden. 2.4.12 fails if any part is covered.", "A partly covered field or button can hide its label, its value or its focus ring, so people cannot be sure what they are on.", "It is often worth meeting, because the fix is the same as for 2.4.11, just done fully: leave room for every sticky and floating element."],
+            failures: ["A floating feedback tab covering the right edge of focused fields", "A sticky header cutting off the top of a focused card", "A chat button covering the corner of the last focused link"],
+            check: ["Tab through each page with every sticky, fixed and floating element visible.", "Look at the whole focused element each time, including its focus ring, not just whether it is visible.", "Repeat at 200% zoom and on small screens, where fixed elements take up more room."],
+            quiz: Quiz(question: "A floating “Feedback” tab is fixed to the right edge. When people tab through a form, it covers the right quarter of each focused field. Which is true?", options: ["It fails 2.4.11 and 2.4.12", "It passes 2.4.11, but fails 2.4.12", "It passes both, because most of the field is visible"], answer: 1, why: "2.4.11 fails only when the focused element is entirely hidden, so it passes at AA. 2.4.12 does not allow any part to be hidden, so it fails at AAA. Moving the tab or adding space fixes both."),
+            spec: ["Give the size and position of every sticky and floating element, and the space content needs around them.", "Ask for scroll padding on all sides, so focused items, including their focus ring, stop fully clear.", "Say whether floating elements can be moved, collapsed or dismissed."],
+            review: ["When this is focused, can you see all of it, including the focus ring?", "Do we need this element to float over content, or could it sit in the layout?", "What does it cover at 400% zoom?"],
+            tradeoff: "Floating buttons and sticky bars are convenient but always cover something. Keep fewer of them, let them collapse, and use layout space instead of overlays, then AAA comes with little extra cost.",
+            system: "Set the size of every sticky and floating component as tokens that feed the page’s scroll padding, focus ring included.",
+            pitch: "Half a button is not good enough. If people can see all of what they are on, they make fewer mistakes."
         ),
         "2.4.13": DeepLesson(
             meta: "5 min read", demo: nil,
@@ -365,6 +729,19 @@ enum Library {
             system: "Define one focus ring token at 2px or more with a tested color, and apply it in every component.",
             pitch: "A thicker, stronger focus ring costs almost nothing and helps everyone who has ever lost track of where they are on a page."
         ),
+        "2.4.2": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Cognitive and memory disabilities", "People with many tabs open", "Search and bookmark users"],
+            takeaways: ["Every page or screen has a title that describes its topic or purpose.", "On the web, it is the title shown in the browser tab and read first by screen readers. In apps, it is each screen’s title.", "Good titles are unique and put the specific part first, such as “Order 4821 – Orders – Shopname”, so people can tell tabs and pages apart.", "Designers write the titles, including for single-page apps, dialogs that act as steps, and errors, and hand them to developers."],
+            failures: ["Every page titled with just the company name", "A single-page app whose title never changes", "Checkout steps that all share the title “Checkout”"],
+            check: ["List every page or screen in the flow and write its title next to the frame.", "Read the titles alone, in a list, and check each one tells you where you are.", "In the build, check the browser tab or screen title changes as you move through the flow."],
+            quiz: Quiz(question: "A three-step checkout keeps the same browser tab title on every step. Which titles would you specify?", options: ["“Delivery – Step 1 of 3 – Checkout – Shopname”, and so on for each step", "“Shopname” on every step, for brand consistency", "“Checkout” on every step, with the step shown in the page heading"], answer: 0, why: "A title that changes with each step tells screen reader users where they landed and helps everyone tell tabs apart. Putting the step first means it is not cut off in a narrow tab."),
+            spec: ["Write the title for every page and screen, including empty, error and success states.", "Use one pattern across the product, such as “Page – Section – Product”.", "For single-page apps and step flows, note when the title changes."],
+            review: ["If this tab were one of twenty open, could you find it?", "Does the title change when the content changes?", "Does the title match the main heading on the page?"],
+            tradeoff: "Marketing often wants the brand name first. Put the page first and the brand last: the brand is still there, and people can tell pages apart.",
+            system: "Give every page template a required title field and a shared title pattern, so no screen ships untitled.",
+            pitch: "The page title is the first thing a screen reader says and the only thing people see in a crowded tab bar. It should tell them where they are."
+        ),
         "2.4.3": DeepLesson(
             meta: "4 min read", demo: nil,
             who: ["Keyboard users", "Screen reader users", "Switch control users", "Low vision with magnification"],
@@ -377,6 +754,32 @@ enum Library {
             tradeoff: "A layout can look best with the main action at the top right, while the focus order wants it last. Place it where it belongs in the task, or annotate the order so the build matches the intent.",
             system: "Build focus handling into the dialog, menu and drawer components, so focus moves in and returns automatically.",
             pitch: "When focus jumps around, keyboard users lose their place and give up on the task."
+        ),
+        "2.4.4": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Voice control users", "Cognitive disabilities", "People who skim"],
+            takeaways: ["People can tell where each link goes from its text, or from its text plus the context around it: the same sentence, paragraph, list item, table cell, or the heading above it.", "Screen reader users often pull up a list of every link on the page. “Read more” ten times tells them nothing.", "Text that only appears visually nearby, like a card image or a column far away, may not count as context. Keep the link and its explanation in the same block.", "Level A. The stricter AAA version, 2.4.9, asks that the link text alone is enough."],
+            failures: ["A row of cards that each end in “Read more”", "Bare “Click here” links in body copy", "Icon-only links with no name, like a lone arrow"],
+            check: ["List every link on the screen as plain text, out of order. Mark each one you cannot explain.", "For each vague link, check the sentence, list item or card it sits in explains it.", "Check that icon and image links have a written name in the annotations."],
+            quiz: Quiz(question: "A news page has a list of stories. Each item has a headline, a summary and a link that says “Continue”. What is the best fix?", options: ["Change every link to “Continue reading”", "Add a small arrow icon after each “Continue”", "Make the headline itself the link"], answer: 2, why: "A headline link describes the story on its own and is a bigger target. “Continue reading” is still the same text ten times, and an arrow adds no meaning."),
+            spec: ["Write the final text for every link. No “Learn more” placeholders left in the file.", "Where a short visible link must stay, give the longer accessible name, such as “Read more about pricing plans”, and say the visible words come first in it.", "Name every icon or image link, and note which element in a card is the link."],
+            review: ["If I heard only the links on this page, could I pick the right one?", "Is the context for this link in the same sentence or card, or just visually nearby?", "Do any two links have the same text but go to different places?"],
+            tradeoff: "Short, repeated links keep cards tidy and consistent. Make the card title the link, or keep “Read more” visible and add the topic to its accessible name, so the layout stays calm and every link is still clear.",
+            system: "Make the card title the link by default in the card component, and give any secondary “More” link a required field for its full name.",
+            pitch: "Links that say where they go get clicked more. Vague links slow everyone down, not just screen reader users."
+        ),
+        "2.4.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and memory disabilities", "Screen reader users", "Low vision with magnification", "People new to the site"],
+            takeaways: ["There is more than one way to find any page in a set of pages: for example navigation, search, a site map, a table of contents or related links.", "People find things in different ways. Some search, some browse menus, some scan an A to Z list. One route alone fails someone.", "Pages that are a step in a process, or the result of one, are exempt. Step 3 of checkout does not need its own entry in search.", "Level AA. It is about the set of pages as a whole, so plan it in the site map and information architecture, not page by page."],
+            failures: ["A help center reachable only by search", "Pages hidden deep in menus with no search and no links to them", "Search that does not cover all the content people need"],
+            check: ["Pick a few deep pages and find each one in two different ways.", "Check that search indexes every content type, not just products.", "In the site map or IA diagram, mark which pages are exempt steps in a process."],
+            quiz: Quiz(question: "A product has a main menu that reaches every page. The team wants to add search later. Does the site meet 2.4.5 today?", options: ["No. The menu is one way, and there needs to be a second", "Yes. A complete menu is enough", "Yes, as long as the menu has sub-menus"], answer: 0, why: "The rule asks for more than one way. A menu alone is one route, however complete. A site map, search or related links would add the second."),
+            spec: ["Document the ways to reach each kind of page: nav, search, site map, related links.", "Mark pages that are steps or results in a process, so nobody adds them to navigation by mistake.", "Design the search entry point and the site map page, and note where they appear on every page."],
+            review: ["If someone cannot use the menu, how else do they reach this page?", "Does search actually return this page?", "Is this page really a step in a process, or is that just an excuse?"],
+            tradeoff: "Every extra route costs space and upkeep: search needs indexing and a site map needs maintaining. A small site can often use a simple site map page or a footer list of key pages; save full search for large sets of content.",
+            system: "Put search and a link to the site map in the shared header or footer component, so every page gets a second route for free.",
+            pitch: "People who cannot find a page assume we do not have it. A second way to find things is cheap compared to a lost customer."
         ),
         "2.4.6": DeepLesson(
             meta: "4 min read", demo: nil,
@@ -403,6 +806,32 @@ enum Library {
             tradeoff: "A strong ring can clash with a refined style. A two-tone ring, light and dark together, stays visible everywhere and can be tuned to the brand.",
             system: "One focus token, applied by every component. Nobody should design a focus ring twice.",
             pitch: "Without visible focus, a keyboard user is operating your product blindfolded."
+        ),
+        "2.4.8": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and memory disabilities", "Screen magnifier users", "Screen reader users", "People who arrive from search"],
+            takeaways: ["People can tell where they are within a set of pages: through breadcrumbs, a highlighted current item in navigation, a step indicator, or a clear page title.", "Someone who lands from a search result, or loses track while zoomed in, needs to know where they are and how it fits the whole.", "Level AAA. It builds on 2.4.2 Page Titled, which only asks for a descriptive title; this asks for location within the set.", "Much of it is cheap and already common. A current-page state in the nav and a “Step 2 of 4” label get you most of the way."],
+            failures: ["A nav with no current-page state", "A multi-step form with no step indicator", "Breadcrumbs that show only a color change on the current item"],
+            check: ["Open any page in the prototype with no history. Can you say where you are in the site?", "Check every nav, tab set and stepper shows the current item in a way that does not rely on color alone.", "Check that long flows say which step you are on and how many there are."],
+            quiz: Quiz(question: "A five-step application form shows numbered dots at the top. The current dot is filled in blue. What best tells people where they are?", options: ["Make the current dot larger", "Add the text “Step 2 of 5: Your address” above the form", "Animate the dot when the step changes"], answer: 1, why: "Text gives the position and the step name to everyone, including screen reader users and people who cannot tell the dots apart. Size and motion are still only visual cues."),
+            spec: ["Mark the current-page state for every nav and breadcrumb, and note it should be exposed in code, for example aria-current.", "Write the step indicator text for each step of every flow.", "Show the breadcrumb trail for each template, and how it shortens on small screens."],
+            review: ["If I landed here from Google, how would I know where I am?", "Is the current item shown by more than color?", "Do the step names match the headings on each step?"],
+            tradeoff: "Breadcrumbs and step labels take space, especially on mobile. Meeting this AAA rule in full is optional, but a current-page state and a step count are cheap and worth doing everywhere; add breadcrumbs where the hierarchy is deep.",
+            system: "Give nav, tabs, breadcrumbs and steppers a built-in current state with text or a shape change, not just a color swap.",
+            pitch: "Lost users leave. Showing people where they are is a small cost that keeps them moving."
+        ),
+        "2.4.9": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Voice control users", "Cognitive disabilities", "People who skim"],
+            takeaways: ["The purpose of each link can be understood from its text alone, with no help from the sentence or card around it.", "Level AAA. It is the stricter sibling of 2.4.4 (A), which also lets surrounding context explain a link.", "The link text here means its accessible name, so a hidden longer name for a short visible link can count. Visible text that says it all is better for everyone.", "Links whose purpose would be unclear to everyone, such as in a guessing game, are exempt."],
+            failures: ["“Read more” that relies on the card title", "“Here” in a sentence that explains where", "“Download (PDF)” repeated for several documents"],
+            check: ["List every link on the screen as plain text. Would each one make sense on a sticky note?", "Look for any two links with the same text that go to different places.", "Check that icon links have names that say where they lead, not what the icon looks like."],
+            quiz: Quiz(question: "A report page lists six documents. Each row has the title, then a link that says “Download”. Under 2.4.9, what is the cleanest fix?", options: ["Add “(PDF, 2 MB)” after each “Download”", "Keep “Download”; the row title explains it", "Make the link text “Download annual report 2025 (PDF)”"], answer: 2, why: "At AAA the text alone must explain the link. The row title is context, which only 2.4.4 accepts, and the file size still does not say which document it is."),
+            spec: ["Write link text that names the destination or action and the thing, like “View invoice 1042”.", "Where the visible text must stay short, write the full accessible name and note it starts with the visible words.", "Flag any repeated link labels in the file so they get unique names."],
+            review: ["Out of context, does this link still say where it goes?", "Is the hidden name consistent with what people see, so voice users can still say it?", "Could we put this explanation in the visible link instead?"],
+            tradeoff: "Fully descriptive links make dense lists and tables longer. Meeting 2.4.4 is the baseline; aim for 2.4.9 on content pages and lists of downloads, where descriptive links help everyone scan, and use hidden names sparingly elsewhere.",
+            system: "Give list, table and card components a link name field that defaults to the item title, so “View” or “Download” is never the whole name.",
+            pitch: "Clear link text is free to write and makes every page easier to scan. It is the cheapest AAA rule we can meet."
         ),
         "2.5.1": DeepLesson(
             meta: "4 min read", demo: nil,
@@ -456,6 +885,32 @@ enum Library {
             system: "Pair every motion trigger with a standard button and a shared “Motion controls” setting.",
             pitch: "Shake and tilt are delightful until your phone is bolted to a wheelchair. A button and an off switch keep the delight without locking anyone out."
         ),
+        "2.5.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Tremors and limited dexterity", "Large fingers and older users", "Low vision", "People on the move"],
+            takeaways: ["Pointer targets are at least 44 by 44 CSS px.", "It is Level AAA. At AA, 2.5.8 asks for 24 by 24 CSS px, or enough spacing around smaller targets.", "Exceptions: an equivalent control on the same page meets the size, the target is a link inside a sentence or block of text, the size is set by the browser and not changed, or the presentation is essential.", "It is worth meeting for primary actions and anything used on the move. The hit area can be larger than the visible icon."],
+            failures: ["A 32px close button on a dialog", "A row of 28px icon buttons in a toolbar", "Small pagination numbers with no larger alternative"],
+            check: ["Draw a 44 by 44 frame over each target, or use a component overlay, and check its hit area fills it.", "For smaller targets, check whether an exception applies, such as an inline link or a larger equivalent control.", "In the build, check the real tap area, not only the visible shape."],
+            quiz: Quiz(question: "A data table has 24px “Edit” icons on each row. Clicking anywhere on the row opens the same edit screen, and each row is 48px tall and full width. Does the icon meet 2.5.5?", options: ["Yes. An equivalent target that meets the size is available", "No. Every target must be at least 44 by 44 px", "No. It only meets 2.5.8"], answer: 0, why: "The equivalent exception covers a small target when another control doing the same thing meets the size. The full row is at least 44 by 44, so the icon can stay small."),
+            spec: ["Mark the hit area of each target separately from its visible size.", "List any target below 44 by 44 and the exception that applies.", "Give minimum heights for buttons, list rows and tabs as tokens."],
+            review: ["Which targets here are below 44 px, and why?", "Could you hit this reliably with your thumb while walking?", "Is the hit area bigger than the icon, or just the icon?"],
+            tradeoff: "44 px targets take room, which dense tools and tables feel. Use 44 px for primary and touch actions, keep 2.5.8 at 24 px as the floor everywhere, and grow hit areas with padding rather than larger icons.",
+            system: "Set 44 px as the default minimum hit area for buttons, icon buttons and list rows, with a compact variant that still meets 24 px.",
+            pitch: "Bigger targets mean fewer mis-taps for everyone, not only people with tremors."
+        ),
+        "2.5.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Keyboard and switch users on touch devices", "Voice control users", "Stylus users", "People who mix inputs"],
+            takeaways: ["Content does not stop people from using any input the platform offers, such as touch, mouse, keyboard, stylus or voice, and people can switch between them at any time.", "It is Level AAA. Exceptions: the restriction is essential, needed for security, or needed to respect user settings.", "Many people combine inputs: a keyboard with a tablet, a mouse with a touch laptop, voice with a pointer. Locking into one input because of the device blocks them.", "Developers handle input events. Designers decide not to tie layouts or features to a guessed device type, such as “touch device, so no keyboard”."],
+            failures: ["A touch laptop where the site turns off mouse input once it detects touch", "A tablet layout that ignores a connected keyboard", "A feature only available to a stylus with no touch or mouse path"],
+            check: ["List any place the design changes based on the detected device or input.", "For each, ask whether people could still use every other input they have.", "In the build, try a tablet with a keyboard and a touch laptop with a mouse, switching mid-task."],
+            quiz: Quiz(question: "On tablets, the team plans a “touch mode” that hides keyboard focus styles and turns off keyboard shortcuts. What do you say?", options: ["Fine. Tablet users do not use keyboards", "Fine, as long as there is a desktop version", "Keep keyboard support on in all modes, since many people pair a keyboard with a tablet"], answer: 2, why: "The tablet supports keyboards, so turning them off restricts an input the platform offers, with no security or essential reason. A larger touch layout is fine, as long as keyboard still works."),
+            spec: ["State that every layout supports every input the platform offers, and that people can switch mid-task.", "Avoid features that depend on guessing the device. If a layout adapts, say what triggers it and confirm other inputs still work.", "Note any restriction kept for security or as essential, and why."],
+            review: ["Are we assuming how people will use this device?", "What happens if someone plugs a keyboard into this tablet halfway through?", "Is this restriction essential, or just simpler for us?"],
+            tradeoff: "Designing for one input per device is simpler and easier to test. Adapt layouts for touch if it helps, but never turn other inputs off, and test the common pairs, such as a tablet with a keyboard.",
+            system: "Components respond to pointer, touch and keyboard in every layout, and focus styles are never removed by a touch or mobile mode.",
+            pitch: "People choose how they use their devices. If we guess wrong and lock them out, we lose them."
+        ),
         "2.5.7": DeepLesson(
             meta: "4 min read", demo: nil,
             who: ["Tremors and limited dexterity", "Head pointer and eye tracking users", "Trackpad and stylus users", "People who cannot hold a press"],
@@ -482,6 +937,110 @@ enum Library {
             system: "Set a minimum hit area on the base button and icon button: a 24px floor, 44px by default on touch.",
             pitch: "A missed tap is an error, a retry or an abandoned task. That is true for anyone on a moving train, not only people with tremors."
         ),
+        "3.1.1": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Braille display users", "Translation tool users", "People using text-to-speech"],
+            takeaways: ["The main language of each page can be determined by software. On the web this is the lang attribute on the page; in apps it is the app or content language.", "Screen readers use it to choose the right voice and pronunciation. Without it, a Spanish page may be read with English rules and become nonsense.", "Browsers and translation tools also use it, for example to offer translation or to hyphenate words correctly.", "Developers set the code. Designers and content teams decide which language each page and template is in, and say so at handoff, especially on multilingual products."],
+            failures: ["Translated pages that still declare English", "No page language set at all", "A shared template whose language is fixed to the original market"],
+            check: ["List every locale your product ships, and the language code for each.", "Check that each translated template or screen is labelled with its language in the file.", "In the build, inspect the page language, or listen with a screen reader for the right accent."],
+            quiz: Quiz(question: "Your product launches in Canada with English and French versions built from one template. What do you hand off?", options: ["Nothing. Screen readers detect the language automatically", "Set the template’s language to English, since it is the source design", "A note that each page’s language must match its locale: en-CA for English, fr-CA for French"], answer: 2, why: "Screen readers do not reliably guess the language, and a fixed English setting makes French pages sound wrong. The language must follow the content of each page."),
+            spec: ["Give the language code for each locale and template.", "Note that the page language changes with the content, not with the design source.", "For apps, state which language setting the content follows: the device, the account or a picker."],
+            review: ["Which language does each version of this page declare?", "Who updates the language when we add a new locale?", "Have we heard this page through a screen reader in each language?"],
+            tradeoff: "Localization often happens after design handoff, so nobody owns the language setting. Make it part of the locale checklist, so whoever adds a language also sets it.",
+            system: "Make the page language a required property of the page template, set from the locale.",
+            pitch: "One missing attribute can make a whole page sound like gibberish to a screen reader user. It takes seconds to set."
+        ),
+        "3.1.2": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Braille display users", "Translation tool users", "Language learners"],
+            takeaways: ["When a passage or phrase is in a different language from the page, that language can be determined by software.", "Screen readers then switch voice or pronunciation, so a German quote in an English article sounds like German.", "Exceptions: proper names, technical terms, words of no clear language, and words that have become part of the surrounding language, such as “café” in English.", "Developers mark it up. Designers and writers spot the passages and flag them in the file, since only they know which text is in which language."],
+            failures: ["A language picker listing “Deutsch” and “Español” with no language marked on each", "A quoted French passage in an English article left unmarked", "A bilingual heading with both languages read in one voice"],
+            check: ["Scan each screen for text in another language: quotes, product names in two languages, the language picker.", "Leave out proper names and borrowed words that are now part of the main language.", "In the build, listen to the passage with a screen reader and check it switches."],
+            quiz: Quiz(question: "Your language picker shows each option in its own language: “English”, “Français”, “日本語”. What do you annotate?", options: ["Each option’s language: “Français” as French, “日本語” as Japanese", "Nothing. These are names, so they are exempt", "Translate every option into the page language instead"], answer: 0, why: "Names of languages written in that language are not proper names, and they are meant for speakers of that language. Marking each one lets screen readers say it correctly. Translating them would make the picker harder to use."),
+            spec: ["Highlight each passage in another language and note its language code.", "Mark the language of each item in the language picker.", "Tell content authors how to mark language in the CMS for quotes they add later."],
+            review: ["Is there any text on this screen in another language?", "Is this word now part of our language, or is it still foreign?", "Who marks the language of quotes added after launch?"],
+            tradeoff: "Marking every borrowed word is overkill and makes speech jumpy. Mark whole passages and phrases readers would hear wrongly, and leave common loanwords and names alone.",
+            system: "Give the quote, text and language picker components a language property, and expose it in the CMS.",
+            pitch: "A quote read in the wrong accent is not just odd, it can be impossible to understand. Marking it is a small step for content we already write."
+        ),
+        "3.1.3": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and learning disabilities", "People reading in a second language", "Deaf people whose first language is sign language", "Translation tool users"],
+            takeaways: ["There is a way to find the specific meaning of words or phrases used in an unusual or restricted way, including idioms and jargon.", "Idioms like “ballpark figure” and jargon like “escrow” or “sprint” can make no sense when read literally or translated.", "This is Level AAA. You can meet it with a definition in the text, a link to a glossary, or a definitions panel.", "It is a content task, but designers decide where definitions live and how people reach them: inline, in a tooltip people can open, or on a glossary page."],
+            failures: ["Product jargon like “workspace seat” with no explanation anywhere", "Idioms such as “touch base” in help text", "Definitions shown only on mouse hover"],
+            check: ["Highlight every term in your copy that a newcomer might not know, or that means something special in your product.", "For each, check there is a definition people can reach by keyboard, touch and screen reader.", "Replace idioms with plain words where you can, so fewer definitions are needed."],
+            quiz: Quiz(question: "A budgeting app’s alert says “You’re in the red this month.” Some readers use translation tools, which turn it into “you are in the color red”. What meets 3.1.3?", options: ["Make “in the red” bold so it stands out", "Rewrite it as “You have spent more than your budget”, or link the idiom to a definition", "Show the alert in red so the meaning is obvious"], answer: 1, why: "Read literally, an idiom means something else. Plain words remove the problem, and where the idiom stays, a definition meets the rule. Red text adds a color-only cue, which 1.4.1 rules out."),
+            spec: ["List the terms that need definitions and write each definition.", "Show how each definition is reached: inline text, a toggle or a glossary link.", "Make sure definition toggles work with keyboard and touch, and say how they are announced."],
+            review: ["Would someone new to this industry understand every word here?", "Which phrases would make no sense if translated word for word?", "Where does someone go if they do not know what this means?"],
+            tradeoff: "Some jargon is precise and the right word. Keep it, and define it. Remove idioms and jargon that are only habit, since a plain word needs no definition.",
+            system: "Provide a definition component for inline terms and a shared glossary that content teams can link to.",
+            pitch: "Every word customers do not understand turns into a support call. A glossary and plain language cost less."
+        ),
+        "3.1.4": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and learning disabilities", "Screen reader users", "People reading in a second language", "New customers"],
+            takeaways: ["There is a way to find the expanded form or meaning of abbreviations, including acronyms like APR, KYC or SLA.", "Abbreviations save space but assume knowledge. Some readers do not know them, and a screen reader may read them as strange words.", "This is Level AAA. You can meet it by writing the full form the first time it appears, linking to a glossary, or giving a definition people can open.", "Designers own where the full form fits: in the label, the helper text, or a definition people can reach by keyboard and touch."],
+            failures: ["A pricing table full of acronyms with no key", "Status chips like “PND” and “ACK” with no explanation", "Expansions shown only in a hover tooltip"],
+            check: ["Search your copy and labels for abbreviations and acronyms, including status codes.", "For each, find the full form on the same screen or one step away.", "Make sure the expansion can be reached without a mouse."],
+            quiz: Quiz(question: "A loan comparison card shows “APR 7.9%”. Space is tight. What meets 3.1.4?", options: ["Leave it. APR is a standard term", "Show the full form only in the page’s source code", "Add a visible explanation on first use, “Annual percentage rate (APR)”, or a definition people can open"], answer: 2, why: "Standard to the industry is not standard to every reader. A full form on first use or an openable definition reaches everyone, including keyboard and touch users."),
+            spec: ["List each abbreviation with its full form and plain meaning.", "Mark where the full form is shown, and how a definition opens if it is not visible.", "Note any abbreviation that screen readers should hear spelled out, such as letters instead of a word."],
+            review: ["Which abbreviations here would a first-time customer not know?", "Is this abbreviation saving real space, or just habit?", "Where can someone find out what this stands for?"],
+            tradeoff: "Full forms make tight UI like chips and tables longer. Use the full form where space allows, and keep a short form with an easy way to expand it where it does not.",
+            system: "Keep a shared list of approved abbreviations with their expansions, and give chips and table headers an optional definition slot.",
+            pitch: "Acronyms are insider language. Explaining them once makes our product feel open to newcomers."
+        ),
+        "3.1.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and learning disabilities", "Dyslexia and reading disabilities", "People reading in a second language", "Anyone stressed or in a hurry"],
+            takeaways: ["When text needs reading ability above lower secondary education, roughly nine years of school, there is supplemental content or a simpler version. Proper names and titles are left out when judging the level.", "Supplemental content can be a plain-language summary, diagrams, illustrations, or audio or video that explains the same thing.", "This is Level AAA. It does not ban complex writing; it asks that a simpler way in is available.", "Writers usually own the words. Designers own where the summary or simpler version sits, so people find it before they give up."],
+            failures: ["Terms and policies written only in legal language", "A dense medical explanation with no summary", "An “easy read” version hidden at the bottom of a long page"],
+            check: ["Run long text through a readability tool to estimate its level, and confirm with real readers where you can.", "For text above the threshold, check a summary or simpler version exists.", "Check it is placed where people meet the complex text, such as at the top or as a clear link."],
+            quiz: Quiz(question: "Your privacy policy reads at university level and legal says it must stay as written. How do you meet 3.1.5?", options: ["Add a plain-language summary at the top, with key points and simple diagrams", "Shorten the policy by removing sections", "Nothing. Legal text is exempt"], answer: 0, why: "The rule allows the original text to stay if supplemental content or a simpler version is available. Cutting sections may break the legal meaning, and there is no exception for legal text."),
+            spec: ["Mark which pages need a summary or simpler version, and where it sits on the page.", "Design the summary block or the switch between versions.", "Note who writes and updates the simpler version when the original changes."],
+            review: ["Who is this text written for, and who will actually read it?", "If someone reads only the first paragraph, do they get the main point?", "Who keeps the simple version in step with the full one?"],
+            tradeoff: "Two versions of a text can drift apart. Start with a short summary of key points, which is cheaper to maintain, and save full simpler versions for high-stakes content like health, money and legal terms.",
+            system: "Offer a summary or key-points component for the top of long pages, and a pattern for linking to a simpler version.",
+            pitch: "Plain-language summaries help everyone decide faster, and they reduce support requests about what our policies mean."
+        ),
+        "3.1.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Dyslexia and reading disabilities", "People reading in a second language", "Language learners"],
+            takeaways: ["Where the meaning of a word is unclear without knowing how to pronounce it, there is a way to find its pronunciation.", "English has words like “lead” (the metal) and “lead” (to guide), or “desert” and “desert”, spelled the same but said differently. Some languages, such as Japanese names in kanji or Hebrew and Arabic without vowel marks, often need pronunciation help.", "This is Level AAA. It only applies where meaning really depends on pronunciation and the context does not make it clear.", "It is mostly a content and development task. Designers decide how pronunciation is shown, for example a phonetic spelling after the word, ruby text above it, an audio button or a glossary."],
+            failures: ["A heading where “read” could be past or present and nothing makes it clear", "Japanese personal names in kanji with no reading given", "A glossary entry for a heteronym that never says which pronunciation is meant"],
+            check: ["With your writers, list words in your content whose meaning changes with pronunciation.", "For each, check whether the context already makes the meaning clear.", "Where it does not, check there is a pronunciation guide people can reach and read."],
+            quiz: Quiz(question: "A language-learning app shows Japanese names in kanji, which can be read several ways. How do you meet 3.1.6?", options: ["Add a hover tooltip with the romanized name", "Show the reading above the kanji as ruby text (furigana)", "Nothing. Names are always exempt"], answer: 1, why: "Ruby text shows the reading right where the word is, for everyone, without hover. Unlike 3.1.2, this rule has no exception for proper names."),
+            spec: ["List the words that need pronunciation help, with the pronunciation for each.", "Specify the pattern: phonetic text after the word, ruby text, an audio button or a glossary link.", "If there is an audio button, give it a clear label and a text version of the pronunciation."],
+            review: ["Could this word be read two ways, and would that change the meaning?", "Does the sentence around it already make it clear?", "Can someone get the pronunciation without sound?"],
+            tradeoff: "Most products have few words where this matters, and rewriting the sentence is often simpler than adding a pronunciation guide. Meet it where your content depends on names, other languages or teaching, such as education or language products.",
+            system: "Provide a ruby text style and a pronunciation pattern in the type system for products that need them.",
+            pitch: "If someone cannot tell how a word is said, they may not know what it means. For language content, pronunciation is part of the information."
+        ),
+        "3.2.1": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Keyboard users", "Screen reader users", "Cognitive disabilities", "Screen magnifier users"],
+            takeaways: ["When an element receives focus, it does not start a change of context, such as opening a new page or window, submitting a form, or moving focus somewhere else.", "Keyboard users move focus just to look around. If focusing something acts on it, they lose their place or land somewhere they did not choose.", "Showing more content on focus is fine when it does not change context: a tooltip, a dropdown menu opening, or a focus ring.", "Changing a setting is a different rule, 3.2.2. Context changes on request at AAA are 3.2.5."],
+            failures: ["A field that opens a date picker in a new window on focus", "A link that navigates as soon as it is tabbed to", "A menu that opens a page as soon as an item is arrowed to"],
+            check: ["Tab through every screen in the prototype. Does anything happen without pressing Enter or Space?", "List every interaction triggered on focus, and check each is only a reveal, not a page change or focus move.", "Check that auto-advancing fields, such as code inputs, only move after typing, not on focus."],
+            quiz: Quiz(question: "In a long form, the design opens a help panel and moves focus into it when people tab into the tax ID field. What do you change?", options: ["Keep it, but add a close button to the panel", "Show the help next to the field and leave focus on the field", "Open the panel only on the first visit"], answer: 1, why: "Moving focus away on focus is a change of context. Showing help nearby while focus stays in the field gives the same information without the surprise."),
+            spec: ["Note for each component what happens on focus, and confirm it is only a visual change.", "Specify that navigation, submission and new windows only happen on activation, with Enter, Space or a click.", "Where content appears on focus, say that focus stays where it is."],
+            review: ["What happens if I just tab past this?", "Does anything here act before I press a key or click?", "Is this a reveal or a change of context?"],
+            tradeoff: "Acting on focus can feel efficient, like a menu that navigates as you arrow through it. It is only efficient for people who meant it. Let focus show and preview, and save the action for a deliberate press.",
+            system: "Document focus and activation as separate states in every interactive component, with “no context change on focus” as a rule in the library.",
+            pitch: "Keyboard users explore by moving focus. If looking at a thing triggers it, our product punishes them for looking."
+        ),
+        "3.2.2": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Screen reader users", "Keyboard users", "Cognitive disabilities", "Screen magnifier users"],
+            takeaways: ["Changing the setting of a control, like picking an option in a select, checking a box or choosing a radio button, does not automatically change context, unless people were told beforehand.", "A change of context means a new page or window, a moved focus, or a major change to the page’s content that alters its meaning.", "Keyboard users arrowing through a select can trigger every option on the way. A select that navigates on change throws them off on the first one.", "Revealing a few related fields after a choice, just after the control, is usually fine. Pressing a button is activation, not changing a setting."],
+            failures: ["A language select that reloads the page on change", "A filter checkbox that jumps focus to the results", "A form that submits when the last radio is picked"],
+            check: ["Use every select, checkbox, radio and toggle in the prototype. Does any of them navigate, submit or move focus?", "For each one that does, check there is a visible message before the control that explains it.", "Check filters that update results leave focus on the control."],
+            quiz: Quiz(question: "A country selector in the footer reloads the site in the chosen region as soon as an option is picked. What is the best fix?", options: ["Add a loading spinner while the page reloads", "Make the select larger so people pick carefully", "Add a “Go” button that applies the choice"], answer: 2, why: "The change then happens on request. A spinner still changes context unannounced, and a larger select does not stop keyboard users from triggering options as they arrow through."),
+            spec: ["For each form control, note what changes when its value changes.", "Where a change of context is kept, write the advance notice and show it before the control.", "Specify the apply button for selects and filters that navigate or reload."],
+            review: ["What happens if someone arrows through this select one option at a time?", "Does any control here act without a button press?", "If this has to happen on change, where are people told first?"],
+            tradeoff: "Instant filters and selects feel quick. Keep instant updates for content on the same page, keep focus where it was, and put navigation and submission behind a button.",
+            system: "Ship select and filter patterns in two documented modes: update in place, or apply with a button. Leave out a navigate-on-change mode.",
+            pitch: "Controls that act on their own surprise people and drive support calls. A button costs one click and removes the surprise."
+        ),
         "3.2.3": DeepLesson(
             meta: "4 min read", demo: nil,
             who: ["Cognitive and memory disabilities", "Screen reader users", "Low vision with magnification", "Anyone using the site often"],
@@ -507,6 +1066,32 @@ enum Library {
             tradeoff: "Different teams and contexts pull toward local wording. Agree on one name per function, and allow small variations only when the function itself is different.",
             system: "Put shared actions in the component library with fixed labels, icons and accessible names, and keep a content glossary.",
             pitch: "If “Save” has three names, people have to learn our product three times. One name per action makes it easier for everyone."
+        ),
+        "3.2.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive disabilities", "Screen reader users", "Screen magnifier users", "Keyboard users"],
+            takeaways: ["Changes of context happen only when the user asks for them, or there is a way to turn automatic changes off.", "Level AAA. It goes further than 3.2.1 and 3.2.2, which only cover focus and input. This covers any change not requested, such as timed redirects, pop-up windows on load or automatic page refreshes.", "Content that updates in place, like a live score, is not a change of context. Opening a new window or sending people to another page without asking is.", "Sending people somewhere they did not choose can lose their place, their reading and their work."],
+            failures: ["A “You will be redirected in 5 seconds” page", "A pop-up window that opens when the page loads", "A page that reloads itself every minute"],
+            check: ["List every change of page, window or focus in the flow. Mark which ones the user did not trigger.", "For each one not triggered by the user, find the setting that turns it off, or change it to a button.", "Check links that open a new window say so, so people can choose."],
+            quiz: Quiz(question: "After people save their settings, the design shows a success page that sends them to the dashboard after 3 seconds. What meets 3.2.5?", options: ["Show the success message with a “Go to dashboard” button", "Extend the delay to 10 seconds", "Add a countdown so people know it is coming"], answer: 0, why: "A button lets people move when they choose. A longer delay or a countdown is still an automatic change they did not ask for."),
+            spec: ["Mark every change of context and what triggers it.", "Replace automatic redirects and refreshes with buttons, or design the setting that turns them off.", "Note which links open a new window, with the visible or spoken label that says so."],
+            review: ["Did the user ask for this to happen?", "If it is automatic, where is the switch to turn it off?", "What happens to someone halfway through reading when this fires?"],
+            tradeoff: "Automatic redirects and auto-opening chats can lift short-term metrics. Full AAA compliance is worth aiming for in focused tools and forms; at minimum, remove timed redirects and auto-opening windows, which cost little to fix.",
+            system: "Remove auto-redirect and auto-open options from page templates and chat widgets in the library, or ship them off by default.",
+            pitch: "When we move people without asking, some of them get lost. Letting them choose when to go keeps them with us."
+        ),
+        "3.2.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and memory disabilities", "People under stress", "Screen magnifier users", "Older users"],
+            takeaways: ["If help appears on several pages, it is in the same place relative to the other content each time: human contact details, a contact form or chat, a self-help page like an FAQ, or a chatbot.", "New in WCAG 2.2, Level A. It does not require you to offer help. It requires the help you offer to be easy to find again.", "People who need help are often already struggling. If the chat button moves between pages, they may never find it.", "“Same relative order” is about order among the page content, not identical pixels. Users who move help themselves are fine."],
+            failures: ["A contact link in the header on some pages and the footer on others", "A chat button that appears in a different corner in checkout", "Help links reordered between templates"],
+            check: ["Line up every template at the same screen size and mark where each help item sits.", "Check the order of help items is the same relative to the header, main content and footer.", "Check special templates, like checkout and account pages, that are often built separately."],
+            quiz: Quiz(question: "On product pages a “Contact us” link sits in the header. On checkout pages the header is stripped down and the link moves to the footer. Does this fail 3.2.6?", options: ["No. Checkout is a different section, so it can differ", "Yes. The help link is in a different place relative to the rest of the page", "No. The rule only applies to live chat"], answer: 1, why: "A set of pages includes checkout. The help mechanism has to keep its relative position. Keep the link in the slim header too, or put it in the footer everywhere."),
+            spec: ["List the help mechanisms offered and their fixed position in each layout.", "Show how each help item appears in minimal templates like checkout.", "Note any user setting that lets people move or hide help."],
+            review: ["Where is help on this page, and is it in the same place on the others?", "Did the checkout or sign-in template drop or move it?", "If I were stuck, could I find help without looking?"],
+            tradeoff: "Focused flows like checkout often strip the header to reduce distraction. Keep the help item in the same spot, even in a slim header. It is one link and it costs little attention.",
+            system: "Put help links and the chat launcher in the shared header and footer components, with their position locked across templates.",
+            pitch: "People who are stuck look for help where they last saw it. If it moves, they leave or call us."
         ),
         "3.3.1": DeepLesson(
             meta: "4 min read", demo: nil,
@@ -560,6 +1145,32 @@ enum Library {
             system: "Provide a review screen pattern and an undoable delete pattern, and point to them from every destructive or payment component.",
             pitch: "A second chance before money moves costs one screen. A mistaken payment costs a complaint, a refund and trust."
         ),
+        "3.3.5": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and learning disabilities", "People new to a task", "People working in a second language", "Older users"],
+            takeaways: ["Context-sensitive help is available: help about the specific field or task where people are, not just a general help center.", "Level AAA. It goes further than 3.3.2 (A), which asks for labels or instructions where input is needed. This adds help at the point of need.", "It can be hint text below a field, a worked example, a “What is this?” link next to a tricky field, or a short guide at the start of a complex form.", "Help is most needed where the label alone is not enough: tax numbers, policy choices, technical settings."],
+            failures: ["A tricky field with only a label", "Help that lives only in a separate FAQ", "Hint text that disappears once people start typing"],
+            check: ["Walk the form as a first-time user. Mark every field where you would need to ask someone.", "For each mark, point to the help on the same screen.", "Check the help can be reached by keyboard and touch, not only by hover."],
+            quiz: Quiz(question: "An insurance form asks people to choose an excess amount. The label says “Excess”. What best meets 3.3.5?", options: ["A link to the general help center in the footer", "A tooltip that appears only on hover over the label", "A short line below the field explaining what excess means, with an example"], answer: 2, why: "Help that sits with the field and is always visible is context-sensitive and reachable by everyone. A help center link is general, and hover tooltips leave out keyboard and touch users."),
+            spec: ["Write hint text for every field that needs it, and mark which fields have “More info” links.", "Design the help pattern: inline hint, disclosure or side panel, and say how it opens.", "Link each help item to its field, so it can be read with the field."],
+            review: ["Where would a first-time user get stuck here?", "Can I get help without leaving the page?", "Is this help written for experts or for the people filling it in?"],
+            tradeoff: "Help text everywhere makes forms long and noisy. Fully meeting this AAA rule rarely means help on every field: add it where research or support tickets show people get stuck, and keep it short.",
+            system: "Give the field component optional hint and “More info” slots, so help can be added without a custom design.",
+            pitch: "Every question people cannot answer on the page becomes a support call or an abandoned form. Help in place is cheaper."
+        ),
+        "3.3.6": DeepLesson(
+            meta: "4 min read", demo: nil,
+            who: ["Cognitive and learning disabilities", "Motor disabilities and tremors", "Screen reader users", "Anyone who misclicks"],
+            takeaways: ["Every submission of information can be reversed, checked for errors with a chance to correct, or confirmed before it is final.", "Level AAA. It extends 3.3.4 (AA), which only covers legal, financial, data-changing and test submissions, to every form.", "One of the three is enough: undo, input checking with a chance to fix, or a review step.", "For simple forms, checking input and letting people correct it is often all it takes."],
+            failures: ["A feedback form that sends on Enter with no checks", "Settings that save instantly with no undo", "A comment that posts with no edit or delete"],
+            check: ["List every form and every action that submits information.", "For each one, name the safeguard: undo, check and correct, or confirm.", "Try submitting each with mistakes. Do you get a chance to fix them before they count?"],
+            quiz: Quiz(question: "A support form sends a message as soon as people press Submit. The team wants to meet 3.3.6 with the least friction. What do you add?", options: ["Check required fields and formats, and let people fix errors before sending", "A confirmation email after sending", "A “Thanks for your message” page"], answer: 0, why: "Checking input with a chance to correct is one of the three options and adds no steps when there are no mistakes. An email or thank-you page comes after the fact and fixes nothing."),
+            spec: ["Mark the safeguard for every submission in the flow.", "Design the edit, undo or delete states for things people post or save.", "Write the validation rules and messages for every field."],
+            review: ["If I sent this by mistake, what would I do?", "Does this need a review step, or is checking enough?", "Can people edit or delete what they posted?"],
+            tradeoff: "A review step on every form would slow everyone. For most forms, checking input or offering edit and undo meets this AAA rule with no extra screens, so it is often worth meeting.",
+            system: "Give the form patterns built-in validation and give posted content edit and delete actions by default.",
+            pitch: "Every mistake people cannot fix becomes a support ticket. Building undo in from the start is cheaper than handling them."
+        ),
         "3.3.7": DeepLesson(
             meta: "4 min read", demo: nil,
             who: ["Cognitive and memory disabilities", "Motor disabilities", "People who use switches or voice", "Anyone on a small screen"],
@@ -585,6 +1196,19 @@ enum Library {
             tradeoff: "Security teams sometimes block paste or add puzzles to stop bots. Blocking paste mostly stops password managers, which makes passwords weaker. Use passkeys, rate limits and invisible bot checks instead.",
             system: "Make the code-entry component accept a pasted code across all its boxes, and never offer a paste-blocking option on password fields.",
             pitch: "Every locked-out user is a support call. Letting password managers work is safer and cheaper."
+        ),
+        "3.3.9": DeepLesson(
+            meta: "5 min read", demo: nil,
+            who: ["Cognitive and memory disabilities", "People with dyslexia or dyscalculia", "Password manager users", "People with low vision"],
+            takeaways: ["No step of logging in may rely on a cognitive function test, such as remembering, transcribing or solving, unless there is another method or something to help.", "Level AAA. It is 3.3.8 (AA) without its exceptions: recognizing objects, or picking a photo the user provided, is not allowed as the only way in.", "Image CAPTCHAs like “select all the buses” and “pick your own photo” checks fail here unless there is another way.", "Passkeys, email links, password managers with paste, and login through another account all avoid a test."],
+            failures: ["An image-grid CAPTCHA with no other option", "A “pick the image you chose at sign-up” step", "Security questions as the only account recovery"],
+            check: ["Walk every login, sign-up, recovery and step-up check. Note every point that asks people to recognize, remember or copy something.", "For each one, name the alternative method that needs no test.", "Check that alternatives are offered on the same screen, not hidden in support pages."],
+            quiz: Quiz(question: "To stop bots at sign-in, the security team proposes a “pick all the bicycles” image test. You are aiming for AAA. What do you choose?", options: ["Use the image test; recognizing objects is allowed", "Use invisible bot detection, or offer a passkey or email link as another way in", "Use a distorted-text CAPTCHA instead"], answer: 1, why: "Object recognition is allowed at AA but not under 3.3.9. A distorted-text CAPTCHA is a transcription test. Bot checks that ask nothing of people, or a method with no test, keep the login open to everyone."),
+            spec: ["List every login method offered and confirm at least one involves no cognitive test.", "State that all credential and code fields allow paste and autofill.", "Document the bot protection used and confirm it asks nothing of the person."],
+            review: ["What does this step ask someone to recognize, remember or copy?", "Is there a way in that asks for none of that?", "Are we relying on the object-recognition exception that AAA removes?"],
+            tradeoff: "Image and personal-photo checks are cheap and familiar, which is why AA allows them. For AAA, move to passkeys, email links and invisible bot checks. Products for wide public use, like health and government services, gain the most from meeting it.",
+            system: "Offer passkey and email-link login as standard options in the authentication pattern, and leave image puzzles out of the library.",
+            pitch: "Every puzzle at the door turns some people away. Passkeys are both easier and more secure."
         ),
         "4.1.2": DeepLesson(
             meta: "5 min read", demo: nil,
