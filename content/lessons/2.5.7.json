@@ -1,0 +1,50 @@
+{
+  "num": "2.5.7",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Tremors and limited dexterity",
+    "Head pointer and eye tracking users",
+    "Trackpad and stylus users",
+    "People who cannot hold a press"
+  ],
+  "takeaways": [
+    "Anything done by dragging can also be done with a single pointer and no drag: taps or clicks. New in WCAG 2.2, Level AA.",
+    "It covers sortable lists, sliders, kanban cards, resizable panels and map panning.",
+    "Keyboard support does not count here. The alternative must work with a pointer. Keyboard access is 2.1.1.",
+    "Exceptions: dragging is essential, or the drag is set by the browser and you have not changed it."
+  ],
+  "failures": [
+    "Reorder handles with no move up or down option",
+    "A slider that only responds to dragging the thumb",
+    "File upload that only accepts drag and drop"
+  ],
+  "check": [
+    "For every draggable element, find the tap or click path that does the same job.",
+    "Try each drag task with single clicks only, never holding the button down.",
+    "Check that the alternative is visible or easy to find, not a hidden gesture."
+  ],
+  "quiz": {
+    "question": "A kanban board lets people drag cards between columns. The cards are also keyboard operable. What else does it need?",
+    "options": [
+      "Nothing. Keyboard support covers it",
+      "A “Drag here” hint on each column",
+      "A “Move to” menu on each card"
+    ],
+    "answer": 2,
+    "why": "Keyboard support helps keyboard users, but someone using a head pointer or a shaky hand still cannot hold and drag. A move menu gives them a click-only path."
+  },
+  "spec": [
+    "For each drag interaction, specify the single-pointer alternative: buttons, a menu, or tap to pick up and tap to place.",
+    "For sliders, state that tapping the track sets the value, or add step buttons.",
+    "Note any drag you treat as essential, and why."
+  ],
+  "review": [
+    "How would someone do this without ever holding the button down?",
+    "Is the alternative findable, or only in a help article?",
+    "Is this a drag or a path-based gesture like a swipe? Swipes are 2.5.1."
+  ],
+  "tradeoff": "Drag and drop feels direct and fast, and extra buttons add clutter. Keep the drag, and put the alternative in a menu on the item, so it is there when needed and quiet when not.",
+  "system": "Every draggable component ships with its non-drag alternative built in, such as a “Move” menu on sortable rows and step buttons on sliders.",
+  "pitch": "Dragging is one of the hardest things to do with a shaky hand or a head pointer. One menu item turns a blocked task into a finished one."
+}

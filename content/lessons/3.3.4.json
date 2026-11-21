@@ -1,0 +1,50 @@
+{
+  "num": "3.3.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "Motor disabilities and tremors",
+    "Screen reader users",
+    "Anyone who misclicks"
+  ],
+  "takeaways": [
+    "When a page makes a legal commitment or financial transaction, changes or deletes user data, or submits test answers, mistakes must be fixable.",
+    "Do at least one: make the action reversible, check the input and let people correct errors, or show a review step to confirm before final submission.",
+    "A review screen before “Pay” or “Sign”, an undo after “Delete”, or a cancellation period all count.",
+    "Other forms are not covered by this AA rule, though the same patterns help everywhere."
+  ],
+  "failures": [
+    "A one-tap purchase with no review and no cancel",
+    "Delete with no confirm and no undo",
+    "A test that submits answers the moment the last one is picked"
+  ],
+  "check": [
+    "List every action in the flow that spends money, signs something, changes saved data or submits a test.",
+    "For each, point to the screen or state that gives the second chance.",
+    "Check the review step shows what will actually happen: amount, item, recipient."
+  ],
+  "quiz": {
+    "question": "A banking app sends a transfer as soon as people tap “Send”. What is the lightest fix that meets the rule?",
+    "options": [
+      "A toast that says “Transfer sent”",
+      "A review screen with the amount and payee, and a “Confirm” button",
+      "A help article explaining how to call support"
+    ],
+    "answer": 1,
+    "why": "A chance to review and confirm before final submission meets the rule. A toast confirms after the fact and reverses nothing."
+  },
+  "spec": [
+    "Mark each covered action and which safeguard it uses: undo, check, or confirm.",
+    "Design the review screen and the undo state, with how long undo stays available.",
+    "Write what the confirm button says, so it names the action, like “Pay £40”."
+  ],
+  "review": [
+    "If I tapped this by mistake, how would I get back?",
+    "Does the review step show the details that matter?",
+    "Which actions here change saved data, and are they covered?"
+  ],
+  "tradeoff": "Extra steps slow down frequent users. Undo often beats a confirm dialog: it is fast for the confident and safe for everyone else.",
+  "system": "Provide a review screen pattern and an undoable delete pattern, and point to them from every destructive or payment component.",
+  "pitch": "A second chance before money moves costs one screen. A mistaken payment costs a complaint, a refund and trust."
+}

@@ -1,0 +1,50 @@
+{
+  "num": "2.3.1",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Photosensitive epilepsy",
+    "Other seizure disorders",
+    "Migraine",
+    "Anyone who has not been diagnosed yet"
+  ],
+  "takeaways": [
+    "Nothing on the page flashes more than three times in any one second, unless the flashes are below the general flash and red flash thresholds.",
+    "Flashing can trigger seizures. The harm can be immediate and serious, so this is Level A.",
+    "A flash is a quick change from light to dark and back. Saturated red flashing is treated more strictly.",
+    "It covers everything on the page, including videos, ads and animations you did not make yourself."
+  ],
+  "failures": [
+    "A strobing “breaking news” or sale banner",
+    "A video with lightning, gunfire or camera flashes",
+    "A rapid light-dark flicker used as an error or alert effect"
+  ],
+  "check": [
+    "Count the flashes in each animation. More than three in any one second needs attention.",
+    "Run videos and complex animations through a flash analysis tool before release.",
+    "Check third-party content such as ads and embedded video, not only your own work."
+  ],
+  "quiz": {
+    "question": "A game’s win screen flashes the whole background between white and black five times a second for two seconds. What should you do?",
+    "options": [
+      "Keep it, and add a warning before it plays",
+      "Keep it, but let people turn it off in settings",
+      "Change it to three flashes a second or fewer, or a non-flashing effect"
+    ],
+    "answer": 2,
+    "why": "A large, high-contrast flash at five per second is the exact pattern this rule forbids. A warning or an off switch does not help someone who has a seizure before they can react."
+  },
+  "spec": [
+    "Give the timing of every flashing or blinking effect, in flashes per second.",
+    "Mark any video or animation that needs a flash analysis before it ships.",
+    "Specify a slower or non-flashing version for any effect that came close."
+  ],
+  "review": [
+    "Is there anything here that flickers or strobes?",
+    "Who checks the videos and ads we did not design?",
+    "Could this alert get attention without flashing at all?"
+  ],
+  "tradeoff": "Flashing grabs attention, which is why people reach for it. Use color, size or a single pulse instead. They get attention without the risk.",
+  "system": "Set motion tokens so no blink or pulse can run faster than three times a second, and forbid full-screen flashing in the guidelines.",
+  "pitch": "This is the one rule where getting it wrong can put someone in hospital. It costs us nothing to avoid."
+}

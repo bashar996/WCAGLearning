@@ -1,0 +1,50 @@
+{
+  "num": "3.2.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Screen reader users",
+    "Voice control users",
+    "Anyone learning a new product"
+  ],
+  "takeaways": [
+    "Components that do the same thing across a set of pages are identified the same way: same label, same icon, same accessible name.",
+    "Consistent does not mean identical text every time. “Go to page 4” and “Go to page 5” are consistent.",
+    "Text alternatives count. A search icon is “Search” on every page, not “Find” on one and “Look up” on another.",
+    "It is about naming. The order of repeated navigation is 3.2.3, and matching visible and coded labels is 2.5.3."
+  ],
+  "failures": [
+    "“Save” on one screen and “Done” on another for the same action",
+    "Two different icons for the same function",
+    "An icon button with a different hidden label on each page"
+  ],
+  "check": [
+    "List every repeated action and its label, icon and accessible name across screens.",
+    "Look for the same function with different words or icons.",
+    "Check icon-only buttons’ accessible names, not just their visuals."
+  ],
+  "quiz": {
+    "question": "Saving changes is “Save” in the editor, “Done” in settings, and a floppy disk icon in the profile. What is the fix?",
+    "options": [
+      "None. Each page is consistent with itself",
+      "Choose one label and icon and use it everywhere",
+      "Add tooltips that explain each version"
+    ],
+    "answer": 1,
+    "why": "The function is the same, so its identity should be too. Tooltips explain the inconsistency without removing it."
+  },
+  "spec": [
+    "Keep a list of shared actions with their label, icon and accessible name.",
+    "Annotate icon-only buttons with the exact accessible name.",
+    "Flag any place where a familiar action is named differently on purpose, and why."
+  ],
+  "review": [
+    "Is this the same action we call something else elsewhere?",
+    "Does this icon mean the same thing on every screen?",
+    "What will a screen reader say for this button here, and on the other pages?"
+  ],
+  "tradeoff": "Different teams and contexts pull toward local wording. Agree on one name per function, and allow small variations only when the function itself is different.",
+  "system": "Put shared actions in the component library with fixed labels, icons and accessible names, and keep a content glossary.",
+  "pitch": "If “Save” has three names, people have to learn our product three times. One name per action makes it easier for everyone."
+}

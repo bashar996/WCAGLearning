@@ -1,0 +1,50 @@
+{
+  "num": "1.1.1",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Screen reader users",
+    "Low vision",
+    "Voice control users",
+    "Slow connections with images off"
+  ],
+  "takeaways": [
+    "A meaningful image needs a text alternative that does the same job as the image.",
+    "Decorative images are marked so assistive tech skips them.",
+    "Icon-only buttons need a name. Describe the action, not the picture: “Close”, not “X icon”.",
+    "Complex images such as charts need a short alternative plus a longer description nearby."
+  ],
+  "failures": [
+    "Icon buttons with no accessible name",
+    "Alt text that says “image” or repeats the file name",
+    "Charts with no text summary"
+  ],
+  "check": [
+    "For each image, ask: if it vanished, what would be lost? Write that down.",
+    "Mark every image as decorative or meaningful in the file.",
+    "Name every icon-only control."
+  ],
+  "quiz": {
+    "question": "A magnifying-glass icon button submits a search. What is the best text alternative?",
+    "options": [
+      "“Magnifying glass”",
+      "“Search”",
+      "None. It is decorative"
+    ],
+    "answer": 1,
+    "why": "Describe what the control does. The picture means nothing to someone who cannot see it."
+  },
+  "spec": [
+    "Annotate each image as decorative or meaningful.",
+    "Write the alt text yourself for meaningful images.",
+    "Give every icon-only control its accessible name."
+  ],
+  "review": [
+    "Who wrote the alt text here: the designer, or nobody?",
+    "Which icons have no visible label, and what are they called?",
+    "What is the text equivalent of this chart?"
+  ],
+  "tradeoff": "Icon-only interfaces are compact and ambiguous for everyone. Where space allows, a visible label beats a hidden name.",
+  "system": "Make the accessible name a required property on icon button and image components.",
+  "pitch": "Alt text is content. If nobody owns it, it ships empty."
+}

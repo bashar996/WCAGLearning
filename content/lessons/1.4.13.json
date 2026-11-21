@@ -1,0 +1,50 @@
+{
+  "num": "1.4.13",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Screen magnifier users",
+    "Low vision",
+    "Tremors and limited dexterity",
+    "Cognitive disabilities"
+  ],
+  "takeaways": [
+    "Content that appears on hover or keyboard focus, such as tooltips, popovers and hover menus, must be dismissible, hoverable and persistent.",
+    "Dismissible: people can close it without moving the pointer or focus, usually with Esc. Hoverable: if hover opened it, the pointer can move onto it without it vanishing.",
+    "Persistent: it stays until hover or focus moves away, the person dismisses it, or its information is no longer valid. No timeouts.",
+    "Exception: content the browser controls, like the native title tooltip. Content opened by a click is not covered."
+  ],
+  "failures": [
+    "A tooltip that disappears when the pointer moves toward it",
+    "A hover card that covers the next field and cannot be closed",
+    "A popover that fades out after a few seconds"
+  ],
+  "check": [
+    "Hover each trigger, then move the pointer onto the content. Does it stay?",
+    "Focus each trigger with the keyboard and press Esc. Does the content close and focus stay put?",
+    "Wait. Does anything disappear on its own?"
+  ],
+  "quiz": {
+    "question": "A help tooltip appears on hover and covers the field below it. What must it support?",
+    "options": [
+      "Closing by itself after 3 seconds",
+      "A close button inside the tooltip, and nothing else",
+      "Esc to close it, and staying open while the pointer moves onto it"
+    ],
+    "answer": 2,
+    "why": "A timeout breaks persistence, and a close button means moving the pointer, which may close it anyway. Esc closes it in place, and hoverability lets magnifier users read it."
+  },
+  "spec": [
+    "For each hover or focus reveal, specify the trigger, how it closes and that Esc dismisses it.",
+    "Show the hover bridge: no gap between trigger and content that closes it.",
+    "State that it has no timeout."
+  ],
+  "review": [
+    "Can someone zoomed in to 400% move onto this tooltip and read it?",
+    "How do I get rid of this without moving my mouse?",
+    "Should this be on click instead of hover?"
+  ],
+  "tradeoff": "Hover reveals keep screens clean, but they are fragile. Keep essential information visible, and use hover and focus only for extras that follow these three rules.",
+  "system": "Build one tooltip and one popover component with Esc dismissal, hoverability and no timeout, and ban custom hover reveals outside them.",
+  "pitch": "People who magnify the screen see one small piece at a time. A tooltip that vanishes when they move toward it is help they can never read."
+}

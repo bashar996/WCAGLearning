@@ -1,0 +1,50 @@
+{
+  "num": "3.3.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "Screen reader users",
+    "Low vision with zoom",
+    "Anyone interrupted mid-form"
+  ],
+  "takeaways": [
+    "Every input has a label that stays visible while people type.",
+    "Placeholders are not labels. They vanish, and are often low contrast.",
+    "Say what format you need before people get it wrong: date order, password rules.",
+    "Mark required fields in words, or with a symbol you explain."
+  ],
+  "failures": [
+    "Placeholder-only fields",
+    "Format rules revealed only in the error",
+    "A group of fields, such as a date, with one vague label"
+  ],
+  "check": [
+    "Fill in the form, then look again. Can you still tell what each field is?",
+    "Check that every hint appears before the input, not after an error.",
+    "Check that required and optional differ by more than color."
+  ],
+  "quiz": {
+    "question": "A date field accepts only DD/MM/YYYY. Where does that instruction belong?",
+    "options": [
+      "In the error message",
+      "Visible with the label, before typing",
+      "In the placeholder"
+    ],
+    "answer": 1,
+    "why": "Instructions prevent errors. A placeholder disappears at the moment it is needed."
+  },
+  "spec": [
+    "Write the label, hint and required state for every field.",
+    "Note which hint text stays on screen.",
+    "For grouped fields, give the group label and each part’s label."
+  ],
+  "review": [
+    "Which fields lose their label once filled?",
+    "What does someone need to know before typing here?",
+    "Could the form ask for less?"
+  ],
+  "tradeoff": "Labels above fields cost vertical space. Floating labels save it, but must stay readable in size and contrast once floated.",
+  "system": "Make label a required property on the field component, with hint and required built in.",
+  "pitch": "Every unclear field is a support ticket or an abandoned form."
+}

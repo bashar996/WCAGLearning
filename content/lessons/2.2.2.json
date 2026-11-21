@@ -1,0 +1,50 @@
+{
+  "num": "2.2.2",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Attention-related disabilities",
+    "Cognitive and reading disabilities",
+    "Screen reader and magnifier users",
+    "Anyone reading slowly"
+  ],
+  "takeaways": [
+    "Anything that moves, blinks or scrolls on its own for more than 5 seconds, next to other content, needs a way to pause, stop or hide it.",
+    "Content that updates on its own, such as a live feed or ticker, needs a way to pause, stop or hide it, or to control how often it updates.",
+    "Movement pulls the eye away from what people are trying to read. For some people it makes the rest of the page unusable.",
+    "Motion that is essential to the activity is exempt. A decorative or promotional animation almost never is."
+  ],
+  "failures": [
+    "An auto-advancing carousel with no pause button",
+    "A looping background video with no stop control",
+    "A news ticker or live score feed that cannot be paused"
+  ],
+  "check": [
+    "Open each screen and wait. List everything that moves or changes without you touching it.",
+    "For each item that runs longer than 5 seconds, find the visible pause, stop or hide control.",
+    "Check that the control works by keyboard, not only by hovering over the moving area."
+  ],
+  "quiz": {
+    "question": "A homepage hero carousel auto-advances every 6 seconds and loops forever. The team says it pauses on hover. Is that enough?",
+    "options": [
+      "No. Add a visible pause button that keyboard and touch users can reach",
+      "Yes. Pausing on hover is a pause mechanism",
+      "Yes, because each slide shows for longer than 5 seconds"
+    ],
+    "answer": 0,
+    "why": "Hover does nothing for keyboard, touch or screen reader users, so they still cannot stop it. The 5 seconds is about how long the motion lasts overall, not each slide."
+  },
+  "spec": [
+    "List every element that moves or updates automatically, with how long it runs.",
+    "Draw the pause, stop or hide control for each, with its position, label and both states.",
+    "Note whether the paused state is remembered when people move between pages."
+  ],
+  "review": [
+    "What on this screen moves without anyone asking it to?",
+    "Where is the pause button, and can you reach it without a mouse?",
+    "Does this animation need to loop at all?"
+  ],
+  "tradeoff": "Marketing wants motion to catch the eye, and that is exactly what makes it hard for others to read. Let it play once and stop, or keep it running with a clear pause control near the start of the component.",
+  "system": "Give the carousel, video background and ticker components a built-in pause control that cannot be turned off.",
+  "pitch": "If people cannot stop the carousel, many of them stop reading the page instead."
+}

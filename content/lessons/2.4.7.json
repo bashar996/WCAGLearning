@@ -1,0 +1,50 @@
+{
+  "num": "2.4.7",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Switch and voice control users",
+    "Low vision",
+    "Power users"
+  ],
+  "takeaways": [
+    "Every interactive element shows a visible indicator when it has keyboard focus.",
+    "Design it. Do not leave it to the browser default, and never remove it.",
+    "A good target, from 2.4.13: a 2px outline, offset from the element, with 3:1 contrast.",
+    "It has to work on every background the component sits on."
+  ],
+  "failures": [
+    "The outline removed in the stylesheet",
+    "A focus style so faint nobody notices it",
+    "Custom components with no focus state drawn"
+  ],
+  "check": [
+    "Tab through the prototype or build. Can you always tell where you are?",
+    "Check the focus style on light, dark and image backgrounds.",
+    "Include a focus state in every component’s state list."
+  ],
+  "quiz": {
+    "question": "A designer removes the focus outline because mouse users see it after clicking. What is the best response?",
+    "options": [
+      "Agree. It is visual noise",
+      "Keep a designed style that shows for keyboard focus",
+      "Replace it with a color change on hover"
+    ],
+    "answer": 1,
+    "why": "Developers can show the ring only for keyboard use. Hover does nothing for people who do not use a pointer."
+  },
+  "spec": [
+    "Draw the focus state for every interactive component.",
+    "Give the ring’s width, offset and color as values.",
+    "Show it on each surface color the component can sit on."
+  ],
+  "review": [
+    "Where is the focus state for this component?",
+    "Does the ring survive on the darkest and lightest backgrounds?",
+    "Does a sticky bar ever cover the focused element? That is 2.4.11."
+  ],
+  "tradeoff": "A strong ring can clash with a refined style. A two-tone ring, light and dark together, stays visible everywhere and can be tuned to the brand.",
+  "system": "One focus token, applied by every component. Nobody should design a focus ring twice.",
+  "pitch": "Without visible focus, a keyboard user is operating your product blindfolded."
+}

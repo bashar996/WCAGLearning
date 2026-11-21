@@ -1,0 +1,50 @@
+{
+  "num": "3.3.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and learning disabilities",
+    "Screen reader users",
+    "People with dyslexia",
+    "Non-native speakers"
+  ],
+  "takeaways": [
+    "When the system detects an error and knows how to fix it, it tells the person how.",
+    "“Invalid date” describes. “Enter the date as DD/MM/YYYY, for example 07/03/2025” suggests.",
+    "Offer the likely fix: a close match for a misspelled city, the allowed range for a number.",
+    "Leave out a suggestion when it would weaken security or defeat the purpose, such as hinting at a password or a test answer."
+  ],
+  "failures": [
+    "“Invalid input” with no hint of what is valid",
+    "Password rules revealed one at a time, after each failure",
+    "A list of accepted values that the system knows but does not show"
+  ],
+  "check": [
+    "For each error message, ask: does it say what to do next?",
+    "List every rule the system checks, and make sure its error names the rule.",
+    "Check that no message gives away a password, security answer or test answer."
+  ],
+  "quiz": {
+    "question": "A login fails because the password is wrong. What should the error say?",
+    "options": [
+      "“Your password should be the one with your dog’s name”",
+      "“Your password starts with K”",
+      "“That email and password do not match. Try again or reset your password”"
+    ],
+    "answer": 2,
+    "why": "Hinting at the password would jeopardize security, which is an exception. You can still point to a safe next step, such as resetting."
+  },
+  "spec": [
+    "Pair every error with its suggested fix, written out in the file.",
+    "Note where the fix is known, such as format, range or a near match, and where it is not.",
+    "Flag messages that must stay vague for security, and why."
+  ],
+  "review": [
+    "Does this message tell me how to fix it, or only that I failed?",
+    "What does the system already know that it is not telling me?",
+    "Is anything here vague for a real security reason, or just by habit?"
+  ],
+  "tradeoff": "Specific messages take more writing and more states to design. Start with the most common errors from analytics or support tickets, and write those well first.",
+  "system": "Keep an error message library in the system, with each validation rule paired with its tested wording.",
+  "pitch": "Telling people how to fix an error is the cheapest way to get them past it."
+}

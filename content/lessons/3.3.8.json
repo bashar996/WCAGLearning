@@ -1,0 +1,50 @@
+{
+  "num": "3.3.8",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and memory disabilities",
+    "People with dyslexia or dyscalculia",
+    "Password manager users",
+    "Anyone who forgets passwords"
+  ],
+  "takeaways": [
+    "No step of logging in may rely on a cognitive function test, such as remembering a password, transcribing a code or solving a puzzle, unless something helps.",
+    "Help can be another method that is not a test, such as a passkey or an email link, or support like pasting and password managers.",
+    "A password field passes if people can paste into it and password managers can fill it.",
+    "At AA, recognizing objects, or picking a photo the user provided, is allowed. 3.3.9 (AAA) removes that exception."
+  ],
+  "failures": [
+    "Paste blocked in password or code fields",
+    "A distorted-text CAPTCHA with no alternative",
+    "One-time code fields that break when a code is pasted"
+  ],
+  "check": [
+    "Walk every login, sign-up and verify step and list what each asks people to remember, copy or solve.",
+    "Try a password manager and paste in every field of the flow.",
+    "For each test you find, name the alternative or the assist that covers it."
+  ],
+  "quiz": {
+    "question": "Your security team wants to block paste in the password field to stop attacks. What do you decide?",
+    "options": [
+      "Allow paste and password manager autofill",
+      "Block paste, but add a “Show password” toggle",
+      "Block paste, and add a security question as a backup"
+    ],
+    "answer": 0,
+    "why": "A password with no help is a memory test. Paste and password managers are the mechanism that assists, so blocking them fails the rule, and a security question is just another memory test."
+  },
+  "spec": [
+    "State that every credential and code field allows paste and autofill.",
+    "Give password and code fields the right autocomplete tokens.",
+    "List the other login methods offered, such as passkey or email link, and where they appear."
+  ],
+  "review": [
+    "What does this login ask me to remember, copy or solve?",
+    "Have you tried it with a password manager and paste?",
+    "If a CAPTCHA is here, what is the alternative?"
+  ],
+  "tradeoff": "Security teams sometimes block paste or add puzzles to stop bots. Blocking paste mostly stops password managers, which makes passwords weaker. Use passkeys, rate limits and invisible bot checks instead.",
+  "system": "Make the code-entry component accept a pasted code across all its boxes, and never offer a paste-blocking option on password fields.",
+  "pitch": "Every locked-out user is a support call. Letting password managers work is safer and cheaper."
+}

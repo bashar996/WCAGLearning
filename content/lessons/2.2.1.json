@@ -1,0 +1,50 @@
+{
+  "num": "2.2.1",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Cognitive and reading disabilities",
+    "Screen reader users",
+    "Motor disabilities",
+    "People working in a second language"
+  ],
+  "takeaways": [
+    "If you set a time limit, people can turn it off, adjust it to at least ten times the default, or extend it.",
+    "To extend, people are warned before time runs out, get at least 20 seconds to extend with a simple action such as one button, and can do it at least ten times.",
+    "Some people need far longer to read, type or move through a screen. A limit that feels generous to you can lock them out.",
+    "Exceptions: real-time events like auctions, limits that are essential to the activity, and limits longer than 20 hours."
+  ],
+  "failures": [
+    "A session that expires with no warning, losing the form",
+    "A timed checkout with no way to ask for more time",
+    "A toast with an Undo button that vanishes before people can reach it"
+  ],
+  "check": [
+    "List every timer in the flow, visible or not: sessions, holds, toasts, auto-advancing steps.",
+    "For each one, find how people turn it off, adjust it or extend it.",
+    "Check the warning gives at least 20 seconds and that extending is a single, simple action."
+  ],
+  "quiz": {
+    "question": "A banking app signs people out after 10 minutes of inactivity. What is the simplest way to meet 2.2.1?",
+    "options": [
+      "Show a countdown in the header so people can see it",
+      "Warn before time runs out, with a “Stay signed in” button and at least 20 seconds to press it",
+      "Make the limit 15 minutes instead"
+    ],
+    "answer": 1,
+    "why": "A visible countdown still ends with no choice, and a longer fixed limit is still a fixed limit. A warning with a one-press extend lets anyone take the time they need."
+  },
+  "spec": [
+    "List each time limit, its length, and whether it can be turned off, adjusted or extended.",
+    "Design the warning dialog: when it appears, its wording, and the extend button.",
+    "Note what happens when time does run out, and what data is kept."
+  ],
+  "review": [
+    "Where in this flow can time run out on someone?",
+    "Who decided this limit, and what is it protecting?",
+    "If someone is twice as slow as you, what happens?"
+  ],
+  "tradeoff": "Security and stock teams want short limits. Keep the limit, but always warn and let people extend it with one action. That keeps the protection without punishing slow users.",
+  "system": "Provide one timeout warning pattern in the library, with the warning time and extend action built in.",
+  "pitch": "Every surprise timeout is a lost form and a frustrated customer. A warning with one button keeps them, and keeps the security."
+}

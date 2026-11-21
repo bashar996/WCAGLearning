@@ -1,0 +1,51 @@
+{
+  "num": "1.4.3",
+  "meta": "6 min · interactive",
+  "demo": "contrast",
+  "who": [
+    "Low vision",
+    "Color vision deficiency",
+    "Aging eyes",
+    "Anyone in bright sunlight",
+    "Cheap or dim screens"
+  ],
+  "takeaways": [
+    "Body text needs 4.5:1. Large text — 24px regular, or about 18.7px bold — needs 3:1.",
+    "Measure against the real background. Over gradients and photos, test the lightest spot behind the text.",
+    "Never round up. 4.49:1 fails.",
+    "Logos, purely decorative text and inactive (disabled) controls are exempt."
+  ],
+  "failures": [
+    "Light gray helper, placeholder and caption text",
+    "White text on light brand colors — sky blue, yellow, orange",
+    "Text over photos with no overlay or scrim"
+  ],
+  "check": [
+    "Sample text and background with a contrast checker such as WebAIM or Stark.",
+    "Check every state: hover, pressed, selected, error.",
+    "For text on images, test the lightest area behind it."
+  ],
+  "quiz": {
+    "question": "A 16px regular label in #949494 sits on white — 3.03:1. Does it pass?",
+    "options": [
+      "Yes — it’s above 3:1",
+      "No — body text needs 4.5:1",
+      "Only at Level A"
+    ],
+    "answer": 1,
+    "why": "16px regular isn’t “large text”, so 4.5:1 applies. #767676 is the lightest gray that passes on white — worth memorizing."
+  },
+  "spec": [
+    "Write the color pair and its measured ratio next to each text style.",
+    "Where text sits on an image, note the scrim or overlay it depends on.",
+    "List every state with its own pair: hover, pressed, selected, error."
+  ],
+  "review": [
+    "Which pairs here were measured, and which were judged by eye?",
+    "What happens to this text in dark mode and in the error state?",
+    "Does anything look disabled that is actually active?"
+  ],
+  "tradeoff": "The brand color fails on white? Keep the hue for large type, fills and graphics, and choose a darker step for body text. An exception for one team becomes the standard for all.",
+  "system": "Ship color tokens as approved pairs, not loose swatches. If a pair is not in the system, nobody has checked it.",
+  "pitch": "Low-contrast text is one of the most common failures audits find, and the cheapest to fix once, in tokens."
+}

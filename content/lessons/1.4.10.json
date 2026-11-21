@@ -1,0 +1,50 @@
+{
+  "num": "1.4.10",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Low vision users who zoom",
+    "Screen magnifier users",
+    "People on small screens",
+    "Older adults"
+  ],
+  "takeaways": [
+    "At 320 CSS px wide, content fits without scrolling in two directions. That equals a 1280px-wide window zoomed to 400%.",
+    "For content that scrolls sideways, such as vertical text, the test is 256 CSS px tall.",
+    "No content or function is lost. The narrow layout can stack columns, collapse navigation into a menu and wrap text.",
+    "Exception: parts that need a two-dimensional layout, such as maps, data tables, diagrams, video and editors whose toolbars must stay in view. They may scroll; the rest of the page still reflows."
+  ],
+  "failures": [
+    "A fixed-width layout that scrolls sideways at 400% zoom",
+    "Sticky headers and footers that fill the screen when zoomed",
+    "Content hidden in the mobile layout with no way to reach it"
+  ],
+  "check": [
+    "Set a frame to 320px wide and lay out every key screen in it.",
+    "In the build, set the window to 1280px and zoom to 400%. Read the page scrolling only down.",
+    "Check that nothing is cut off, overlapping or missing compared with the wide view."
+  ],
+  "quiz": {
+    "question": "At 320px a data table is wider than the screen. Everything else on the page fits. Does the page pass?",
+    "options": [
+      "No. Nothing may scroll sideways",
+      "Only if the table turns into cards",
+      "Yes. The table may scroll sideways on its own"
+    ],
+    "answer": 2,
+    "why": "A data table needs rows and columns to make sense, so it is exempt. The rest of the page must reflow, so give the table its own scroll area."
+  },
+  "spec": [
+    "Provide a 320px-wide layout for each template, and say what changes.",
+    "Mark which regions may scroll in two directions, and why.",
+    "Say how sticky elements behave when space is tight, such as becoming static."
+  ],
+  "review": [
+    "What does this look like at 400% zoom?",
+    "Which parts truly need two-dimensional scrolling?",
+    "How much of the screen is left once sticky bars are shown?"
+  ],
+  "tradeoff": "Hiding things on small screens keeps them tidy, but anything hidden must still be reachable. Collapse into menus and disclosures rather than removing content. Text size alone is 1.4.4.",
+  "system": "Make every component responsive down to 320px, and give tables and media a built-in scroll container.",
+  "pitch": "Zooming in is how many people with low vision read. If they have to scroll sideways on every line, they give up."
+}

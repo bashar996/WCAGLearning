@@ -1,0 +1,50 @@
+{
+  "num": "1.4.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Low vision",
+    "Older adults",
+    "People on small screens",
+    "Anyone without their glasses"
+  ],
+  "takeaways": [
+    "Text can be enlarged to 200% without losing content or function.",
+    "Design for growth: containers expand, text wraps, nothing is clipped.",
+    "Avoid fixed heights on anything that holds text.",
+    "On phones, respect the system text size setting."
+  ],
+  "failures": [
+    "Text cut off or overlapping when enlarged",
+    "Fixed-height buttons that clip two-line labels",
+    "Layouts that only work with one line of text"
+  ],
+  "check": [
+    "Zoom the browser to 200% and use the page.",
+    "Set your phone to its largest text size and open the app.",
+    "Stress-test components with double-length text."
+  ],
+  "quiz": {
+    "question": "At 200% text size a tab label is cut off with an ellipsis, and there is no other way to read it. Does it pass?",
+    "options": [
+      "Yes. Truncation is a standard pattern",
+      "No. Content is lost",
+      "Yes, at Level AA"
+    ],
+    "answer": 1,
+    "why": "If the full label cannot be read, content is lost. Let it wrap, or let the tabs scroll."
+  },
+  "spec": [
+    "Show how each component grows: wrap, expand or scroll.",
+    "Mark containers as hugging their content, not fixed height.",
+    "Include a large-text version of key screens."
+  ],
+  "review": [
+    "What does this screen look like at the largest text size?",
+    "Which elements have fixed heights?",
+    "Where will long translations break this layout?"
+  ],
+  "tradeoff": "Tight, pixel-perfect layouts break first. Flexible layouts look a little less controlled and survive real use, including translation.",
+  "system": "Build components with auto layout and test each one at 200% before release.",
+  "pitch": "Many people run their phone at a larger text size. A layout that breaks under it breaks for them every day."
+}

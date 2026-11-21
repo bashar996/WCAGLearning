@@ -1,0 +1,50 @@
+{
+  "num": "1.4.12",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Dyslexia",
+    "Low vision",
+    "Cognitive disabilities",
+    "People using reading extensions"
+  ],
+  "takeaways": [
+    "When people set line height to 1.5× the font size, paragraph spacing to 2×, letter spacing to 0.12× and word spacing to 0.16×, no content or function is lost.",
+    "You do not have to design with these values. Your layout has to survive people applying them.",
+    "Wider spacing makes text longer and taller. Containers that grow with their text survive; fixed boxes clip.",
+    "It applies to real text in the page, not text in images. Languages that do not use one of these properties only need the ones they use."
+  ],
+  "failures": [
+    "Fixed-height cards that cut off the last line",
+    "Button labels that overflow or get truncated",
+    "Text that overlaps the element below it"
+  ],
+  "check": [
+    "Apply a text spacing bookmarklet to the build and use the page.",
+    "In your file, make a test version of key components with the four values applied.",
+    "Look for clipped, overlapping or truncated text, especially in buttons, tabs and badges."
+  ],
+  "quiz": {
+    "question": "Brand guidelines set body line height to 1.2. Does that fail 1.4.12?",
+    "options": [
+      "No, as long as the layout survives people raising it",
+      "Yes. Line height must be at least 1.5",
+      "Yes, unless it is only used for headings"
+    ],
+    "answer": 0,
+    "why": "This criterion is about what happens when people override spacing, not about your defaults. Generous spacing still helps readability, but here the test is whether anything breaks."
+  },
+  "spec": [
+    "Mark containers that hold text as hugging their content, not fixed height.",
+    "Say how labels behave when they get longer: wrap, grow or scroll, never clip.",
+    "Avoid line height and spacing values that rely on text staying exactly one line."
+  ],
+  "review": [
+    "Which elements have a fixed height with text inside?",
+    "What happens to these tabs if every word gets wider?",
+    "Where are we truncating with an ellipsis, and can people still read the full text?"
+  ],
+  "tradeoff": "Tight, fixed boxes give a precise look and break first. Let containers grow, and set minimum heights rather than fixed ones, so the design keeps its shape at default and survives at wider spacing.",
+  "system": "Build text containers with auto layout and minimum heights, and test each component with the four spacing values before release.",
+  "pitch": "Many people with dyslexia read better with more space between letters and lines. If our layout breaks when they add it, we have locked them out."
+}

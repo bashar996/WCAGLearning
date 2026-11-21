@@ -1,0 +1,50 @@
+{
+  "num": "2.4.13",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Low vision",
+    "Keyboard users",
+    "Older adults",
+    "Attention-related disabilities"
+  ],
+  "takeaways": [
+    "A focus indicator is at least as large as a 2 CSS px thick outline around the unfocused component, and its pixels change by at least 3:1 between unfocused and focused states.",
+    "It is Level AAA. At AA, 2.4.7 only asks that focus is visible.",
+    "The 3:1 compares the same pixels before and after focus. 1.4.11 compares colors against what is next to them.",
+    "A solid 2px outline in a color with 3:1 against the background meets it for most components."
+  ],
+  "failures": [
+    "A 1px outline, too thin to meet the size",
+    "A subtle tint change on the button background",
+    "A thin underline under a large card"
+  ],
+  "check": [
+    "Measure the ring: is it at least 2px thick all the way around?",
+    "Compare the ring color with what those pixels were before focus. Is it 3:1 or more?",
+    "Check the ring on every surface the component can sit on."
+  ],
+  "quiz": {
+    "question": "A button’s focus style is a 1px solid dark blue outline with 8:1 contrast against the white page. Does it meet 2.4.13?",
+    "options": [
+      "Yes. The contrast is well above 3:1",
+      "No. Its area is smaller than a 2px perimeter",
+      "Yes. Any visible focus style passes"
+    ],
+    "answer": 1,
+    "why": "Both parts must pass: size and contrast. A 1px outline covers about half the area of a 2px one, so it is too small however strong the color."
+  },
+  "spec": [
+    "Give the focus ring’s thickness, offset and color for each component.",
+    "List the contrast between ring and background on each surface color.",
+    "For thin or unusual shapes, such as inline links, show how the indicator is drawn."
+  ],
+  "review": [
+    "Is this ring 2px or more all the way around?",
+    "What was under the ring before focus, and how much does it change?",
+    "Are we aiming for AAA here, or is 2.4.7 the target?"
+  ],
+  "tradeoff": "A bold ring can feel heavy in a refined interface. A two-tone ring, a thin light line inside a dark one, meets the size and contrast on any background and can still be tuned to the brand.",
+  "system": "Define one focus ring token at 2px or more with a tested color, and apply it in every component.",
+  "pitch": "A thicker, stronger focus ring costs almost nothing and helps everyone who has ever lost track of where they are on a page."
+}

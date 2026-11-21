@@ -1,0 +1,50 @@
+{
+  "num": "1.3.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Devices mounted on wheelchairs",
+    "People who cannot rotate a device",
+    "Low vision users who prefer landscape",
+    "Anyone with a phone on a stand"
+  ],
+  "takeaways": [
+    "Do not lock content to portrait or landscape. It works in both, unless one orientation is essential.",
+    "Some people have a device fixed in one position, on a wheelchair or a bed mount, and cannot turn it.",
+    "The layout can adapt to each orientation. It does not have to look the same in both.",
+    "Essential means the task cannot work otherwise, such as a piano keyboard app or photographing a bank check."
+  ],
+  "failures": [
+    "A “Rotate your device” screen that blocks the app",
+    "A checkout locked to portrait",
+    "A landscape-only video player with no portrait view"
+  ],
+  "check": [
+    "Design key screens in both portrait and landscape frames.",
+    "Turn the prototype or build on a real device and complete a task each way.",
+    "For any locked screen, write down why that orientation is essential."
+  ],
+  "quiz": {
+    "question": "A video app’s player looks best in landscape. What should happen when a phone is held upright?",
+    "options": [
+      "Show a “Rotate your device” screen",
+      "Play in portrait, in a smaller frame",
+      "Lock the app to landscape"
+    ],
+    "answer": 1,
+    "why": "Landscape is nicer for video, but not essential. Someone with a mounted phone still needs to watch, so the player adapts instead of refusing."
+  },
+  "spec": [
+    "State that each screen supports both orientations.",
+    "Show how the layout changes between them.",
+    "Mark any screen locked to one orientation, with the essential reason."
+  ],
+  "review": [
+    "What does this screen look like on its side?",
+    "Is this orientation lock essential, or just easier?",
+    "Can someone with a mounted device finish this flow?"
+  ],
+  "tradeoff": "Designing two orientations costs time, and a lock is tempting. Use responsive layouts that rearrange themselves, and save locks for the rare screen that truly needs one.",
+  "system": "Define every template with portrait and landscape layouts, and make orientation locks an exception that needs a written reason.",
+  "pitch": "Some customers cannot turn their phone. If our app only works one way up, they cannot use it at all."
+}

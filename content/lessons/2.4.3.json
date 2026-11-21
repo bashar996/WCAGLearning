@@ -1,0 +1,50 @@
+{
+  "num": "2.4.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Screen reader users",
+    "Switch control users",
+    "Low vision with magnification"
+  ],
+  "takeaways": [
+    "When people move through a page with the Tab key, focus goes in an order that keeps the meaning and lets them use it.",
+    "Usually that follows the reading order. It does not have to be strictly left to right, as long as it makes sense.",
+    "When a dialog or menu opens, focus moves into it. When it closes, focus goes back to what opened it.",
+    "This is about interactive elements. The reading order of all content is 1.3.2."
+  ],
+  "failures": [
+    "Focus jumping between columns at random",
+    "A modal that opens while focus stays behind it",
+    "Content inserted after the trigger that focus never reaches until the end of the page"
+  ],
+  "check": [
+    "Tab through the prototype or build. Does the order make sense at every step?",
+    "Open and close every dialog, menu and drawer. Where does focus go?",
+    "On forms, check that focus follows the fields in the order people fill them in."
+  ],
+  "quiz": {
+    "question": "A “Filter” button opens a modal dialog. Where should focus go?",
+    "options": [
+      "Into the dialog, then back to the Filter button when it closes",
+      "It stays on the Filter button. People can tab to the dialog",
+      "To the top of the page, so people can start again"
+    ],
+    "answer": 0,
+    "why": "Focus left behind the dialog means people are operating content they cannot see. Returning it to the trigger lets them carry on from where they were."
+  },
+  "spec": [
+    "Number the focus order on complex screens, forms and anything with columns.",
+    "For each dialog, menu and drawer, say where focus starts and where it returns.",
+    "Note where new content appears, so focus can reach it next."
+  ],
+  "review": [
+    "Tab through this for me. Did anything surprise you?",
+    "When this panel closes, where does the person end up?",
+    "Does focus order match the order you would explain this screen in?"
+  ],
+  "tradeoff": "A layout can look best with the main action at the top right, while the focus order wants it last. Place it where it belongs in the task, or annotate the order so the build matches the intent.",
+  "system": "Build focus handling into the dialog, menu and drawer components, so focus moves in and returns automatically.",
+  "pitch": "When focus jumps around, keyboard users lose their place and give up on the task."
+}

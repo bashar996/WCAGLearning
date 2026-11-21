@@ -1,0 +1,50 @@
+{
+  "num": "2.1.1",
+  "meta": "5 min read",
+  "demo": null,
+  "who": [
+    "Keyboard users",
+    "Screen reader users",
+    "Switch and voice control users",
+    "People with tremors"
+  ],
+  "takeaways": [
+    "Everything people can do with a mouse or touch, they can also do with a keyboard alone, without needing to press keys at a certain speed.",
+    "Many assistive tools, such as switches and voice control, work through the keyboard interface. If the keyboard cannot do it, they cannot either.",
+    "Developers build it, but designers decide whether a keyboard path exists: hover-only menus, drag-only lists and custom widgets need one designed.",
+    "The only exception is when the result depends on the path of movement, such as freehand drawing. Dragging to reorder is not exempt."
+  ],
+  "failures": [
+    "Actions that only appear on hover",
+    "Drag-and-drop with no other way to move items",
+    "Custom dropdowns, sliders or date pickers with no keyboard behavior"
+  ],
+  "check": [
+    "Put the mouse away and complete every key task with Tab, Enter, Space, Esc and arrow keys.",
+    "For each hover or drag interaction, find the keyboard way to do the same thing.",
+    "Check custom components against the standard keyboard pattern for that type of widget."
+  ],
+  "quiz": {
+    "question": "In a table, the Edit and Delete actions appear only when the mouse hovers over a row. What do you specify?",
+    "options": [
+      "Nothing. Most people use a mouse here",
+      "Show them on keyboard focus too, or keep a visible “More” button on each row",
+      "A hint above the table: “Hover over a row to see actions”"
+    ],
+    "answer": 1,
+    "why": "Keyboard users never hover, so for them the actions do not exist. Revealing them on focus, or a button that is always there, gives everyone the same path."
+  },
+  "spec": [
+    "For every custom component, write the keyboard behavior: which keys do what.",
+    "For each hover or drag action, show the keyboard alternative in the frames.",
+    "Mark which elements are reachable with Tab and which use arrow keys inside a group."
+  ],
+  "review": [
+    "How would you do this without a mouse?",
+    "What is only visible on hover here?",
+    "Is this a standard control, or are we inventing keyboard behavior?"
+  ],
+  "tradeoff": "Hiding actions until hover keeps cards clean, but leaves keyboard users out. Show the actions on focus as well as hover, or keep one visible “More” button that opens them all.",
+  "system": "Document the keyboard behavior in every component’s spec, next to its states, and prefer standard controls over custom ones.",
+  "pitch": "Keyboard access is the base layer that screen readers, switches and voice control all depend on. Without it, the feature does not exist for them."
+}

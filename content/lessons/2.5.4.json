@@ -1,0 +1,50 @@
+{
+  "num": "2.5.4",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Devices mounted on wheelchairs",
+    "Tremors and involuntary movement",
+    "People who cannot shake or tilt a device",
+    "Anyone on a bumpy ride"
+  ],
+  "takeaways": [
+    "If moving the device, such as shaking or tilting, or moving in front of a camera triggers an action, an on-screen control does the same thing.",
+    "People can also turn the motion response off, so a tremor or a bus ride does not trigger it by accident.",
+    "Exceptions: the motion is essential, like a step counter, or it works through an accessibility-supported interface.",
+    "This is about motion as input. Animation that moves on screen is 2.3.3 and 2.2.2."
+  ],
+  "failures": [
+    "Shake to undo with no undo button",
+    "Tilt to scroll with no way to turn it off",
+    "A “wave to continue” camera gesture as the only option"
+  ],
+  "check": [
+    "List every feature that reacts to device or body motion.",
+    "Find the button or control that does the same thing.",
+    "Find the setting that turns the motion response off."
+  ],
+  "quiz": {
+    "question": "Your app adds shake to report a bug. What else does it need?",
+    "options": [
+      "A “Report a bug” button, plus a setting to turn shake off",
+      "A tutorial explaining the shake",
+      "A firmer shake threshold to avoid accidents"
+    ],
+    "answer": 0,
+    "why": "Some people cannot shake a phone, and others shake it without meaning to. The button covers the first group and the off switch covers the second."
+  },
+  "spec": [
+    "For each motion feature, name the on-screen control that does the same thing.",
+    "Specify where the setting to disable motion lives, and its default.",
+    "Mark any motion you treat as essential, and why."
+  ],
+  "review": [
+    "What happens if this phone is clamped to a wheelchair?",
+    "Could this fire by accident in someone’s pocket or on a bus?",
+    "Where is the switch to turn this off?"
+  ],
+  "tradeoff": "Motion features feel playful and save screen space. Keep them as extras, never the only route, and make turning them off one clear setting.",
+  "system": "Pair every motion trigger with a standard button and a shared “Motion controls” setting.",
+  "pitch": "Shake and tilt are delightful until your phone is bolted to a wheelchair. A button and an off switch keep the delight without locking anyone out."
+}

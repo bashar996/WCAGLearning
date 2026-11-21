@@ -1,0 +1,50 @@
+{
+  "num": "2.5.3",
+  "meta": "4 min read",
+  "demo": null,
+  "who": [
+    "Voice control users",
+    "Screen reader users who can see",
+    "Cognitive disabilities",
+    "People using speech input after injury"
+  ],
+  "takeaways": [
+    "When a control has visible text, its accessible name contains that same text.",
+    "Voice users say what they see, like “click Search”. If the hidden name is “Find products”, the command fails.",
+    "Best practice: start the name with the visible text, then add context, like “Read more about pricing”.",
+    "Icon-only buttons have no visible text, so this rule does not apply to them. They still need a name under 4.1.2."
+  ],
+  "failures": [
+    "A “Buy” button named “Add to basket” in code",
+    "Visible label “Next” with hidden name “Continue to payment”",
+    "Extra hidden words added in front of the visible text"
+  ],
+  "check": [
+    "For each control with visible text, compare it with the name you annotate.",
+    "Say the visible label out loud as a voice command. Would it match?",
+    "Check that added context comes after the visible words, not before."
+  ],
+  "quiz": {
+    "question": "Several cards each show a “Learn more” link. You want each link’s name to be unique. What do you annotate?",
+    "options": [
+      "“Learn more about savings accounts”",
+      "“Savings accounts details”",
+      "“Open savings account page”"
+    ],
+    "answer": 0,
+    "why": "It contains the visible text and starts with it, so voice users can say what they see. The others drop the visible words."
+  },
+  "spec": [
+    "Annotate the accessible name for every control whose name differs from its visible text.",
+    "Write the visible label as the first words of that name.",
+    "Note where visible text is an image of text, so the name includes those words too."
+  ],
+  "review": [
+    "What would I say to click this?",
+    "Does the coded name match the words on screen?",
+    "Why is the name different here?"
+  ],
+  "tradeoff": "Writers want short visible labels and full hidden names for context. Keep both by adding context after the visible words, or make the visible label clearer.",
+  "system": "In the button and link components, document that a hidden name must begin with the visible label.",
+  "pitch": "Voice users click by saying what they read. If the code disagrees with the screen, the button does not exist for them."
+}
