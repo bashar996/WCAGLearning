@@ -38,7 +38,7 @@ A regular iPhone gets the standard bottom tab bar because that is Apple's guidan
 - **Placement:** scope, then 6 questions, which place you on the knowledge × scope matrix. It sets lesson depth, path and practice task.
 - **Today:** today's lesson poster, review due, the 86-dot WCAG map and your path.
 - **Learn:** six paths, the Atlas (4 principles → 13 guidelines → 86 criteria) with level filters, the three levels and the law map.
-- **Lessons:** all 86 WCAG 2.2 criteria, each with a full See it / Apply it / Lead it lesson and a quick check. 4 lessons have interactive demos: contrast slider, colour-blindness simulation, simulated taps on a target, and parallax with a Reduce motion switch.
+- **Lessons:** all 86 WCAG 2.2 criteria, each with a full See it / Apply it / Lead it lesson and a quick check. 8 lessons have interactive demos: contrast slider (1.4.3), colour-blindness simulation (1.4.1), simulated taps on a target (2.5.8), parallax with a Reduce motion switch (2.3.3), a focus ring to tune (2.4.13), text to enlarge to 200% (1.4.4), a form error to fix (3.3.1) and a reading order to hear (1.3.2).
 - **Practice:** spaced review (1, 3, 7, 21, 60 days), Name it (8 scenarios), and a task for your scope.
 - **You:** local profile, scope, appearance (Auto / Light / Dark), text size (100 / 115 / 130 %, on top of iOS Dynamic Type), Reduce motion, Hide particles, Mirror layout.
 - **Account:** log in / sign up with Google, Apple, Microsoft, GitHub or email, plus a profile. **These are local only for now:** they create a profile stored on the phone and nothing is sent anywhere.
@@ -66,7 +66,7 @@ WCAGforDesigners/
   App/          entry point
   Model/        Library.swift (generated, do not edit), Models.swift, AppStore.swift (state + persistence)
   Design/       Theme (colours, fonts), Components, Particles (poster and demo engine)
-  Views/        Root (layout + rail), Today, Learn, Criterion, Demos, Practice, You, Account, Onboarding
+  Views/        Root (layout + rail), Today, Learn, Criterion, Demos + NewDemos, Practice, You, Account, Onboarding
   Resources/Fonts   Newsreader, Hanken Grotesk, JetBrains Mono (static instances, SIL OFL)
   Assets.xcassets   App icon (placeholder) and accent colour
 licenses/       font licences

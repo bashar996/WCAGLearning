@@ -262,7 +262,7 @@ enum Library {
             pitch: "Structure is how a screen reader user skims. Without it, they have to listen to everything."
         ),
         "1.3.2": DeepLesson(
-            meta: "4 min read", demo: nil,
+            meta: "4 min · interactive", demo: .readingOrder,
             who: ["Screen reader users", "People using reader modes", "Braille display users", "People using text-to-speech"],
             takeaways: ["When the order of content changes its meaning, the order in code matches the order people should read it in.", "Screen readers read the code order, not the layout. If the two disagree, people hear things in the wrong sequence.", "It only matters where order changes meaning: steps, a price and what it is for, a question and its answer.", "This is about reading order. Where keyboard focus goes next is 2.4.3."],
             failures: ["Columns that read across rows instead of down", "A layout reordered visually so the code order no longer makes sense", "Spaces or tabs used to fake columns of text"],
@@ -418,7 +418,7 @@ enum Library {
             pitch: "Low-contrast text is one of the most common failures audits find, and the cheapest to fix once, in tokens."
         ),
         "1.4.4": DeepLesson(
-            meta: "4 min read", demo: nil,
+            meta: "4 min · interactive", demo: .resize,
             who: ["Low vision", "Older adults", "People on small screens", "Anyone without their glasses"],
             takeaways: ["Text can be enlarged to 200% without losing content or function.", "Design for growth: containers expand, text wraps, nothing is clipped.", "Avoid fixed heights on anything that holds text.", "On phones, respect the system text size setting."],
             failures: ["Text cut off or overlapping when enlarged", "Fixed-height buttons that clip two-line labels", "Layouts that only work with one line of text"],
@@ -717,7 +717,7 @@ enum Library {
             pitch: "Half a button is not good enough. If people can see all of what they are on, they make fewer mistakes."
         ),
         "2.4.13": DeepLesson(
-            meta: "5 min read", demo: nil,
+            meta: "5 min · interactive", demo: .focus,
             who: ["Low vision", "Keyboard users", "Older adults", "Attention-related disabilities"],
             takeaways: ["A focus indicator is at least as large as a 2 CSS px thick outline around the unfocused component, and its pixels change by at least 3:1 between unfocused and focused states.", "It is Level AAA. At AA, 2.4.7 only asks that focus is visible.", "The 3:1 compares the same pixels before and after focus. 1.4.11 compares colors against what is next to them.", "A solid 2px outline in a color with 3:1 against the background meets it for most components."],
             failures: ["A 1px outline, too thin to meet the size", "A subtle tint change on the button background", "A thin underline under a large card"],
@@ -1094,7 +1094,7 @@ enum Library {
             pitch: "People who are stuck look for help where they last saw it. If it moves, they leave or call us."
         ),
         "3.3.1": DeepLesson(
-            meta: "4 min read", demo: nil,
+            meta: "4 min · interactive", demo: .formErrors,
             who: ["Screen reader users", "Color vision deficiency", "Cognitive disabilities", "Anyone filling in a long form"],
             takeaways: ["When the system detects an input error, it shows which field is wrong and describes the error in text.", "A red border or a warning icon alone is not enough. Some people cannot see the color, and nobody can read an icon’s meaning for sure.", "The message names the problem: “Enter your email address”, not just “Invalid”.", "This applies to errors the system catches. It does not force you to add validation, but whatever you detect must be explained."],
             failures: ["A field that only turns red", "A banner saying “There were errors” with no field named", "Errors shown only as an icon or a shake animation"],

@@ -29,7 +29,7 @@ for (const l of lessons) {
   if (l.file !== l.num + '.json') errors.push(`${l.file}: "num" is ${l.num}, file name disagrees`);
   if (!nums.has(l.num)) errors.push(`${l.file}: ${l.num} is not a WCAG 2.2 criterion`);
   if (!isStr(l.meta)) errors.push(`${l.file}: "meta" missing`);
-  if (l.demo !== null && !['contrast', 'color', 'taps', 'motion'].includes(l.demo)) errors.push(`${l.file}: unknown demo "${l.demo}"`);
+  if (l.demo !== null && !['contrast', 'color', 'taps', 'motion', 'focus', 'resize', 'formErrors', 'readingOrder'].includes(l.demo)) errors.push(`${l.file}: unknown demo "${l.demo}"`);
   strList(l, 'who', 3, 6); strList(l, 'takeaways', 3, 5); strList(l, 'failures', 2, 4); strList(l, 'check', 2, 4);
   strList(l, 'spec', 2, 4); strList(l, 'review', 2, 4);
   for (const k of ['tradeoff', 'system', 'pitch']) if (!isStr(l[k])) errors.push(`${l.file}: "${k}" missing`);

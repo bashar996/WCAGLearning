@@ -1,7 +1,7 @@
 {
   "num": "3.3.1",
-  "meta": "4 min read",
-  "demo": null,
+  "meta": "4 min · interactive",
+  "demo": "formErrors",
   "who": [
     "Screen reader users",
     "Color vision deficiency",
